@@ -31,7 +31,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            {{Form::open(array('url'=>'creator/page/save/'.@$rs->id, 'method'=>'post', 'class'=>'','id'=>'pageFrm'))}}
+            {{Form::open(array('url'=>'fdadmin/page/save/'.@$rs->id, 'method'=>'post', 'class'=>'', 'id'=>'pageFrm'))}}
               <div class="box-body">
 
 

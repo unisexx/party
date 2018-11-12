@@ -1,59 +1,63 @@
-{{ deleteDuplicate() }}
+<header class="fixed-top p-auto">
+    <div class="container">
+        <nav class="navbar navbar-expand p-0">
+            <a class="navbar-brand mr-0 pr-4" href="index.html">
+                <img src="image/logo.png" alt="logo" width="100">
+            </a>
+            <a href="javascript:void(0)" id="cls-btn">&times;</a>
+            <div class="navbar-collapse nav-sec" id="sidenav">
+                <ul class="navbar-nav mr-auto header-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link active text-white" href="index.html">
+                            หน้าแรก
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-white dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">เกี่ยวกับพรรค</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">วิสัยทัศน์</a>
+                            <a class="dropdown-item" href="#">นโยบาย</a>
+                            <a class="dropdown-item" href="#">พรรค</a>
+                            <a class="dropdown-item" href="#">ข้อบังคับพรรค</a>
+                        </div>
+                    </li>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
+                    <!-- <li class="nav-item">
+                        <a class="nav-link text-white" href="services.html">
+                            เกี่ยวกับพรรค
+                        </a>
+                    </li> -->
 
-                <!-- Collapsed Hamburger -->
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
 
-                <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Linepop
-                </a>
-            </div>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="blog.html">
+                            ผู้บริหารพรรค
+                        </a>
+                    </li>
 
-            <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/sticker') }}">สติ๊กเกอร์</a></li>
-                    <li><a href="{{ url('/theme') }}">ธีม</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="portfolio.html">
+                            ข่าวสารพรรค
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="contact.html">
+                            ผู้สมัคร สส.
+                        </a>
+                    </li>
                 </ul>
-                <div class="col-sm-5 col-md-4">
-                    {{Form::open(array('url'=>'search', 'method'=>'get', 'class'=>'navbar-form','role'=>'search'))}}
-						<div class="input-group">
-							<input type="text" class="form-control" placeholder="ค้นหา" name="q" id="srch-term" value="{{ @$_GET['q'] }}">
-							<div class="input-group-btn">
-								<button class="btn bg-green" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-							</div>
-						</div>
-                    {{Form::close()}}
-				</div>
-
-                <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Authentication Links -->
-                    @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">เข้าสู่ระบบ</a></li>
-                        <li><a href="{{ url('/register') }}">สมัครสมาชิก</a></li>
-                    @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/creator/dashboard') }}"><i class="fa fa-btn fa-gears"></i>จัดการข้อมูล</a></li>
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>ออกจากระบบ</a></li>
-                            </ul>
-                        </li>
-                    @endif
-                </ul>
-            </div>
-        </div>
-    </nav>
+                <div class="search-box mr-lg-0">
+                    <input type="text" placeholder="Search here..." name="search1">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="menu-icon d-lg-none">
+                    <span class="ml-auto"></span>
+                    <span class="ml-auto"></span>
+                    <span class="ml-auto"></span>
+                </div>
+        </nav>
+    </div>
+</header>

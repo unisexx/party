@@ -31,20 +31,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        SEO::setTitle('รวมสติ๊กเกอร์ไลน์ขายดี แนะนำ ฮิตๆ ยอดนิยม');
-        SEO::setDescription('รวมสติ๊กเกอร์ไลน์ขายดี แนะนำ ฮิตๆ ยอดนิยม จากครีเอเทอร์');
-        SEO::opengraph()->setUrl(url()->current());
-        SEO::addImages('https://i.imgur.com/M1FvcTu.png');
-        SEO::twitter()->setSite('@line2me_th');
-        SEOMeta::setKeywords('line, sticker, theme, creator, animation, sound, popup, ไลน์, สติ๊กเกอร์, ธีม, ครีเอเทอร์, ดุ๊กดิ๊ก, มีเสียง, ป๊อปอัพ');
-        SEOMeta::addKeyword('line, sticker, theme, creator, animation, sound, popup, ไลน์, สติ๊กเกอร์, ธีม, ครีเอเทอร์, ดุ๊กดิ๊ก, มีเสียง, ป๊อปอัพ');
+        // SEO::setTitle('รวมสติ๊กเกอร์ไลน์ขายดี แนะนำ ฮิตๆ ยอดนิยม');
+        // SEO::setDescription('รวมสติ๊กเกอร์ไลน์ขายดี แนะนำ ฮิตๆ ยอดนิยม จากครีเอเทอร์');
+        // SEO::opengraph()->setUrl(url()->current());
+        // SEO::addImages('https://i.imgur.com/M1FvcTu.png');
+        // SEO::twitter()->setSite('@line2me_th');
+        // SEOMeta::setKeywords('line, sticker, theme, creator, animation, sound, popup, ไลน์, สติ๊กเกอร์, ธีม, ครีเอเทอร์, ดุ๊กดิ๊ก, มีเสียง, ป๊อปอัพ');
+        // SEOMeta::addKeyword('line, sticker, theme, creator, animation, sound, popup, ไลน์, สติ๊กเกอร์, ธีม, ครีเอเทอร์, ดุ๊กดิ๊ก, มีเสียง, ป๊อปอัพ');
 
-        $data['sticker'] = new Sticker;
-        $data['sticker'] = $data['sticker']->orderBy('updated_at', 'desc')->take(12)->get();
-
-        $data['theme'] = new Theme;
-        $data['theme'] = $data['theme']->orderBy('updated_at', 'desc')->take(12)->get();
-        return view('home', $data);
+        return view('home');
     }
 
     public function search()

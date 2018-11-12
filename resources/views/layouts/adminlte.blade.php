@@ -18,19 +18,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel="stylesheet" href="AdminLTE-2.4.2/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="AdminLTE-2.4.5/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="AdminLTE-2.4.2/bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="AdminLTE-2.4.5/bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="AdminLTE-2.4.2/bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="AdminLTE-2.4.5/bower_components/Ionicons/css/ionicons.min.css">
   <!-- DataTables -->
-  <link rel="stylesheet" href="AdminLTE-2.4.2/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="AdminLTE-2.4.5/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="AdminLTE-2.4.2/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="AdminLTE-2.4.5/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect. -->
-  <link rel="stylesheet" href="AdminLTE-2.4.2/dist/css/skins/skin-blue.min.css">
+  <link rel="stylesheet" href="AdminLTE-2.4.5/dist/css/skins/skin-blue.min.css">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -155,31 +155,31 @@ desired effect
 
 <!-- jQuery 3 -->
 
-<script src="AdminLTE-2.4.2/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="AdminLTE-2.4.5/bower_components/jquery/dist/jquery.min.js"></script>
 
 <!-- Bootstrap 3.3.7 -->
 
-<script src="AdminLTE-2.4.2/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="AdminLTE-2.4.5/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 <!-- AdminLTE App -->
 
-<script src="AdminLTE-2.4.2/dist/js/adminlte.min.js"></script>
+<script src="AdminLTE-2.4.5/dist/js/adminlte.min.js"></script>
 
 
 
 <!-- DataTables -->
 
-<script src="AdminLTE-2.4.2/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="AdminLTE-2.4.5/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 
-<script src="AdminLTE-2.4.2/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="AdminLTE-2.4.5/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 
 <!-- SlimScroll -->
 
-<script src="AdminLTE-2.4.2/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="AdminLTE-2.4.5/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 
 <!-- FastClick -->
 
-<script src="AdminLTE-2.4.2/bower_components/fastclick/lib/fastclick.js"></script>
+<script src="AdminLTE-2.4.5/bower_components/fastclick/lib/fastclick.js"></script>
 
 
 
@@ -214,7 +214,7 @@ $.ajaxSetup({
 
   $(function () {
 
-    $('#tableSticker').DataTable();
+    // $('#tableSticker').DataTable();
 
   })
 

@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers\Creator;
+namespace App\Http\Controllers\Fdadmin;
 
 use Illuminate\Http\Request;
 
@@ -25,35 +25,35 @@ class PageController extends Controller
 	public function getIndex()
 	{
 		//permission
-		if (Auth::user()->level != 99) {
-			set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
-			return back()->send();
-		}
+		// if (Auth::user()->level != 99) {
+		// 	set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
+		// 	return back()->send();
+		// }
 
 		$data['rs'] = new Page;
 		$data['rs'] = $data['rs']->orderBy('id', 'desc')->get();
-		return view('creator.page.index', $data);
+		return view('fdadmin.page.index', $data);
 	}
 
 	public function getForm($id = null)
 	{
 		//permission
-		if (Auth::user()->level != 99) {
-			set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
-			return back()->send();
-		}
+		// if (Auth::user()->level != 99) {
+		// 	set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
+		// 	return back()->send();
+		// }
 
 		$data['rs'] = Page::find($id);
-		return view('creator.page.form', $data);
+		return view('fdadmin.page.form', $data);
 	}
 
 	public function postSave(Request $rq, $id = null)
 	{
 		//permission
-		if (Auth::user()->level != 99) {
-			set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
-			return back()->send();
-		}
+		// if (Auth::user()->level != 99) {
+		// 	set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
+		// 	return back()->send();
+		// }
 
 		$rq->merge([
 			'slug' => generateUniqueSlug($rq->input('title'))
@@ -65,28 +65,29 @@ class PageController extends Controller
 		$model->save();
 
 		set_notify('success', trans('message.completeSave'));
-		return Redirect('creator/page/index');
+		// return Redirect('fdadmin/page/index');
+		return redirect()->back();
 	}
 
 	public function getDelete($id = null)
 	{
 		//permission
-		if (Auth::user()->level != 99) {
-			set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
-			return back()->send();
-		}
+		// if (Auth::user()->level != 99) {
+		// 	set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
+		// 	return back()->send();
+		// }
 
 		if ($rs = Page::find($id)) {
 			$rs->delete(); // Delete process
 			set_notify('error', trans('message.completeDelete'));
 		}
-		return Redirect('creator/page/index');
+		return Redirect('fdadmin/page/index');
 	}
 
 	public function getView($id)
 	{
 		$data['rs'] = Page::find($id);
-		return view('creator.page.view', $data);
+		return view('fdadmin.page.view', $data);
 	}
 
 }

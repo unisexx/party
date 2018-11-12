@@ -4,9 +4,9 @@
     <!-- Logo -->
     <a href="{{ url('') }}" class="logo" target="_blank">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>L</b>Pop</span>
+      <span class="logo-mini">พปชร.</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Line</b>pop</span>
+      <span class="logo-lg">พรรคพลังประชารัฐ</span>
     </a>
 
     <!-- Header Navbar -->

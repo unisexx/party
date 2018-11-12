@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers\Creator;
+namespace App\Http\Controllers\Fdadmin;
 
 use Illuminate\Http\Request;
 

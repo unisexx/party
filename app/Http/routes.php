@@ -38,13 +38,11 @@ Route::get('/page/{param}', 'PageController@getView');
 // เช็กล็อกอิน
 Route::group(['middleware' => 'auth'], function () {
 
-    // Creator
-    Route::group(['prefix' => 'creator', 'namespace' => 'Creator'], function () {
+    // FDadmin
+    Route::group(['prefix' => 'fdadmin', 'namespace' => 'Fdadmin'], function () {
         Route::controller('dashboard', 'DashboardController');
-        Route::controller('sticker', 'StickerController');
-        Route::controller('theme', 'ThemeController');
         Route::controller('page', 'PageController');
-        Route::controller('lucky', 'LuckyController');
+        Route::controller('info', 'InfoController');
     });
 
 }); //middleware
