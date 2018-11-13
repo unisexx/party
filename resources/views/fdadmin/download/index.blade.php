@@ -2,9 +2,9 @@
 
 @section('content')
 
-<!-- Content Wrapper. Contains info content -->
+<!-- Content Wrapper. Contains download content -->
 <div class="content-wrapper">
-    <!-- Content Header (info header) -->
+    <!-- Content Header (download header) -->
     <!-- <section class="content-header">
       <h1>
         Data Tables
@@ -23,8 +23,8 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">ข่าวสารพรรค</h3>
-              <a href="{{ url('fdadmin/info/form') }}">
+              <h3 class="box-title">เอกสารดาวน์โหลด</h3>
+              <a href="{{ url('fdadmin/download/form') }}">
                 <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> เพิ่มรายการ</button>
               </a>
             </div>
@@ -44,8 +44,8 @@
                       <td>{{ $row->id }}</td>
 		                  <td>{{ $row->title }}</td>
 		                  <td>
-		                  	<a href="fdadmin/info/form/{{ $row->id }}"><button type="button" class="btn btn-warning  btn-xs">แก้ไข</button></a>
-		                  	<a href="fdadmin/info/delete/{{ $row->id }}" onclick="return confirm('ต้องการลบรายการนี้')"><button type="button" class="btn btn-danger btn-xs">ลบ</button></a>
+		                  	<a href="fdadmin/download/form/{{ $row->id }}"><button type="button" class="btn btn-warning  btn-xs">แก้ไข</button></a>
+		                  	<a href="fdadmin/download/delete/{{ $row->id }}" onclick="return confirm('ต้องการลบรายการนี้')"><button type="button" class="btn btn-danger btn-xs">ลบ</button></a>
 		                  </td>
 		                </tr>
                 	@endforeach

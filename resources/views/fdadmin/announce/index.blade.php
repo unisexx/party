@@ -2,9 +2,9 @@
 
 @section('content')
 
-<!-- Content Wrapper. Contains info content -->
+<!-- Content Wrapper. Contains announce content -->
 <div class="content-wrapper">
-    <!-- Content Header (info header) -->
+    <!-- Content Header (announce header) -->
     <!-- <section class="content-header">
       <h1>
         Data Tables
@@ -23,8 +23,8 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">ข่าวสารพรรค</h3>
-              <a href="{{ url('fdadmin/info/form') }}">
+              <h3 class="box-title">ประกาศพรรค</h3>
+              <a href="{{ url('fdadmin/announce/form') }}">
                 <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> เพิ่มรายการ</button>
               </a>
             </div>
@@ -44,8 +44,8 @@
                       <td>{{ $row->id }}</td>
 		                  <td>{{ $row->title }}</td>
 		                  <td>
-		                  	<a href="fdadmin/info/form/{{ $row->id }}"><button type="button" class="btn btn-warning  btn-xs">แก้ไข</button></a>
-		                  	<a href="fdadmin/info/delete/{{ $row->id }}" onclick="return confirm('ต้องการลบรายการนี้')"><button type="button" class="btn btn-danger btn-xs">ลบ</button></a>
+		                  	<a href="fdadmin/announce/form/{{ $row->id }}"><button type="button" class="btn btn-warning  btn-xs">แก้ไข</button></a>
+		                  	<a href="fdadmin/announce/delete/{{ $row->id }}" onclick="return confirm('ต้องการลบรายการนี้')"><button type="button" class="btn btn-danger btn-xs">ลบ</button></a>
 		                  </td>
 		                </tr>
                 	@endforeach
