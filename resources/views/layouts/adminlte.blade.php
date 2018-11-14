@@ -45,6 +45,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <style>
     .panel .has-error{background:#dd4b39;}
   </style>
+
+  <!-- jQuery 3 -->
+
+  <script src="AdminLTE-2.4.5/bower_components/jquery/dist/jquery.min.js"></script>
+
+  <!-- Bootstrap 3.3.7 -->
+
+  <script src="AdminLTE-2.4.5/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <!-- AdminLTE App -->
+
+  <script src="AdminLTE-2.4.5/dist/js/adminlte.min.js"></script>
+
 </head>
 
 <!--
@@ -150,20 +163,6 @@ desired effect
 
 
 <!-- REQUIRED JS SCRIPTS -->
-
-
-
-<!-- jQuery 3 -->
-
-<script src="AdminLTE-2.4.5/bower_components/jquery/dist/jquery.min.js"></script>
-
-<!-- Bootstrap 3.3.7 -->
-
-<script src="AdminLTE-2.4.5/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-<!-- AdminLTE App -->
-
-<script src="AdminLTE-2.4.5/dist/js/adminlte.min.js"></script>
 
 
 
