@@ -24,7 +24,7 @@ if(!function_exists('dropdownOption'))
 {
 	function dropdownOption($table, $id, $title, $where = null, $orderby = null, $add_other = null)
 	{
-		$sql = "select ".$id." as id, ".$title." as title from ".$table." where 1 = 1 and deleted_at is null ";
+		$sql = "select ".$id." as id, ".$title." as title from ".$table." where 1 = 1 ";
 		$where = ($where)?' and '.$where:'';
 		$sql .= $where;
 		$orderby = ($orderby)?' order by '.$orderby:'  order by '.$id.' asc';

@@ -12,7 +12,7 @@
 
 
 
-    <title>Linepop.in.th</title>
+    <title>พรรคพลังประชารัฐ</title>
 
 
 
@@ -57,7 +57,7 @@
 
     <!-- Header -->
 
-	@include('include.front.header')
+	{{-- @include('include.front.header') --}}
 
 
 

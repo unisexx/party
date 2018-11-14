@@ -46,6 +46,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::controller('announce', 'AnnounceController');
         Route::controller('law', 'LawController');
         Route::controller('download', 'DownloadController');
+        Route::controller('manager', 'ManagerController');
     });
 
 }); //middleware

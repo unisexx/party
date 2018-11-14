@@ -29,7 +29,7 @@
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">เมนู {{ request()->path() }}</li>
+        <li class="header">เมนู</li>
         <li class="{{ request()->segment(2) == 'page' ? 'active' : '' }} treeview">
           <a href="#">
             <i class="fa fa-files-o"></i> <span>เกี่ยวกับพรรค {{ request()->segment(2) }}</span>
@@ -44,7 +44,7 @@
             <li class="{{ request()->path() == 'fdadmin/page/form/4' ? 'active' : '' }}"><a href="{{ url('fdadmin/page/form/4') }}"><i class="fa fa-circle-o"></i> ข้อบังคับพรรค</a></li>
           </ul>
         </li>
-        <li {{ request()->segment(2) == '#' ? 'class=active' : '' }}><a href="{{ url('fdadmin/#') }}"><i class="fa fa-files-o"></i> <span>ผู้บริหารพรรค</span></a></li>
+        <li {{ request()->segment(2) == '#' ? 'class=active' : '' }}><a href="{{ url('fdadmin/manager') }}"><i class="fa fa-files-o"></i> <span>ผู้บริหารพรรค</span></a></li>
         <li {{ request()->segment(2) == 'info' ? 'class=active' : '' }}><a href="{{ url('fdadmin/info') }}"><i class="fa fa-files-o"></i> <span>ข่าวสารพรรค</span></a></li>
         <li {{ request()->segment(2) == 'announce' ? 'class=active' : '' }}><a href="{{ url('fdadmin/announce
 ') }}"><i class="fa fa-files-o"></i> <span>ประกาศพรรค</span></a></li>
