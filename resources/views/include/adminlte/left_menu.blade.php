@@ -32,7 +32,7 @@
         <li class="header">เมนู</li>
         <li class="{{ request()->segment(2) == 'page' ? 'active' : '' }} treeview">
           <a href="#">
-            <i class="fa fa-files-o"></i> <span>เกี่ยวกับพรรค {{ request()->segment(2) }}</span>
+            <i class="fa fa-files-o"></i> <span>เกี่ยวกับพรรค</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
