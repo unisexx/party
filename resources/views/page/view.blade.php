@@ -1,12 +1,15 @@
 @extends('layouts.front') @section('content')
-<div class="row">
-	<!-- /.col -->
-	<div class="col-md-12">
-        <h2>{{ $rs->title }}</h2>
-        <div>
-            {!! $rs->description !!}
-        </div>
-	</div>
-	<!-- /.col -->
-</div>
+
+
+<section class="banner innerpage-banner contact-banner">
+    <div class="container">
+        <h1 data-aos="fade-up" data-aos-duration="1000">{{ $rs->title }}</h1>
+    </div>
+</section>
+
+<section class="blog-page blogsingle">
+    {!! $rs->description !!}
+</section>
+
+
 @endsection

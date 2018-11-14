@@ -2,12 +2,12 @@
     <div class="layer">
         <div class="container">
             <nav class="navbar navbar-expand  p-0">
-                <a class="navbar-brand mr-0 pr-2 pr-sm-4" href="index.html">
-                    <img src="bizzy-master/images/logo.png" alt="logo">
-                </a>
+                <!-- <a class="navbar-brand mr-0 pr-2 pr-sm-4" href="index.html">
+                    <img src="image/logo.png" alt="logo" width="100">
+                </a> -->
                 <div class="nav-sec">
                     <ul class="ml-md-auto">
-                        <li class="nav-item active">
+                        <!-- <li class="nav-item active">
                             <a class="nav-link active text-black" href="index.html">
                                 Home
                             </a>
@@ -39,9 +39,12 @@
                             <a class="nav-link" href="support.html">
                                 Support
                             </a>
-                        </li>
+                        </li> -->
                         <li>
-                            <p class="m-0"> ©2018, All Rights Reserved. Designed By <a href="https://www.template.net/editable/websites">Template.net</a></p>
+                            <p class="m-0" style="color:#fff; ">
+                                พรรคพลังประชารัฐ<br>
+                                ๑๓๐/๑ อาคารปานศรี ซอยรัชดาภิเษก ๕๔ ถนนรัชดาภิเษกแขวงลาดยาว เขตจตุจักร กรุงเทพมหานคร
+                            </p>
                         </li>
                     </ul>
             </nav>

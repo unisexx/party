@@ -6,7 +6,7 @@ return [
          * The default configurations to be used by the meta generator.
          */
         'defaults'       => [
-            'title'        => "Linepop", // set false to total remove
+            'title'        => "พรรคพลังประชารัฐ", // set false to total remove
             'description'  => 'รวมสติกเกอร์ไลน์แนะนำ สติกเกอร์ไลน์ฮิต ยอดนิยม', // set false to total remove
             'separator'    => ' - ',
             'keywords'     => [],
@@ -29,7 +29,7 @@ return [
          * The default configurations to be used by the opengraph generator.
          */
         'defaults' => [
-            'title'       => 'Linepop', // set false to total remove
+            'title'       => 'พรรคพลังประชารัฐ', // set false to total remove
             'description' => 'รวมสติกเกอร์ไลน์แนะนำ สติกเกอร์ไลน์ฮิต ยอดนิยม', // set false to total remove
             'url'         => false, // Set null for using Url::current(), set false to total remove
             'type'        => false,

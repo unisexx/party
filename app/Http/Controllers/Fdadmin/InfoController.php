@@ -63,7 +63,7 @@ class InfoController extends Controller
 			$image = $rq->file('imgUpload');
 			$filename  = time() . '.' . $image->getClientOriginalExtension();
 			$path = public_path('uploads/' . $filename);
-			Image::make($image->getRealPath())->resize(468, 249)->save($path);
+			Image::make($image->getRealPath())->resize(600, 400)->save($path);
 			$model->image = $filename;
 		}
 		$model->slug = generateUniqueSlug($rq->input('title'));

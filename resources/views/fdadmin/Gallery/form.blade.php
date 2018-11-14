@@ -63,15 +63,16 @@
                             <input type="hidden" name="attach_imgs_id[]">
                         </td>
                     </tr>
-                    @foreach($attach_imgs as $i)
+                    @if(!empty($rs))
+                    @foreach($rs->attach_imgs()->get() as $i)
                       <tr>
                           <td class="text-center"></td>
                           <td>
                               <div class="thumbnail-box thumbnail-box-inverse" style="margin-bottom:10px;">
                                   <a class="thumb-link" href="#" title=""></a>
                                   <div class="thumb-overlay bg-black"></div>
-                                  <img src="{{url($i->getPath())}}" alt="{{$i->file_name}}" style="max-width:178px;"><!--
-                              --></div>
+                                  <img src="{{url($i->getPath())}}" alt="{{$i->file_name}}" style="max-width:178px;">
+                              </div>
                               <input type="file" name="attach_imgs_file[]" class="form-control">
                           </td>
                           <td>
@@ -79,7 +80,8 @@
                               <input type="hidden" name="attach_imgs_id[]" value="{{@$i->id}}">
                           </td>
                       </tr>
-                  @endforeach
+                    @endforeach
+                    @endif
                 </tbody>
               </table>
 
@@ -141,9 +143,9 @@ tinymce.init({
 <script>
 $(document).ready(function(){
   // ATTACH FILE (IMAGES)
-  {{empty($attach_imgs->count())?'add_attachimgs();':'sort_attachimgs();'}}
   $('body').on('click', '.btn-attachimgs-add', add_attachimgs);
   $('body').on('click', '.btn-attachimgs-del', function(){ del_attachimgs($(this)); });
+  sort_attachimgs();
 });
 function sort_attachimgs() {
     for(i=0; i<=$('#attach_img tbody tr').length; i++) {

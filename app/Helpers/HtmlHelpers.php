@@ -53,3 +53,57 @@ if (!function_exists('deleteDuplicate')) {
             and n1.sticker_code = n2.sticker_code');
 	}
 }
+
+// remove tag เพื่อตัดคำ
+if (!function_exists('remove_tag')) {
+	function remove_tag($str2)
+	{
+		$simple_search = array( 
+			'/\[author\](.*?)\[\/author\]/is',
+			'/\[h\](.*?)\[\/h\]/is',   
+			'/\[b\](.*?)\[\/b\]/is',                                 
+			'/\[i\](.*?)\[\/i\]/is',                                 
+			'/\[u\](.*?)\[\/u\]/is',
+			'/\[url=(.*?)\](.*?)\[\/url\]/is',
+			'/\[img\](.*?)\[\/img\]/is',
+			'/\[video\](.*?)\[\/video\]/is'
+		); 
+		$simple_replace = array( 
+			'$1', 
+			'$1', 
+			'$1', 
+			'$1', 
+			'$1',
+			'$2',
+			'',
+			''
+		); 
+		$str2 = preg_replace ($simple_search, $simple_replace, $str2); 
+		$str2 = strip_tags($str2);
+		// $this->str = $str2;
+		return $str2;
+	}
+}
+
+// ตัดคำแล้วเติมจุด
+if (!function_exists('cuttext')) {
+	function cuttext($str,$ncut,$minword = 50)
+	{
+		$str = remove_tag($str);
+		$sub = '';
+		$len = 0;
+		foreach (explode(' ', $str) as $word)
+		{
+			$part = (($sub != '') ? ' ' : '') . $word;
+			$sub .= $part;
+			$len += strlen($part);
+		   
+			if (strlen($word) > $minword && strlen($sub) >= $ncut)
+			{
+				break;
+			}
+		}
+	   
+		return $sub . (($len < strlen($str)) ? '...' : '');
+	}
+}

@@ -8,6 +8,9 @@ use App\Models\Sticker;
 use App\Models\Theme;
 use App\Models\Stamp;
 
+use App\Models\Info;
+use App\Models\Gallery;
+
 use DB;
 use SEO;
 use SEOMeta;
@@ -39,7 +42,15 @@ class HomeController extends Controller
         // SEOMeta::setKeywords('line, sticker, theme, creator, animation, sound, popup, ไลน์, สติ๊กเกอร์, ธีม, ครีเอเทอร์, ดุ๊กดิ๊ก, มีเสียง, ป๊อปอัพ');
         // SEOMeta::addKeyword('line, sticker, theme, creator, animation, sound, popup, ไลน์, สติ๊กเกอร์, ธีม, ครีเอเทอร์, ดุ๊กดิ๊ก, มีเสียง, ป๊อปอัพ');
 
-        return view('home');
+        // ข่าวสารพรรค
+        $data['info'] = new Info;
+        $data['info'] = $data['info']->orderBy('id', 'desc')->take(3)->get();
+
+        // ภาพกิจกรรม
+        $data['gallery'] = new Gallery;
+        $data['gallery'] = $data['gallery']->orderBy('id', 'desc')->take(6)->get();
+        
+        return view('home',$data);
     }
 
     public function search()

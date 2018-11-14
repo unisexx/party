@@ -46,7 +46,6 @@ class GalleryController extends Controller
 		// }
 
 		$data['rs'] = Gallery::find($id);
-		$data['attach_imgs'] = $data['rs']->attach_imgs()->get();
 		return view('fdadmin.gallery.form', $data);
 	}
 
