@@ -130,21 +130,6 @@ desired effect
 
 
 
-  
-
-
-
-  <!-- Main Footer -->
-
-  @include('include.adminlte.footer')
-
-
-
-  <!-- Right Sidebar -->
-
-  @include('include.adminlte.right_sidebar')
-
-
 
 
 

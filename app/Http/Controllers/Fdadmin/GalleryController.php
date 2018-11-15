@@ -90,10 +90,17 @@ class GalleryController extends Controller
                         unlink($model_imgs->getPath());
                     }
                 }
-                // upload files
-                $model_imgs->file_path = genFilename($rq->attach_imgs_file[$k]->getClientOriginalName());
-                $model_imgs->file_name = $rq->attach_imgs_file[$k]->getClientOriginalName();
-                $rq->attach_imgs_file[$k]->move($model_imgs->getDir(),$model_imgs->file_path);
+				
+				// upload รูป
+				$image = $rq->attach_imgs_file[$k];
+				$filename  = genFilename($image->getClientOriginalName());
+				$path = public_path('uploads/gallery/' . $filename);
+				Image::make($image->getRealPath())->resize(600, null, function ($constraint) {
+					$constraint->aspectRatio();
+				})->save($path); // resize width 600 height aspectRatio.
+				$model_imgs->file_path = $filename;
+				$model_imgs->file_name = $rq->attach_imgs_file[$k]->getClientOriginalName();
+
             }
             if(!empty($rq->attach_imgs_detail_th[$k]) || !empty($rq->attach_imgs_detail_th[$k]) || !empty($model_imgs->file_path)) {
                 $model_imgs->save();

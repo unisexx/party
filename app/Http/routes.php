@@ -23,14 +23,6 @@ Route::auth();
 Route::get('/', 'HomeController@index');
 Route::get('home', 'HomeController@index');
 // Route::get('search', 'HomeController@search');
-// Route::get('author/{param}', 'HomeController@author');
-// Route::get('tag/{param}', 'HomeController@tag');
-
-// Route::get('/sticker', 'StickerController@getIndex');
-// Route::get('/sticker/{param}', 'StickerController@getView');
-
-// Route::get('/theme', 'ThemeController@getIndex');
-// Route::get('/theme/{param}', 'ThemeController@getView');
 
 Route::get('/page', 'PageController@getIndex');
 Route::get('/page/{param}', 'PageController@getView');

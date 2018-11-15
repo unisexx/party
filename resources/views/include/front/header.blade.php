@@ -31,7 +31,7 @@
 
 
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="blog.html">
+                        <a class="nav-link text-white" href="#">
                             ผู้บริหารพรรค
                         </a>
                     </li>
@@ -43,7 +43,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="contact.html">
+                        <a class="nav-link text-white" href="#">
                             ผู้สมัคร สส.
                         </a>
                     </li>
