@@ -7,7 +7,7 @@ return [
          */
         'defaults'       => [
             'title'        => "พรรคพลังประชารัฐ", // set false to total remove
-            'description'  => 'รวมสติกเกอร์ไลน์แนะนำ สติกเกอร์ไลน์ฮิต ยอดนิยม', // set false to total remove
+            'description'  => 'โลกเปลี่ยน ไทยต้องปรับ ทางเลือกใหม่ของการเมืองไทย ก้าวข้ามความขัดแย้ง', // set false to total remove
             'separator'    => ' - ',
             'keywords'     => [],
             'canonical'    => false, // Set null for using Url::current(), set false to total remove
@@ -30,7 +30,7 @@ return [
          */
         'defaults' => [
             'title'       => 'พรรคพลังประชารัฐ', // set false to total remove
-            'description' => 'รวมสติกเกอร์ไลน์แนะนำ สติกเกอร์ไลน์ฮิต ยอดนิยม', // set false to total remove
+            'description' => 'โลกเปลี่ยน ไทยต้องปรับ ทางเลือกใหม่ของการเมืองไทย ก้าวข้ามความขัดแย้ง', // set false to total remove
             'url'         => false, // Set null for using Url::current(), set false to total remove
             'type'        => false,
             'site_name'   => false,

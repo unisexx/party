@@ -4,12 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
-use App\Models\Sticker;
-use App\Models\Theme;
-use App\Models\Stamp;
-
 use App\Models\Info;
-use App\Models\Gallery;
 
 use DB;
 use SEO;
@@ -44,52 +39,17 @@ class HomeController extends Controller
 
         // ข่าวสารพรรค
         $data['info'] = new Info;
-        $data['info'] = $data['info']->orderBy('id', 'desc')->take(3)->get();
+        $data['info'] = $data['info']->orderBy('id', 'desc')->take(6)->get();
 
-        // ภาพกิจกรรม
-        $data['gallery'] = new Gallery;
-        $data['gallery'] = $data['gallery']->orderBy('id', 'desc')->take(6)->get();
+        // ข่าวสารจากสาขาพรรค
+        $data['info_sub'] = new Info;
+        $data['info_sub'] = $data['info_sub']->orderBy('id', 'desc')->take(3)->get();
+
+        // ข่าวสารจากสาขาพรรค
+        $data['info_youth'] = new Info;
+        $data['info_youth'] = $data['info_youth']->orderBy('id', 'desc')->take(6)->get();
         
         return view('home',$data);
     }
 
-    public function search()
-    {
-        $data['sticker'] = new Sticker;
-        if (!empty($_GET['q'])) {
-            $data['sticker'] = $data['sticker']->where('name', 'like', '%' . $_GET['q'] . '%')->orWhere('description', 'like', '%' . $_GET['q'] . '%');
-        }
-        $data['sticker'] = $data['sticker']->orderBy('updated_at', 'desc')->get();
-
-        $data['theme'] = new Theme;
-        if (!empty($_GET['q'])) {
-            $data['theme'] = $data['theme']->where('name', 'like', '%' . $_GET['q'] . '%')->orWhere('description', 'like', '%' . $_GET['q'] . '%');
-        }
-        $data['theme'] = $data['theme']->orderBy('updated_at', 'desc')->get();
-
-        return view('home', $data);
-    }
-
-    public function author($user_id)
-    {
-        $data['sticker'] = new Sticker;
-        $data['sticker'] = $data['sticker']->where('user_id', $user_id)->orderBy('updated_at', 'desc')->get();
-
-        $data['theme'] = new Theme;
-        $data['theme'] = $data['theme']->where('user_id', $user_id)->orderBy('updated_at', 'desc')->get();
-
-        return view('home.author', $data);
-    }
-
-    public function tag($tag)
-    {
-        $data['tag'] = $tag;
-        $data['stamp'] = new Stamp;
-        if (!empty($tag)) {
-            $data['stamp'] = $data['stamp']->where('tag', 'like', '%' . $tag . '%');
-        }
-        $data['stamp'] = $data['stamp']->orderBy('updated_at', 'desc')->get();
-
-        return view('home.tag', $data);
-    }
 }
