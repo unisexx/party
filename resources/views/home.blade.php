@@ -7,7 +7,7 @@ a {
     color: #363636 !important;
 }
 
-.row>[class^=col-] {
+[class^=col-] {
     padding-top: .75rem;
     padding-bottom: .75rem;
     background-color: rgba(86,61,124,.15);
@@ -147,12 +147,12 @@ section.blog-home ul li .overlay .blog-img .blog-img-inner {
 <!-- Sub Banner Block -->
 <section class="blog-home" style="padding-bottom:0px;">
     <div class="container">
-        <div class="row">
+        <!-- <div class="row"> -->
             <div class="col-12">Banner 1<br>นำภาพผลงานของพรรคมาขยายผลการดำเนินการอย่างต่อเนื่องและมีเป้าหมาย ทางด้านเศรษฐกิจ สังคม และการเมือง</div>
             <div class="col-12">Banner 2<br>บัตรคนจน</div>
             <div class="col-12">Banner 3<br>...</div>
             <div class="col-12">Banner 4<br>คำขวัญของพรรค</div>
-        </div>
+        <!-- </div> -->
     </div>
 </section>
 
@@ -160,7 +160,7 @@ section.blog-home ul li .overlay .blog-img .blog-img-inner {
 <!-- Body Block -->
 <section class="blog-home" style="padding-bottom:0px;">
     <div class="container">
-        <div class="row">
+        <div class="row" style="margin-right: 0px !important; margin-left: 0px !important;">
             
 
             <!-- Left Side -->
