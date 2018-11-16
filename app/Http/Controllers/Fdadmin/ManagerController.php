@@ -63,7 +63,9 @@ class ManagerController extends Controller
 			$image = $rq->file('imgUpload');
 			$filename  = time() . '.' . $image->getClientOriginalExtension();
 			$path = public_path('uploads/manager/' . $filename);
-			Image::make($image->getRealPath())->resize(468, 249)->save($path);
+			Image::make($image->getRealPath())->resize(600, null, function ($constraint) {
+				$constraint->aspectRatio();
+			})->save($path); // resize width 600 height aspectRatio.
 			$model->image = $filename;
 		}
 		$model->slug = generateUniqueSlug($rq->input('title'));

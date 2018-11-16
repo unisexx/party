@@ -35,6 +35,14 @@ Route::get('/download', 'DownloadController@getIndex');
 Route::get('/gallery', 'GalleryController@getIndex');
 Route::get('/gallery/{param}', 'GalleryController@getView');
 
+Route::get('/announce', 'AnnounceController@getIndex');
+Route::get('/announce/type/{param}', 'AnnounceController@getType');
+Route::get('/announce/{param}', 'AnnounceController@getView');
+
+Route::get('/manager', 'ManagerController@getIndex');
+Route::get('/manager/type/{param}', 'ManagerController@getType');
+Route::get('/manager/{param}', 'ManagerController@getView');
+
 // เช็กล็อกอิน
 Route::group(['middleware' => 'auth'], function () {
 
@@ -52,18 +60,23 @@ Route::group(['middleware' => 'auth'], function () {
 
 }); //middleware
 
-Route::get('/test', function () {
-    $crawler = Goutte::request('GET', 'https://duckduckgo.com/html/?q=Laravel');
-    $crawler->filter('.result__title .result__a')->each(function ($node) {
-        dump($node->text());
-    });
-    return view('welcome');
+Route::get('logout', function() {
+    Auth::logout();
+    return redirect()->intended('/');
 });
 
-Route::get('/testimg', function () {
-    // return Image::canvas(800, 600, '#ccc')->save('bar.jpg');
-    return Image::canvas(800, 600, '#ccc')->response('jpg');
-});
+// Route::get('/test', function () {
+//     $crawler = Goutte::request('GET', 'https://duckduckgo.com/html/?q=Laravel');
+//     $crawler->filter('.result__title .result__a')->each(function ($node) {
+//         dump($node->text());
+//     });
+//     return view('welcome');
+// });
 
-// test entrust
-Route::controller('role', 'RoleController');
+// Route::get('/testimg', function () {
+//     // return Image::canvas(800, 600, '#ccc')->save('bar.jpg');
+//     return Image::canvas(800, 600, '#ccc')->response('jpg');
+// });
+
+// // test entrust
+// Route::controller('role', 'RoleController');

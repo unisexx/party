@@ -55,9 +55,9 @@ class PageController extends Controller
 		// 	return back()->send();
 		// }
 
-		$rq->merge([
-			'slug' => generateUniqueSlug($rq->input('title'))
-		]);
+		// $rq->merge([
+		// 	'slug' => generateUniqueSlug($rq->input('title'))
+		// ]);
 		
 		// Save
 		$model = $id ? Page::find($id) : new Page;

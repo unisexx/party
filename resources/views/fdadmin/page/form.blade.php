@@ -38,7 +38,7 @@
               <!-- text input -->
               <div class="form-group">
                 <label>หัวข้อ</label>
-                <input name="title" type="text" class="form-control" value="{{ @$rs->title }}">
+                <input name="title" type="text" class="form-control" value="{{ @$rs->title }}" readonly>
               </div>
 
               <div class="form-group">

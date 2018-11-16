@@ -30,7 +30,7 @@
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">เมนู</li>
-        <li class="{{ request()->segment(2) == 'page' ? 'active' : '' }} treeview">
+        <li class="{{ request()->segment(2) == 'page' && request()->path() != 'fdadmin/page/form/5' ? 'active' : '' }} treeview">
           <a href="#">
             <i class="fa fa-files-o"></i> <span>เกี่ยวกับพรรค</span>
             <span class="pull-right-container">
@@ -44,13 +44,13 @@
             <li class="{{ request()->path() == 'fdadmin/page/form/4' ? 'active' : '' }}"><a href="{{ url('fdadmin/page/form/4') }}"><i class="fa fa-circle-o"></i> ข้อบังคับพรรค</a></li>
           </ul>
         </li>
-        <li {{ request()->segment(2) == '#' ? 'class=active' : '' }}><a href="{{ url('fdadmin/manager') }}"><i class="fa fa-files-o"></i> <span>ผู้บริหารพรรค</span></a></li>
+        <li {{ request()->segment(2) == 'manager' ? 'class=active' : '' }}><a href="{{ url('fdadmin/manager') }}"><i class="fa fa-files-o"></i> <span>ผู้บริหารพรรค</span></a></li>
         <li {{ request()->segment(2) == 'info' ? 'class=active' : '' }}><a href="{{ url('fdadmin/info') }}"><i class="fa fa-files-o"></i> <span>ข่าวสารพรรค</span></a></li>
         <li {{ request()->segment(2) == 'announce' ? 'class=active' : '' }}><a href="{{ url('fdadmin/announce
 ') }}"><i class="fa fa-files-o"></i> <span>ประกาศพรรค</span></a></li>
         <!-- <li {{ request()->segment(2) == 'law' ? 'class=active' : '' }}><a href="{{ url('fdadmin/law
 ') }}"><i class="fa fa-files-o"></i> <span>กฎหมายต้องรู้</span></a></li> -->
-        <li class="treeview">
+        <!-- <li class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i> <span>ผู้สมัคร สส.</span>
             <span class="pull-right-container">
@@ -61,13 +61,12 @@
             <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> ผู้สมัคร สส.แบบบัญชีรายชื่อ</a></li>
             <li><a href="index2.html"><i class="fa fa-circle-o"></i> ผู้สมัคร สส.แบบแบ่งเขต</a></li>
           </ul>
-          <li {{ request()->segment(2) == 'page' ? 'class=active' : '' }}><a href="{{ url('fdadmin/gallery
+        </li> -->
+        <li {{ request()->segment(2) == 'gallery' ? 'class=active' : '' }}><a href="{{ url('fdadmin/gallery
 ') }}"><i class="fa fa-files-o"></i> <span>ภาพกิจกรรม</span></a></li>
-          <li {{ request()->segment(2) == 'page' ? 'class=active' : '' }}><a href="{{ url('fdadmin/download
+        <li {{ request()->segment(2) == 'download' ? 'class=active' : '' }}><a href="{{ url('fdadmin/download
 ') }}"><i class="fa fa-files-o"></i> <span>ดาวน์โหลดเอกสาร</span></a></li>
-          <li {{ request()->segment(2) == 'page' ? 'class=active' : '' }}><a href="{{ url('fdadmin/contact
-') }}"><i class="fa fa-files-o"></i> <span>ติดต่อพรรค</span></a></li>
-        </li>
+        <li class="{{ request()->path() == 'fdadmin/page/form/5' ? 'active' : '' }}"><a href="{{ url('fdadmin/page/form/5') }}"><i class="fa fa-files-o"></i> <span>ติดต่อพรรค</span></a></li>
 
       </ul>
       <!-- /.sidebar-menu -->

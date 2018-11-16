@@ -62,7 +62,7 @@ class AnnounceController extends Controller
 		if ($rq->hasFile('imgUpload')) {
 			$image = $rq->file('imgUpload');
 			$filename  = time() . '.' . $image->getClientOriginalExtension();
-			$path = public_path('uploads/' . $filename);
+			$path = public_path('uploads/announce/' . $filename);
 			Image::make($image->getRealPath())->resize(468, 249)->save($path);
 			$model->image = $filename;
 		}

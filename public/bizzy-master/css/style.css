@@ -2831,3 +2831,128 @@ a {
     border-bottom-right-radius: 3px;
     border-top-right-radius: 3px;
 }
+
+[class^=col-] {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    background-color: rgba(86, 61, 124, .15);
+    border: 1px solid rgba(86, 61, 124, .2);
+}
+
+/* ------ home ------- */
+section.blog-home {
+    text-align: left;
+    padding-top: 64px;
+    padding-bottom: 140px;
+}
+
+section.blog-home ul li .overlay a:first-child h5 {
+    color: #363636;
+    margin-bottom: 23px;
+    font-size: 16px;
+}
+
+section.blog-home ul li .overlay p {
+    font-size: 16px;
+    line-height: 28px;
+    color: #000000;
+    opacity: 0.6;
+    margin-bottom: 40px;
+}
+
+section.blog-home ul li .overlay a:last-child {
+    display: inline-block;
+    min-width: 152px;
+    height: 57px;
+    background: linear-gradient(180deg, #007bff 22%, #0062cc 95%);
+    color: #FFF;
+    letter-spacing: -0.6px;
+    font-size: 17px;
+    text-align: center;
+    line-height: 58px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.6s;
+    margin-bottom: 75px;
+}
+
+section.blog-home ul li .overlay a:last-child:hover {
+    background: #fff;
+    color: #000000;
+    border-radius: 50px;
+    box-shadow: 1px 1px 10px 7px rgba(0, 0, 0, 0.15);
+
+}
+
+section.blog-home ul li .overlay .blog-img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+
+section.blog-home ul li .overlay .blog-img figure {
+    margin: 0;
+    transition: all 0.7s;
+}
+
+section.blog-home ul li .overlay a:hover .blog-img figure {
+    transform: scale(1.2);
+}
+
+
+section.blog-home ul li .overlay a:hover .blog-img .blog-img-inner {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+section.blog-home .container {
+    max-width: 980px;
+    padding: 0;
+}
+
+section.blog-home .container h2 {
+    font-size: 25px;
+    color: #000000;
+    text-transform: capitalize;
+    line-height: 27px;
+    margin-bottom: 10px;
+}
+
+section.blog-home ul li.col-md-6 {
+    padding: 0 40px;
+}
+
+section.blog-home ul {
+    margin: 0 0 25px 0;
+}
+
+section.blog-home ul:last-child {
+    margin: 0px;
+}
+
+section.blog-home ul li .overlay .blog-img .blog-img-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 10px solid rgba(255, 255, 255, .4);
+}
+
+/* ------End of Blog page------ */
+
+.section-nav ul {
+    padding-left: 1rem;
+}
+
+.toc-entry a {
+    display: block;
+    padding: .125rem 0;
+    color: #99979c;
+}
+
+.right-side-banner {
+    margin: 10px 0;
+}

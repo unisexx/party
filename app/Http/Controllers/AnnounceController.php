@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Models\Info;
+use App\Models\Announce;
+use App\Models\Announce_type;
 
 use DB;
 use SEO;
@@ -15,7 +16,7 @@ use Session;
 use OpenGraph;
 
 
-class InfoController extends Controller
+class AnnounceController extends Controller
 {
 	public function getIndex()
 	{
@@ -23,14 +24,21 @@ class InfoController extends Controller
 		// SEO::setTitle('สติ๊กเกอร์ไลน์ยอดนิยม');
 		// SEO::setDescription('รวมสติ๊กเกอร์ไลน์ขายดี แนะนำ ฮิตๆ ยอดนิยม');
 
-		$data['rs'] = new Info;
-		$data['rs'] = $data['rs']->orderBy('id', 'desc')->paginate(8);
-		return view('info.index', $data);
+		$data['rs'] = new Announce;
+		$data['rs'] = $data['rs']->orderBy('id', 'desc')->paginate(10);
+		return view('announce.index', $data);
+	}
+
+	public function getType($id){
+		$data['type'] = Announce_type::find($id);
+		$data['rs'] = new Announce;
+		$data['rs'] = $data['rs']->where('announce_type_id',$id)->orderBy('id', 'desc')->paginate(8);
+		return view('announce.index', $data);
 	}
 
 	public function getView($param = null)
 	{
-		$data['rs'] = Info::where('slug', $param)->orWhere('id', $param)->firstOrFail();
+		$data['rs'] = Announce::where('slug', $param)->orWhere('id', $param)->firstOrFail();
 		
 		// tracking
 		// $array = @array_merge(Session::get('track_sticker'), array($data['rs']->id));
@@ -48,6 +56,6 @@ class InfoController extends Controller
 		// OpenGraph::addProperty('image:width', '240');
 		// OpenGraph::addProperty('image:height', '240');
 
-		return view('info.view', $data);
+		return view('Announce.view', $data);
 	}
 }

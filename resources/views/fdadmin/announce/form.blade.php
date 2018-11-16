@@ -54,7 +54,7 @@
               <div class="form-group">
                 <label>ภาพประกอบข่าว</label>
                 @if(!empty($rs->image)) 
-                  <div><img src="uploads/{{ $rs->image }}" width="250" style="margin-bottom:10px;"><div>
+                  <div><img src="uploads/announce/{{ $rs->image }}" width="250" style="margin-bottom:10px;"><div>
                 @endif
                 <input type="file" name="imgUpload">
               </div>

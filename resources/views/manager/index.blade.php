@@ -3,10 +3,9 @@
 
 <section class="banner innerpage-banner contact-banner">
     <div class="container">
-        <h1 data-aos="fade-up" data-aos-duration="1000">ข่าวสารพรรค</h1>
+        <h1 data-aos="fade-up" data-aos-duration="1000">ผู้บริหารพรรค</h1>
     </div>
 </section>
-
 
 <section class="blog-home" style="padding-bottom:0px;">
     <div class="container">
@@ -17,14 +16,14 @@
             <div class="col-lg-12 col-md-12">
 
 
-                <h2 data-aos="fade-up" data-aos-duration="1000">ข่าวสารล่าสุด</h2>
+                <h2 data-aos="fade-up" data-aos-duration="1000">{{ $type->name }}</h2>
                 <ul class="row">
                     @foreach($rs as $row)
                     <li class="col-md-3">
                         <div class="overlay" data-aos="fade-up" data-aos-duration="1000">
-                            <a href="{{ url('info/'.$row->slug) }}">
+                            <a href="{{ url('manager/'.$row->slug) }}">
                                 <div class="blog-img">
-                                    <figure><img src="{{ url('uploads/info/'.$row->image) }}" alt="img-1" class="img-fluid"></figure>
+                                    <figure><img src="{{ url('uploads/manager/'.$row->image) }}" alt="img-1" class="img-fluid"></figure>
 
                                     <div class="blog-img-inner"></div>
                                 </div>
@@ -32,7 +31,7 @@
                                     {{ $row->title }}
                                 </h5>
                             </a>
-                            <a href="{{ url('info/'.$row->slug) }}" style="display:none;">อ่านต่อ</a>
+                            <a href="{{ url('manager/'.$row->slug) }}" style="display:none;">อ่านต่อ</a>
                         </div>
                     </li>
                     @endforeach
@@ -43,8 +42,6 @@
             <!-- END Left Side -->
             
         </div>
-
-        {{ $rs->appends(@$_GET)->render() }}
     </div>
 </section>
 <!-- END Body Block -->

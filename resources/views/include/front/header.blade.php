@@ -12,6 +12,7 @@
                             หน้าแรก
                         </a>
                     </li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link text-white dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                             aria-haspopup="true" aria-expanded="false">เกี่ยวกับพรรค</a>
@@ -23,17 +24,14 @@
                         </div>
                     </li>
 
-                    <!-- <li class="nav-item">
-                        <a class="nav-link text-white" href="services.html">
-                            เกี่ยวกับพรรค
-                        </a>
-                    </li> -->
-
-
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">
-                            ผู้บริหารพรรค
-                        </a>
+                     <li class="nav-item dropdown">
+                        <a class="nav-link text-white dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">ผู้บริหารพรรค</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ url('manager/type/1') }}">หัวหน้าพรรค</a>
+                            <a class="dropdown-item" href="{{ url('manager/type/2') }}">กรรรมการบริหารพรรค</a>
+                            <a class="dropdown-item" href="{{ url('manager/type/3') }}">คณะที่ปรึกษาพรรค</a>
+                        </div>
                     </li>
 
                     <li class="nav-item">
@@ -42,17 +40,17 @@
                         </a>
                     </li>
 
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link text-white" href="#">
                             ผู้สมัคร สส.
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
-                <div class="search-box mr-lg-0">
+                <!-- <div class="search-box mr-lg-0">
                     <input type="text" placeholder="Search here..." name="search1">
                     <button type="submit"><i class="fa fa-search"></i></button>
                     </form>
-                </div>
+                </div> -->
                 <div class="menu-icon d-lg-none">
                     <span class="ml-auto"></span>
                     <span class="ml-auto"></span>

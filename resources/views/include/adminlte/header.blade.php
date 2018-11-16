@@ -18,7 +18,12 @@
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          
+
+          <li class="dropdown messages-menu">
+            <a href="{{ url('logout') }}">
+              <i class="fa fa-power-off"></i> ออกจากระบบ
+            </a>
+          </li>
           
         </ul>
       </div>
