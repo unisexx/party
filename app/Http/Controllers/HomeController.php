@@ -39,15 +39,15 @@ class HomeController extends Controller
 
         // ข่าวสารพรรค
         $data['info'] = new Info;
-        $data['info'] = $data['info']->orderBy('id', 'desc')->take(6)->get();
+        $data['info'] = $data['info']->where('info_type_id',1)->orderBy('id', 'desc')->take(6)->get();
 
         // ข่าวสารจากสาขาพรรค
         $data['info_sub'] = new Info;
-        $data['info_sub'] = $data['info_sub']->orderBy('id', 'desc')->take(3)->get();
+        $data['info_sub'] = $data['info_sub']->where('info_type_id',2)->orderBy('id', 'desc')->take(3)->get();
 
         // ข่าวสารจากสาขาพรรค
         $data['info_youth'] = new Info;
-        $data['info_youth'] = $data['info_youth']->orderBy('id', 'desc')->take(6)->get();
+        $data['info_youth'] = $data['info_youth']->where('info_type_id',3)->orderBy('id', 'desc')->take(6)->get();
         
         return view('home',$data);
     }

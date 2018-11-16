@@ -18,16 +18,16 @@ use OpenGraph;
 
 class GalleryController extends Controller
 {
-	// public function getIndex()
-	// {
-	// 	// SEO
-	// 	SEO::setTitle('สติ๊กเกอร์ไลน์ยอดนิยม');
-	// 	SEO::setDescription('รวมสติ๊กเกอร์ไลน์ขายดี แนะนำ ฮิตๆ ยอดนิยม');
+	public function getIndex()
+	{
+		// SEO
+		SEO::setTitle('แฟ้มภาพกิจกรรม');
+		SEO::setDescription('แฟ้มภาพกิจกรรมของพรรคพลังประชารัฐ');
 
-	// 	$data['Gallery'] = new Gallery;
-	// 	$data['Gallery'] = $data['Gallery']->orderBy('updated_at', 'desc')->paginate(30);
-	// 	return view('Gallery.index', $data);
-	// }
+		$data['rs'] = new Gallery;
+		$data['rs'] = $data['rs']->orderBy('id', 'desc')->paginate(30);
+		return view('gallery.index', $data);
+	}
 
 	public function getView($param = null)
 	{

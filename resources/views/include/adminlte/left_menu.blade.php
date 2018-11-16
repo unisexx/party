@@ -48,8 +48,8 @@
         <li {{ request()->segment(2) == 'info' ? 'class=active' : '' }}><a href="{{ url('fdadmin/info') }}"><i class="fa fa-files-o"></i> <span>ข่าวสารพรรค</span></a></li>
         <li {{ request()->segment(2) == 'announce' ? 'class=active' : '' }}><a href="{{ url('fdadmin/announce
 ') }}"><i class="fa fa-files-o"></i> <span>ประกาศพรรค</span></a></li>
-        <li {{ request()->segment(2) == 'law' ? 'class=active' : '' }}><a href="{{ url('fdadmin/law
-') }}"><i class="fa fa-files-o"></i> <span>กฎหมายต้องรู้</span></a></li>
+        <!-- <li {{ request()->segment(2) == 'law' ? 'class=active' : '' }}><a href="{{ url('fdadmin/law
+') }}"><i class="fa fa-files-o"></i> <span>กฎหมายต้องรู้</span></a></li> -->
         <li class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i> <span>ผู้สมัคร สส.</span>

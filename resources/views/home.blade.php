@@ -1,12 +1,6 @@
 @extends('layouts.front') @section('content')
 
 <style>
-a {
-    text-decoration: none;
-    /* font-size: 16px !important; */
-    color: #363636 !important;
-}
-
 [class^=col-] {
     padding-top: .75rem;
     padding-bottom: .75rem;
@@ -150,7 +144,7 @@ section.blog-home ul li .overlay .blog-img .blog-img-inner {
         <!-- <div class="row"> -->
             <div class="col-12">Banner 1<br>นำภาพผลงานของพรรคมาขยายผลการดำเนินการอย่างต่อเนื่องและมีเป้าหมาย ทางด้านเศรษฐกิจ สังคม และการเมือง</div>
             <div class="col-12">Banner 2<br>บัตรคนจน</div>
-            <div class="col-12">Banner 3<br>...</div>
+            <div class="col-12">Banner 3<br>ราคาข้าวสูง</div>
             <div class="col-12">Banner 4<br>คำขวัญของพรรค</div>
         <!-- </div> -->
     </div>
@@ -269,13 +263,27 @@ section.blog-home ul li .overlay .blog-img .blog-img-inner {
                 </ul>
 
                 <div class="row">
-                    <div class="col-12 right-side-banner"><i class="far fa-list-alt"></i> สมัครสมาชิกพรรค</div>
-                    <div class="col-12 right-side-banner"><i class="fas fa-download"></i> ดาวน์โหลดเอกสาร</div>
-                    <div class="col-12 right-side-banner"><i class="fas fa-users"></i> ระบบสมาชิกออนไลน์</div>
-                    <div class="col-12 right-side-banner"><i class="far fa-image"></i> แฟ้มภาพ</div>
-                    <div class="col-12 right-side-banner"><i class="far fa-handshake"></i> ระบบบริหารงานพรรค</div>
-                    <div class="col-12 right-side-banner"><i class="fas fa-list-ul"></i> รายชื่อผู้สมัคร สส.และ<br>สส.บัญชีรายชื่อ ของ<br>พรรคทั่วประเทศ</div>
-                    <div class="col-12 right-side-banner"><i class="far fa-envelope"></i> ติดต่อพรรค ผู้สมัครพรรค<br>และ สส.ของพรรค</div>
+                    <a class="col-12" href="#">
+                        <div class="right-side-banner"><i class="far fa-list-alt"></i> สมัครสมาชิกพรรค</div>
+                    </a>
+                    <a class="col-12" href="{{ url('download') }}">
+                        <div class="right-side-banner"><i class="fas fa-download"></i> ดาวน์โหลดเอกสาร</div>
+                    </a>
+                    <a class="col-12" href="#">
+                        <div class="right-side-banner"><i class="fas fa-users"></i> ระบบสมาชิกออนไลน์</div>
+                    </a>
+                    <a class="col-12" href="{{ url('gallery') }}">
+                        <div class="right-side-banner"><i class="far fa-image"></i> แฟ้มภาพ</div>
+                    </a>
+                    <a class="col-12" href="#">
+                        <div class="right-side-banner"><i class="far fa-handshake"></i> ระบบบริหารงานพรรค</div>
+                    </a>
+                    <a class="col-12" href="#">
+                        <div class="right-side-banner"><i class="fas fa-list-ul"></i> รายชื่อผู้สมัคร สส.และ<br>สส.บัญชีรายชื่อ ของ<br>พรรคทั่วประเทศ</div>
+                    </a>
+                    <a class="col-12" href="#">
+                        <div class="right-side-banner"><i class="far fa-envelope"></i> ติดต่อพรรค ผู้สมัครพรรค<br>และ สส.ของพรรค</div>
+                    </a>
                 </div>
                 
 

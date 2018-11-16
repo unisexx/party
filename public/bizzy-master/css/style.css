@@ -2697,6 +2697,11 @@ section.contact-page ul li:nth-child(2) {
 
 
 /* custom style */
+a {
+    text-decoration: none;
+    /* font-size: 16px !important; */
+    color: #363636 !important;
+}
 
 /* dropdown hover menu */
 .dropdown .dropdown-menu {

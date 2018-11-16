@@ -41,7 +41,7 @@
                 <input name="title" type="text" class="form-control" value="{{ @$rs->title }}">
               </div>
 
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label>รายละเอียด</label>
                 <textarea name="description" class="form-control tinymce" rows="15">{{ @$rs->description }}</textarea>
               </div>
@@ -52,12 +52,12 @@
                   <div><img src="uploads/{{ $rs->image }}" width="250" style="margin-bottom:10px;"><div>
                 @endif
                 <input type="file" name="imgUpload">
-              </div>
+              </div> -->
 
               <div class="form-group">
                 <label>แนบไฟล์เอกสาร</label>
                 @if(!empty($rs->file_path)) 
-                  <!-- <div><img src="uploads/doc/{{ $rs->file_path }}" width="250" style="margin-bottom:10px;"><div> -->
+                  <a href="{{ url('fdadmin/download/filedownload/'.$rs->id) }}"><div><i class="fa fa-download"></i> ดาวน์โหลดเอกสาร<div></a>
                 @endif
                 <input type="file" name="fileUpload">
               </div>

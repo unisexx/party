@@ -42,6 +42,11 @@
               </div>
 
               <div class="form-group">
+                <label>หมวดหมู่</label>
+                {{ Form::select('announce_type_id', dropdownOption('announce_types','id','name'), @$rs->announce_type_id, ['placeholder' => '-- เลือกหมวดหมู่ --','class' => 'form-control']) }}
+              </div>
+
+              <div class="form-group">
                 <label>รายละเอียด</label>
                 <textarea name="description" class="form-control tinymce" rows="15">{{ @$rs->description }}</textarea>
               </div>

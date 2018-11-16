@@ -35,6 +35,7 @@
                 <tr>
                   <th>ไอดี</th>
                   <th>หัวข้อ</th>
+                  <th>หมวดหมู่</th>
                   <th data-orderable="false" data-searchable="false">จัดการ</th>
                 </tr>
                 </thead>
@@ -43,6 +44,7 @@
                 		<tr>
                       <td>{{ $row->id }}</td>
 		                  <td>{{ $row->title }}</td>
+                      <td>{{ $row->announce_type->name }}</td>
 		                  <td>
 		                  	<a href="fdadmin/announce/form/{{ $row->id }}"><button type="button" class="btn btn-warning  btn-xs">แก้ไข</button></a>
 		                  	<a href="fdadmin/announce/delete/{{ $row->id }}" onclick="return confirm('ต้องการลบรายการนี้')"><button type="button" class="btn btn-danger btn-xs">ลบ</button></a>

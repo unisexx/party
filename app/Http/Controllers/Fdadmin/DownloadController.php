@@ -106,4 +106,9 @@ class DownloadController extends Controller
 		return view('fdadmin.download.view', $data);
 	}
 
+	public function getFiledownload($id){
+		$rs = Download::find($id);
+		return downloadFile('uploads/doc',$rs->file_path, $rs->title);
+	}
+
 }

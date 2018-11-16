@@ -30,6 +30,11 @@ Route::get('/page/{param}', 'PageController@getView');
 Route::get('/info', 'InfoController@getIndex');
 Route::get('/info/{param}', 'InfoController@getView');
 
+Route::get('/download', 'DownloadController@getIndex');
+
+Route::get('/gallery', 'GalleryController@getIndex');
+Route::get('/gallery/{param}', 'GalleryController@getView');
+
 // เช็กล็อกอิน
 Route::group(['middleware' => 'auth'], function () {
 
