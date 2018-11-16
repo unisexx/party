@@ -168,7 +168,7 @@ section.blog-home ul li .overlay .blog-img .blog-img-inner {
                         <div class="overlay" data-aos="fade-up" data-aos-duration="1000">
                             <a href="{{ url('info/'.$row->slug) }}">
                                 <div class="blog-img">
-                                    <figure><img src="{{ url('uploads/'.$row->image) }}" alt="img-1" class="img-fluid"></figure>
+                                    <figure><img src="{{ url('uploads/info/'.$row->image) }}" alt="img-1" class="img-fluid"></figure>
 
                                     <div class="blog-img-inner"></div>
                                 </div>
@@ -190,7 +190,7 @@ section.blog-home ul li .overlay .blog-img .blog-img-inner {
                         <div class="overlay" data-aos="fade-up" data-aos-duration="1000">
                             <a href="{{ url('info/'.$row->slug) }}">
                                 <div class="blog-img">
-                                    <figure><img src="{{ url('uploads/'.$row->image) }}" alt="img-1" class="img-fluid"></figure>
+                                    <figure><img src="{{ url('uploads/info/'.$row->image) }}" alt="img-1" class="img-fluid"></figure>
 
                                     <div class="blog-img-inner"></div>
                                 </div>
@@ -212,7 +212,7 @@ section.blog-home ul li .overlay .blog-img .blog-img-inner {
                         <div class="overlay" data-aos="fade-up" data-aos-duration="1000">
                             <a href="{{ url('info/'.$row->slug) }}">
                                 <div class="blog-img">
-                                    <figure><img src="{{ url('uploads/'.$row->image) }}" alt="img-1" class="img-fluid"></figure>
+                                    <figure><img src="{{ url('uploads/info/'.$row->image) }}" alt="img-1" class="img-fluid"></figure>
 
                                     <div class="blog-img-inner"></div>
                                 </div>
@@ -249,14 +249,16 @@ section.blog-home ul li .overlay .blog-img .blog-img-inner {
                     </li>
                     <li class="toc-entry toc-h2"><a href="#">ผู้บริหารพรรค</a>
                         <ul>
-                            <li class="toc-entry toc-h3"><a href="#">- หัวหน้าพรรค</a></li>
-                            <li class="toc-entry toc-h3"><a href="#">- กรรมการบริหาร</a></li>
-                            <li class="toc-entry toc-h3"><a href="#">- ที่ปรึกษาพรรค</a></li>
+                            @foreach($person_type as $row)
+                            <li class="toc-entry toc-h3"><a href="{{ url('manager/type/'.$row->id) }}">- {{ $row->name }}</a></li>
+                            @endforeach
                         </ul>
                     </li>
                     <li class="toc-entry toc-h2"><a href="#">ประกาศพรรค</a>
                         <ul>
-                            <li class="toc-entry toc-h3"><a href="#">- กฎหมายน่ารู้</a></li>
+                            @foreach($announce_type as $row)
+                            <li class="toc-entry toc-h3"><a href="{{ url('annnuce/type/'.$row->id) }}">- {{ $row->name }}</a></li>
+                            @endforeach
                         </ul>
                     </li>
                     <li class="toc-entry toc-h2"><a href="#">ติดต่อพรรค</a></li>

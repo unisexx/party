@@ -5,6 +5,8 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 
 use App\Models\Info;
+use App\Models\Announce_type;
+use App\Models\Person_type;
 
 use DB;
 use SEO;
@@ -48,6 +50,14 @@ class HomeController extends Controller
         // ข่าวสารจากสาขาพรรค
         $data['info_youth'] = new Info;
         $data['info_youth'] = $data['info_youth']->where('info_type_id',3)->orderBy('id', 'desc')->take(6)->get();
+
+        // หมวดหมู่ผู้บริการพรรค
+        $data['person_type'] = new Person_type;
+        $data['person_type'] = $data['person_type']->orderBy('id', 'asc')->get();
+
+        // หมวดหมู่ประกาศพรรค
+        $data['announce_type'] = new Announce_type;
+        $data['announce_type'] = $data['announce_type']->orderBy('id', 'asc')->get();
         
         return view('home',$data);
     }

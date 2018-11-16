@@ -21,7 +21,7 @@
             <tbody>
                 @foreach($rs as $row)
                 <tr>
-                    <td scope="row"><a href="{{ url('gallery/view/'.$row->slug) }}">{{ $row->title }}</a></td>
+                    <td scope="row"><a href="{{ url('gallery/'.$row->slug) }}">{{ $row->title }}</a></td>
                     <td>{{ $row->attach_imgs->count() }}</td>
                 </tr>
                 @endforeach

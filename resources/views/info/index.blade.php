@@ -16,7 +16,7 @@
                 <div class="overlay" data-aos="fade-up" data-aos-duration="1000">
                     <a href="{{ url('info/'.$row->slug) }}">
                         <div class="blog-img">
-                            <figure><img src="{{ url('uploads/'.$row->image) }}" alt="img-1" class="img-fluid"></figure>
+                            <figure><img src="{{ url('uploads/info/'.$row->image) }}" alt="img-1" class="img-fluid"></figure>
 
                             <div class="blog-img-inner"></div>
                         </div>
