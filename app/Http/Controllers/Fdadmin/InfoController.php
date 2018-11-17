@@ -56,6 +56,16 @@ class InfoController extends Controller
 		// 	return back()->send();
 		// }
 
+		$this->validate($rq, [
+			'title' => 'required',
+			'info_type_id' => 'required',
+			'description' => 'required'
+        ], [
+			'title.required' => 'หัวข้อ ห้ามเป็นค่าว่าง',
+			'info_type_id.required' => 'หมวดหมู่ ห้ามเป็นค่าว่าง',
+			'description.required' => 'รายละเอียด ห้ามเป็นค่าว่าง'
+        ]);
+
 		// Save
 		$model = $id ? Info::find($id) : new Info;
 		// upload รูป

@@ -58,6 +58,14 @@ class PageController extends Controller
 		// $rq->merge([
 		// 	'slug' => generateUniqueSlug($rq->input('title'))
 		// ]);
+
+		$this->validate($rq, [
+			'title' => 'required',
+			'description' => 'required'
+        ], [
+			'title.required' => 'หัวข้อ ห้ามเป็นค่าว่าง',
+			'description.required' => 'รายละเอียด ห้ามเป็นค่าว่าง'
+        ]);
 		
 		// Save
 		$model = $id ? Page::find($id) : new Page;

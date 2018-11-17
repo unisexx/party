@@ -30,20 +30,32 @@
               <h3 class="box-title">หน้าเพจ (เพิ่ม/แก้ไข)</h3>
             </div>
             <!-- /.box-header -->
+
             <!-- form start -->
             {{Form::open(array('url'=>'fdadmin/page/save/'.@$rs->id, 'method'=>'post', 'class'=>'', 'id'=>'pageFrm'))}}
               <div class="box-body">
 
+              @if(count($errors))
+              <div class="alert alert-danger">
+                  <strong>หมายเหตุ!</strong> ไม่สามารถบันทึกข้อมูลได้เนื่องจาก...
+                  <br/>
+                  <ul>
+                      @foreach($errors->all() as $error)
+                      <li>{!! $error !!}</li>
+                      @endforeach
+                  </ul>
+              </div>
+              @endif
 
               <!-- text input -->
-              <div class="form-group">
+              <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
                 <label>หัวข้อ</label>
-                <input name="title" type="text" class="form-control" value="{{ @$rs->title }}" readonly>
+                <input name="title" type="text" class="form-control" value="{{ @$rs->title ? @$rs->title : old('title') }}" readonly>
               </div>
 
-              <div class="form-group">
+              <div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
                 <label>รายละเอียด</label>
-                <textarea name="description" class="form-control tinymce" rows="15">{{ @$rs->description }}</textarea>
+                <textarea name="description" class="form-control tinymce" rows="15">{{ @$rs->description ? @$rs->description : old('description') }}</textarea>
               </div>
 
 

@@ -43,6 +43,8 @@ Route::get('/manager', 'ManagerController@getIndex');
 Route::get('/manager/type/{param}', 'ManagerController@getType');
 Route::get('/manager/{param}', 'ManagerController@getView');
 
+Route::controller('membership', 'MembershipController');
+
 // เช็กล็อกอิน
 Route::group(['middleware' => 'auth'], function () {
 

@@ -56,6 +56,16 @@ class AnnounceController extends Controller
 		// 	return back()->send();
 		// }
 
+		$this->validate($rq, [
+			'title' => 'required',
+			'announce_type_id' => 'required',
+			'description' => 'required'
+        ], [
+			'title.required' => 'หัวข้อ ห้ามเป็นค่าว่าง',
+			'announce_type_id.required' => 'หมวดหมู่ ห้ามเป็นค่าว่าง',
+			'description.required' => 'รายละเอียด ห้ามเป็นค่าว่าง'
+        ]);
+
 		// Save
 		$model = $id ? Announce::find($id) : new Announce;
 		// upload รูป

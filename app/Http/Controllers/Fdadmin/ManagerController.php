@@ -56,6 +56,16 @@ class ManagerController extends Controller
 		// 	return back()->send();
 		// }
 
+		$this->validate($rq, [
+			'title' => 'required',
+			'person_type_id' => 'required',
+			'description' => 'required'
+        ], [
+			'title.required' => 'ชื่อ ห้ามเป็นค่าว่าง',
+			'person_type_id.required' => 'ตำแหน่ง ห้ามเป็นค่าว่าง',
+			'description.required' => 'ประวัติ ห้ามเป็นค่าว่าง'
+        ]);
+
 		// Save
 		$model = $id ? Manager::find($id) : new Manager;
 		// upload รูป

@@ -57,6 +57,12 @@ class GalleryController extends Controller
 		// 	return back()->send();
 		// }
 
+		$this->validate($rq, [
+			'title' => 'required'
+        ], [
+			'title.required' => 'หัวข้อกิจกรรม ห้ามเป็นค่าว่าง'
+		]);
+		
 		// Save Gallery
 		$model = $id ? Gallery::find($id) : new Gallery;
 		$model->slug = generateUniqueSlug($rq->input('title'));

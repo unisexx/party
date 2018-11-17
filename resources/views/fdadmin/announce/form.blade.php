@@ -34,25 +34,36 @@
             {{Form::open(array('url'=>'fdadmin/announce/save/'.@$rs->id, 'method'=>'post', 'class'=>'', 'id'=>'pageFrm', 'files' => true))}}
               <div class="box-body">
 
+              @if(count($errors))
+              <div class="alert alert-danger">
+                  <strong>หมายเหตุ!</strong> ไม่สามารถบันทึกข้อมูลได้เนื่องจาก...
+                  <br/>
+                  <ul>
+                      @foreach($errors->all() as $error)
+                      <li>{!! $error !!}</li>
+                      @endforeach
+                  </ul>
+              </div>
+              @endif
 
               <!-- text input -->
-              <div class="form-group">
+              <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
                 <label>หัวข้อ</label>
-                <input name="title" type="text" class="form-control" value="{{ @$rs->title }}">
+                <input name="title" type="text" class="form-control" value="{{ @$rs->title ? @$rs->title : old('title') }}">
               </div>
 
-              <div class="form-group">
+              <div class="form-group {{ $errors->has('announce_type_id') ? 'has-error' : '' }}">
                 <label>หมวดหมู่</label>
                 {{ Form::select('announce_type_id', dropdownOption('announce_types','id','name'), @$rs->announce_type_id, ['placeholder' => '-- เลือกหมวดหมู่ --','class' => 'form-control']) }}
               </div>
 
-              <div class="form-group">
+              <div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
                 <label>รายละเอียด</label>
-                <textarea name="description" class="form-control tinymce" rows="15">{{ @$rs->description }}</textarea>
+                <textarea name="description" class="form-control tinymce" rows="15">{{ @$rs->description ? @$rs->description : old('description') }}</textarea>
               </div>
 
               <div class="form-group">
-                <label>ภาพประกอบข่าว</label>
+                <label>ภาพประกอบ</label>
                 @if(!empty($rs->image)) 
                   <div><img src="uploads/announce/{{ $rs->image }}" width="250" style="margin-bottom:10px;"><div>
                 @endif

@@ -4,12 +4,9 @@
 <!-- Main Banner Block -->
 <section class="banner">
     <div class="container" data-aos="fade-up" data-aos-duration="1000">
-        <!-- <h1>Let’s Create Something Awesome Together</h1>
-        <h6>This is how we work, to make your project awesome !</h6>
-        <a href="#" class="get-started-btn">get started</a> -->
         <h1>พรรคพลังประชารัฐ</h1>
         <h6>โลกเปลี่ยน ไทยต้องปรับ ทางเลือกใหม่ของการเมืองไทย ก้าวข้ามความขัดแย้ง</h6>
-        <a href="#" class="get-started-btn">สมัครสมาชิกพรรค</a>
+        <a href="membership/form" class="get-started-btn">สมัครสมาชิกพรรค</a>
     </div>
 </section>
 

@@ -56,6 +56,12 @@ class DownloadController extends Controller
 		// 	return back()->send();
 		// }
 
+		$this->validate($rq, [
+			'title' => 'required',
+        ], [
+			'title.required' => 'หัวข้อ ห้ามเป็นค่าว่าง',
+		]);
+		
 		// Save
 		$model = $id ? Download::find($id) : new Download;
 		// upload รูป

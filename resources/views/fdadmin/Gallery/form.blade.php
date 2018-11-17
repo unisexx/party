@@ -34,11 +34,22 @@
             {{Form::open(array('url'=>'fdadmin/gallery/save/'.@$rs->id, 'method'=>'post', 'class'=>'', 'id'=>'pageFrm', 'files' => true))}}
               <div class="box-body">
 
+              @if(count($errors))
+              <div class="alert alert-danger">
+                  <strong>หมายเหตุ!</strong> ไม่สามารถบันทึกข้อมูลได้เนื่องจาก...
+                  <br/>
+                  <ul>
+                      @foreach($errors->all() as $error)
+                      <li>{!! $error !!}</li>
+                      @endforeach
+                  </ul>
+              </div>
+              @endif
 
               <!-- text input -->
-              <div class="form-group">
+              <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
                 <label>หัวข้อกิจกรรม</label>
-                <input name="title" type="text" class="form-control" value="{{ @$rs->title }}">
+                <input name="title" type="text" class="form-control" value="{{ @$rs->title ? @$rs->title : old('title') }}">
               </div>
 
               <input type="button" class="btn btn-primary btn-attachimgs-add" value="เพิ่มภาพ">

@@ -34,6 +34,18 @@
             {{Form::open(array('url'=>'fdadmin/manager/save/'.@$rs->id, 'method'=>'post', 'class'=>'', 'id'=>'pageFrm', 'files' => true))}}
               <div class="box-body">
 
+              @if(count($errors))
+              <div class="alert alert-danger">
+                  <strong>หมายเหตุ!</strong> ไม่สามารถบันทึกข้อมูลได้เนื่องจาก...
+                  <br/>
+                  <ul>
+                      @foreach($errors->all() as $error)
+                      <li>{!! $error !!}</li>
+                      @endforeach
+                  </ul>
+              </div>
+              @endif
+
               <div class="form-group">
                 <label>รูปภาพ</label>
                 @if(!empty($rs->image)) 
@@ -43,19 +55,19 @@
               </div>
 
               <!-- text input -->
-              <div class="form-group">
+              <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
                 <label>ชื่อ</label>
-                <input name="title" type="text" class="form-control" value="{{ @$rs->title }}">
+                <input name="title" type="text" class="form-control" value="{{ @$rs->title ? @$rs->title : old('title') }}">
               </div>
 
-              <div class="form-group">
+              <div class="form-group {{ $errors->has('person_type_id') ? 'has-error' : '' }}">
                 <label>ตำแหน่ง</label>
                 {{ Form::select('person_type_id', dropdownOption('person_types','id','name'), @$rs->person_type_id, ['placeholder' => '-- เลือกตำแหน่ง --','class' => 'form-control']) }}
               </div>
 
-              <div class="form-group">
-                <label>รายละเอียด</label>
-                <textarea name="description" class="form-control tinymce" rows="15">{{ @$rs->description }}</textarea>
+              <div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
+                <label>ประวัติ</label>
+                <textarea name="description" class="form-control tinymce" rows="15">{{ @$rs->description ? @$rs->description : old('description') }}</textarea>
               </div>
 
 
