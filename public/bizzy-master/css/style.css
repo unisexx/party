@@ -902,7 +902,8 @@ section.about-page ul li.col-lg-6 {
 
 section.about-page ul li figure img {
     width: 100%;
-    height: 100%;
+    height: auto;
+    /* height: 100%; */
 }
 
 
@@ -2955,4 +2956,24 @@ section.blog-home ul li .overlay .blog-img .blog-img-inner {
 
 .right-side-banner {
     margin: 10px 0;
+}
+
+.form-group.has-error .form-control,
+.form-group.has-error .input-group-addon {
+    border-color: #dd4b39;
+    box-shadow: none;
+}
+
+@media (max-width: 1920px) and (min-width: 1840px) {
+    section.portfolio-page ul li figure {
+        width: 100%;
+        height: 180px !important;
+    }
+}
+
+@media (max-width: 1920px) and (min-width: 1840px) {
+    section.portfolio-page ul li .portfolio-gallery {
+        width: 370px;
+        height: auto !important;
+    }
 }

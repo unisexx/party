@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class membership extends Model
+class Membership extends Model
 {
     protected $fillable = array(
         'name',
@@ -76,5 +76,6 @@ class membership extends Model
         'file_path_3',
         'file_path_4',
         'file_path_5',
+        'status',
     );
 }

@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Fdadmin;
 
 use Illuminate\Http\Request;
 
@@ -8,27 +8,48 @@ use App\Http\Controllers\Controller;
 
 use App\Models\Membership;
 
+use Form;
 use DB;
-use SEO;
-use SEOMeta;
-use Session;
-use OpenGraph;
-
+use Auth;
+use Image;
 
 class MembershipController extends Controller
 {
-	public function getForm()
-	{
-		// SEO
-		SEO::setTitle('สมัครสมาชิกพรรค');
-		SEO::setDescription('แบบฟอร์มสมัครสมาชิกพรรคพลังประชารัฐ');
+	// public function __construct()
+    // {
+    //     if(Auth::user()->level != 99){
+	// 		set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
+	// 		return back()->send();
+	// 	}
+	// }
 
-		return view('membership.form');
+	public function getIndex()
+	{
+		//permission
+		// if (Auth::user()->level != 99) {
+		// 	set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
+		// 	return back()->send();
+		// }
+
+		$data['rs'] = new Membership;
+		$data['rs'] = $data['rs']->orderBy('id', 'desc')->get();
+		return view('fdadmin.membership.index', $data);
 	}
 
-	public function postSave(Request $rq)
+	public function getForm($id = null)
 	{
+		//permission
+		// if (Auth::user()->level != 99) {
+		// 	set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
+		// 	return back()->send();
+		// }
 
+		$data['rs'] = Membership::find($id);
+		return view('fdadmin.membership.form', $data);
+	}
+
+	public function postSave(Request $rq, $id = null)
+	{
 		$this->validate($rq, [
 			'name' => 'required',
 			'birthdate' => 'required',
@@ -62,7 +83,7 @@ class MembershipController extends Controller
 		]);
 		
 		// Save
-		$model = new Membership;
+		$model = $id ? Membership::find($id) : new Membership;
 
 		// upload ไฟล์แนบ 1
 		if (@$rq->hasFile('filUpload_1')) {
@@ -114,16 +135,37 @@ class MembershipController extends Controller
 			}
 		}
 
-		$model->status = 'รอการตรวจสอบ';
 		$model->fill($rq->all());
 		$model->save();
 
 		set_notify('success', trans('message.completeSave'));
-		return Redirect('membership/success');
+		return Redirect('fdadmin/membership/index');
 	}
 
-	public function getSuccess()
+	public function getDelete($id = null)
 	{
-		return view('membership.success');
+		//permission
+		// if (Auth::user()->level != 99) {
+		// 	set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
+		// 	return back()->send();
+		// }
+
+		if ($rs = Membership::find($id)) {
+			$rs->delete(); // Delete process
+			set_notify('error', trans('message.completeDelete'));
+		}
+		return Redirect('fdadmin/membership/index');
 	}
+
+	public function getView($id)
+	{
+		$data['rs'] = Membership::find($id);
+		return view('fdadmin.membership.view', $data);
+	}
+
+	public function getFiledownload($id,$field_name,$file_name){
+		$rs = Membership::find($id);
+		return downloadFile('uploads/membership',$rs->{$field_name}, $rs->name.'_'.$file_name);
+	}
+
 }

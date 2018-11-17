@@ -101,7 +101,7 @@ class GalleryController extends Controller
 				$image = $rq->attach_imgs_file[$k];
 				$filename  = genFilename($image->getClientOriginalName());
 				$path = public_path('uploads/gallery/' . $filename);
-				Image::make($image->getRealPath())->resize(600, null, function ($constraint) {
+				Image::make($image->getRealPath())->resize(800, null, function ($constraint) {
 					$constraint->aspectRatio();
 				})->save($path); // resize width 600 height aspectRatio.
 				$model_imgs->file_path = $filename;

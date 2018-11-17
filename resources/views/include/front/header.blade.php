@@ -24,7 +24,7 @@
                         </div>
                     </li>
 
-                     <li class="nav-item dropdown">
+                    <li class="nav-item dropdown">
                         <a class="nav-link text-white dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                             aria-haspopup="true" aria-expanded="false">ผู้บริหารพรรค</a>
                         <div class="dropdown-menu">
@@ -34,10 +34,14 @@
                         </div>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{{ url('info') }}">
-                            ข่าวสารพรรค
-                        </a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-white dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">ข่าวสารพรรค</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ url('info/type/1') }}">ข่าวสารเกี่ยวกับพรรค</a>
+                            <a class="dropdown-item" href="{{ url('info/type/2') }}">ข่าวสารจากสาขาพรรค</a>
+                            <a class="dropdown-item" href="{{ url('info/type/3') }}">ข่าวสารจากเยาวชนคนรุ่นใหม่</a>
+                        </div>
                     </li>
 
                     <!-- <li class="nav-item">

@@ -28,6 +28,7 @@ Route::get('/page', 'PageController@getIndex');
 Route::get('/page/{param}', 'PageController@getView');
 
 Route::get('/info', 'InfoController@getIndex');
+Route::get('/info/type/{param}', 'InfoController@getType');
 Route::get('/info/{param}', 'InfoController@getView');
 
 Route::get('/download', 'DownloadController@getIndex');
@@ -58,6 +59,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::controller('download', 'DownloadController');
         Route::controller('manager', 'ManagerController');
         Route::controller('gallery', 'GalleryController');
+        Route::controller('membership', 'MembershipController');
     });
 
 }); //middleware

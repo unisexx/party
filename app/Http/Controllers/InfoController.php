@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Models\Info;
+use App\Models\Info_type;
 
 use DB;
 use SEO;
@@ -26,6 +27,13 @@ class InfoController extends Controller
 		$data['rs'] = new Info;
 		$data['rs'] = $data['rs']->orderBy('id', 'desc')->paginate(8);
 		return view('info.index', $data);
+	}
+
+	public function getType($id){
+		$data['type'] = Info_type::find($id);
+		$data['rs'] = new Info;
+		$data['rs'] = $data['rs']->where('info_type_id',$id)->orderBy('id', 'desc')->paginate(8);
+		return view('info.type', $data);
 	}
 
 	public function getView($param = null)

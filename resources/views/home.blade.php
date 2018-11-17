@@ -6,7 +6,7 @@
     <div class="container" data-aos="fade-up" data-aos-duration="1000">
         <h1>พรรคพลังประชารัฐ</h1>
         <h6>โลกเปลี่ยน ไทยต้องปรับ ทางเลือกใหม่ของการเมืองไทย ก้าวข้ามความขัดแย้ง</h6>
-        <a href="membership/form" class="get-started-btn">สมัครสมาชิกพรรค</a>
+        <a href="membership/form" class="get-started-btn" style="color:#fff !important;">สมัครสมาชิกพรรค</a>
     </div>
 </section>
 

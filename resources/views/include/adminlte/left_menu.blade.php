@@ -66,6 +66,8 @@
 ') }}"><i class="fa fa-files-o"></i> <span>ภาพกิจกรรม</span></a></li>
         <li {{ request()->segment(2) == 'download' ? 'class=active' : '' }}><a href="{{ url('fdadmin/download
 ') }}"><i class="fa fa-files-o"></i> <span>ดาวน์โหลดเอกสาร</span></a></li>
+        <li {{ request()->segment(2) == 'membership' ? 'class=active' : '' }}><a href="{{ url('fdadmin/membership
+') }}"><i class="fa fa-files-o"></i> <span>ผู้สมัครพรรค</span></a></li>
         <li class="{{ request()->path() == 'fdadmin/page/form/5' ? 'active' : '' }}"><a href="{{ url('fdadmin/page/form/5') }}"><i class="fa fa-files-o"></i> <span>ติดต่อพรรค</span></a></li>
 
       </ul>
