@@ -44,10 +44,10 @@
             <li class="{{ request()->path() == 'fdadmin/page/form/4' ? 'active' : '' }}"><a href="{{ url('fdadmin/page/form/4') }}"><i class="fa fa-circle-o"></i> ข้อบังคับพรรค</a></li>
           </ul>
         </li>
-        <li {{ request()->segment(2) == 'manager' ? 'class=active' : '' }}><a href="{{ url('fdadmin/manager') }}"><i class="fa fa-files-o"></i> <span>ผู้บริหารพรรค</span></a></li>
-        <li {{ request()->segment(2) == 'info' ? 'class=active' : '' }}><a href="{{ url('fdadmin/info') }}"><i class="fa fa-files-o"></i> <span>ข่าวสารพรรค</span></a></li>
+        <li {{ request()->segment(2) == 'manager' ? 'class=active' : '' }}><a href="{{ url('fdadmin/manager') }}"><i class="fa fa-users"></i> <span>ผู้บริหารพรรค</span></a></li>
+        <li {{ request()->segment(2) == 'info' ? 'class=active' : '' }}><a href="{{ url('fdadmin/info') }}"><i class="fa fa-newspaper-o"></i> <span>ข่าวสารพรรค</span></a></li>
         <li {{ request()->segment(2) == 'announce' ? 'class=active' : '' }}><a href="{{ url('fdadmin/announce
-') }}"><i class="fa fa-files-o"></i> <span>ประกาศพรรค</span></a></li>
+') }}"><i class="fa fa-bullhorn"></i> <span>ประกาศพรรค</span></a></li>
         <!-- <li {{ request()->segment(2) == 'law' ? 'class=active' : '' }}><a href="{{ url('fdadmin/law
 ') }}"><i class="fa fa-files-o"></i> <span>กฎหมายต้องรู้</span></a></li> -->
         <!-- <li class="treeview">
@@ -63,12 +63,12 @@
           </ul>
         </li> -->
         <li {{ request()->segment(2) == 'gallery' ? 'class=active' : '' }}><a href="{{ url('fdadmin/gallery
-') }}"><i class="fa fa-files-o"></i> <span>ภาพกิจกรรม</span></a></li>
+') }}"><i class="fa fa-picture-o"></i> <span>ภาพกิจกรรม</span></a></li>
         <li {{ request()->segment(2) == 'download' ? 'class=active' : '' }}><a href="{{ url('fdadmin/download
-') }}"><i class="fa fa-files-o"></i> <span>ดาวน์โหลดเอกสาร</span></a></li>
+') }}"><i class="fa fa-download"></i> <span>ดาวน์โหลดเอกสาร</span></a></li>
         <li {{ request()->segment(2) == 'membership' ? 'class=active' : '' }}><a href="{{ url('fdadmin/membership
-') }}"><i class="fa fa-files-o"></i> <span>ผู้สมัครพรรค</span></a></li>
-        <li class="{{ request()->path() == 'fdadmin/page/form/5' ? 'active' : '' }}"><a href="{{ url('fdadmin/page/form/5') }}"><i class="fa fa-files-o"></i> <span>ติดต่อพรรค</span></a></li>
+') }}"><i class="fa fa-user-plus"></i> <span>ผู้สมัครพรรค</span></a></li>
+        <li {{ request()->segment(2) == 'contact' ? 'class=active' : '' }}><a href="{{ url('fdadmin/contact') }}"><i class="fa fa-envelope"></i> <span>ติดต่อพรรค <br>ผู้สมัครพรรค และ สส.ของพรรค</span></a></li>
 
       </ul>
       <!-- /.sidebar-menu -->

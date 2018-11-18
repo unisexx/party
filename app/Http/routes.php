@@ -46,6 +46,9 @@ Route::get('/manager/{param}', 'ManagerController@getView');
 
 Route::controller('membership', 'MembershipController');
 
+Route::get('/contact', 'ContactController@getIndex');
+Route::get('/contact/{param}', 'ContactController@getView');
+
 // เช็กล็อกอิน
 Route::group(['middleware' => 'auth'], function () {
 
@@ -60,6 +63,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::controller('manager', 'ManagerController');
         Route::controller('gallery', 'GalleryController');
         Route::controller('membership', 'MembershipController');
+        Route::controller('contact', 'ContactController');
     });
 
 }); //middleware

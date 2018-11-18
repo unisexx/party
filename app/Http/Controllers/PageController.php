@@ -17,16 +17,16 @@ use OpenGraph;
 
 class PageController extends Controller
 {
-	// public function getIndex()
-	// {
-	// 	// SEO
-	// 	SEO::setTitle('สติ๊กเกอร์ไลน์ยอดนิยม');
-	// 	SEO::setDescription('รวมสติ๊กเกอร์ไลน์ขายดี แนะนำ ฮิตๆ ยอดนิยม');
+	public function getIndex()
+	{
+		// SEO
+		// SEO::setTitle('สติ๊กเกอร์ไลน์ยอดนิยม');
+		// SEO::setDescription('รวมสติ๊กเกอร์ไลน์ขายดี แนะนำ ฮิตๆ ยอดนิยม');
 
-	// 	$data['page'] = new Page;
-	// 	$data['page'] = $data['page']->orderBy('updated_at', 'desc')->paginate(30);
-	// 	return view('page.index', $data);
-	// }
+		$data['rs'] = new Page;
+		$data['rs'] = $data['rs']->orderBy('id', 'asc')->paginate(10);
+		return view('page.index', $data);
+	}
 
 	public function getView($param = null)
 	{

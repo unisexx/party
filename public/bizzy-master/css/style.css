@@ -2992,20 +2992,30 @@ body {
 }
 
 [class^=col-] {
-    /* padding-top: .75rem;
-    padding-bottom: .75rem; */
+    padding-top: .75rem;
+    padding-bottom: .75rem;
     /* background-color: rgba(86, 61, 124, .15);
     border: 1px solid rgba(86, 61, 124, .2); */
 }
 
+.side-banner [class^=col-] {
+    /* background-color: rgba(86, 61, 124, .15); */
+    border-bottom: 1px solid #0845ae;
+}
+
 section.h-banner [class^=col-] {
-    padding-top: .75rem;
-    padding-bottom: .75rem;
-    background-color: rgba(86, 61, 124, .15);
-    border: 1px solid rgba(86, 61, 124, .2);
+    padding-top: 0;
+    padding-bottom: 0;
+    /* background-color: rgba(86, 61, 124, .15);
+    border: 1px solid rgba(86, 61, 124, .2); */
 }
 
 section.blog-home .container h2 {
+    color: #0845ae;
+    border-bottom: 1px solid #0845ae;
+}
+
+section.blog-page h2 {
     color: #0845ae;
 }
 
@@ -3031,7 +3041,15 @@ section.blog-home .container h2 {
     box-sizing: border-box; */
 }
 
+.toc-entry a:hover,
+.side-banner a:hover {
+    color: #0845ae !important;
+}
+
 /***** Footer *****/
+footer {
+    margin-top: 50px !important;
+}
 
 .footer-top {
     padding: 60px 0;
@@ -3104,14 +3122,19 @@ section.blog-home .container h2 {
 
 .footer-bottom {
     padding: 15px 0;
-    background: #0944aa;
+    background: #002a87;
     text-align: left;
-    color: #aaa;
+    color: #FFF !important;
+}
+
+.footer-bottom a {
+    color: #aaa !important;
 }
 
 .footer-copyright p {
     margin: 0;
     padding: 0.5rem 0;
+    color: #fff;
 }
 
 .footer-copyright a {
@@ -3156,3 +3179,35 @@ footer.navbar-expand-md .navbar-nav .nav-link {
     padding-left: 1rem;
     padding-right: 1rem;
 }
+
+/* Sideber-blue */
+/* .right-sidebar {
+    background: #002a87;
+    border-radius: 10px;
+}
+
+section.blog-home .container .right-sidebar h2 {
+    color: #FFF;
+}
+
+.right-sidebar .toc-entry a {
+    display: block;
+    padding: .125rem 0;
+    color: #fff !important;
+}
+
+.side-banner a {
+    color: #fff !important;
+}
+
+.right-sidebar .toc-entry a:hover {
+    color: #aaa !important;
+}
+
+.side-banner a:hover {
+    color: #aaa !important;
+}
+
+.side-banner [class^=col-] {
+    border-bottom: 1px solid #FFF;
+} */

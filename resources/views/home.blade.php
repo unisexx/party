@@ -15,10 +15,10 @@
 <section class="blog-home h-banner" style="padding-bottom:0px;">
     <div class="container">
         <!-- <div class="row"> -->
-            <div class="col-12">Banner 1<br>นำภาพผลงานของพรรคมาขยายผลการดำเนินการอย่างต่อเนื่องและมีเป้าหมาย ทางด้านเศรษฐกิจ สังคม และการเมือง</div>
-            <div class="col-12">Banner 2<br>บัตรคนจน</div>
-            <div class="col-12">Banner 3<br>ราคาข้าวสูง</div>
-            <div class="col-12">Banner 4<br>คำขวัญของพรรค</div>
+            <div class="col-12"><img class="img-fluid" src="{{ url('image/banner_1.jpg') }}"></div>
+            <div class="col-12"><img class="img-fluid" src="{{ url('image/banner_2.jpg') }}"></div>
+            <div class="col-12"><img class="img-fluid" src="{{ url('image/banner_3.jpg') }}"></div>
+            <div class="col-12"><img class="img-fluid" src="{{ url('image/banner_4.jpg') }}"></div>
         <!-- </div> -->
     </div>
 </section>
@@ -56,7 +56,7 @@
                     @endforeach
                 </ul>
 
-                <hr>
+                <!-- <hr> -->
                 <h2 data-aos="fade-up" data-aos-duration="1000">ข่าวสารจากสาขาพรรค</h2>
                 <ul class="row">
                     @foreach($info_sub as $row)
@@ -79,7 +79,7 @@
                     @endforeach
                 </ul>
 
-                <hr>
+                <!-- <hr> -->
                 <h2 data-aos="fade-up" data-aos-duration="1000">ข่าวสารจากเยาวชนคนรุ่นใหม่</h2>
                 <ul class="row">
                     @foreach($info_youth as $row)
@@ -136,10 +136,10 @@
                             @endforeach
                         </ul>
                     </li>
-                    <li class="toc-entry toc-h2"><a href="{{ url('page/ติดต่อพรรค') }}">ติดต่อพรรค</a></li>
+                    <li class="toc-entry toc-h2"><a href="{{ url('contact/1') }}">ติดต่อพรรค</a></li>
                 </ul>
 
-                <div class="row">
+                <div class="row side-banner">
                     <a class="col-12" href="{{ url('membership/form') }}">
                         <div class="right-side-banner"><i class="far fa-list-alt"></i> สมัครสมาชิกพรรค</div>
                     </a>
@@ -148,6 +148,9 @@
                     </a>
                     <a class="col-12" href="#">
                         <div class="right-side-banner"><i class="fas fa-users"></i> ระบบสมาชิกออนไลน์</div>
+                    </a>
+                    <a class="col-12" href="#">
+                        <div class="right-side-banner"><i class="fas fa-user-tie"></i> ระบบพรรคออนไลน์</div>
                     </a>
                     <a class="col-12" href="{{ url('gallery') }}">
                         <div class="right-side-banner"><i class="far fa-image"></i> แฟ้มภาพ</div>
@@ -158,7 +161,7 @@
                     <a class="col-12" href="#">
                         <div class="right-side-banner"><i class="fas fa-list-ul"></i> รายชื่อผู้สมัคร สส.และ<br>สส.บัญชีรายชื่อ ของ<br>พรรคทั่วประเทศ</div>
                     </a>
-                    <a class="col-12" href="#">
+                    <a class="col-12" href="{{ url('contact') }}">
                         <div class="right-side-banner"><i class="far fa-envelope"></i> ติดต่อพรรค ผู้สมัครพรรค<br>และ สส.ของพรรค</div>
                     </a>
                 </div>

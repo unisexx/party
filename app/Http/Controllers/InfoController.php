@@ -24,8 +24,8 @@ class InfoController extends Controller
 		// SEO::setTitle('สติ๊กเกอร์ไลน์ยอดนิยม');
 		// SEO::setDescription('รวมสติ๊กเกอร์ไลน์ขายดี แนะนำ ฮิตๆ ยอดนิยม');
 
-		$data['rs'] = new Info;
-		$data['rs'] = $data['rs']->orderBy('id', 'desc')->paginate(8);
+		$data['rs'] = new Info_type;
+		$data['rs'] = $data['rs']->orderBy('id', 'asc')->paginate(8);
 		return view('info.index', $data);
 	}
 

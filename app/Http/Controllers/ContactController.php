@@ -6,8 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Models\Manager;
-use App\Models\Person_type;
+use App\Models\Contact;
 
 use DB;
 use SEO;
@@ -16,7 +15,7 @@ use Session;
 use OpenGraph;
 
 
-class ManagerController extends Controller
+class ContactController extends Controller
 {
 	public function getIndex()
 	{
@@ -24,21 +23,21 @@ class ManagerController extends Controller
 		// SEO::setTitle('สติ๊กเกอร์ไลน์ยอดนิยม');
 		// SEO::setDescription('รวมสติ๊กเกอร์ไลน์ขายดี แนะนำ ฮิตๆ ยอดนิยม');
 
-		$data['rs'] = new Person_type;
-		$data['rs'] = $data['rs']->orderBy('id', 'asc')->paginate(10);
-		return view('manager.index', $data);
+		$data['rs'] = new Contact;
+		$data['rs'] = $data['rs']->orderBy('id', 'desc')->paginate(10);
+		return view('contact.index', $data);
 	}
 
 	public function getType($id){
-		$data['type'] = Person_type::find($id);
-		$data['rs'] = new Manager;
-		$data['rs'] = $data['rs']->where('Person_type_id',$id)->orderBy('id', 'desc')->paginate(8);
-		return view('manager.type', $data);
+		$data['type'] = Contact_type::find($id);
+		$data['rs'] = new Contact;
+		$data['rs'] = $data['rs']->where('Contact_type_id',$id)->orderBy('id', 'desc')->paginate(8);
+		return view('contact.index', $data);
 	}
 
 	public function getView($param = null)
 	{
-		$data['rs'] = Manager::where('slug', $param)->orWhere('id', $param)->firstOrFail();
+		$data['rs'] = Contact::where('slug', $param)->orWhere('id', $param)->firstOrFail();
 		
 		// tracking
 		// $array = @array_merge(Session::get('track_sticker'), array($data['rs']->id));
@@ -56,6 +55,6 @@ class ManagerController extends Controller
 		// OpenGraph::addProperty('image:width', '240');
 		// OpenGraph::addProperty('image:height', '240');
 
-		return view('manager.view', $data);
+		return view('contact.view', $data);
 	}
 }

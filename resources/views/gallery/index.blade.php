@@ -7,29 +7,25 @@
     </div>
 </section>
 
-<section class="blog-page">
-    <div class="container">
-        <h2 data-aos="fade-up" data-aos-duration="1000">แฟ้มภาพ</h2>
-
-        <table class="table table-bordered">
-            <thead>
-                <tr>
+<section class="blog-page blogsingle">
+    <h2 data-aos="fade-up" data-aos-duration="1000">แฟ้มภาพ</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
                 <th scope="col">หัวข้อ</th>
                 <th scope="col">จำนวนภาพ</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($rs as $row)
-                <tr>
-                    <td scope="row"><a href="{{ url('gallery/'.$row->slug) }}">{{ $row->title }}</a></td>
-                    <td>{{ $row->attach_imgs->count() }}</td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-
-        {{ $rs->appends(@$_GET)->render() }}
-    </div>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($rs as $row)
+            <tr>
+                <td scope="row"><a href="{{ url('gallery/'.$row->slug) }}">{{ $row->title }}</a></td>
+                <td>{{ $row->attach_imgs->count() }}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+    {{ $rs->appends(@$_GET)->render() }}
 </section>
 
 
