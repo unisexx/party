@@ -2987,9 +2987,6 @@ section.blog-home ul li .overlay .blog-img .blog-img-inner {
 
 
 /* Custom Style */
-body {
-    /* background: #f1f1f1; */
-}
 
 [class^=col-] {
     padding-top: .75rem;
@@ -3032,13 +3029,6 @@ section.blog-page h2 {
 
 .right-sidebar {
     border-left: 1px solid #f1f1f1;
-}
-
-.contain-block {
-    /* background: #FFF;
-    border-radius: 10px;
-    padding: 10px 10px 20px;
-    box-sizing: border-box; */
 }
 
 .toc-entry a:hover,
