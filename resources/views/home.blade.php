@@ -12,7 +12,7 @@
 
 
 <!-- Sub Banner Block -->
-<section class="blog-home" style="padding-bottom:0px;">
+<section class="blog-home h-banner" style="padding-bottom:0px;">
     <div class="container">
         <!-- <div class="row"> -->
             <div class="col-12">Banner 1<br>นำภาพผลงานของพรรคมาขยายผลการดำเนินการอย่างต่อเนื่องและมีเป้าหมาย ทางด้านเศรษฐกิจ สังคม และการเมือง</div>
@@ -27,7 +27,7 @@
 <!-- Body Block -->
 <section class="blog-home" style="padding-bottom:0px;">
     <div class="container">
-        <div class="row" style="margin-right: 0px !important; margin-left: 0px !important;">
+        <div class="row contain-block" style="margin-right: 0px !important; margin-left: 0px !important;">
             
 
             <!-- Left Side -->
@@ -56,6 +56,7 @@
                     @endforeach
                 </ul>
 
+                <hr>
                 <h2 data-aos="fade-up" data-aos-duration="1000">ข่าวสารจากสาขาพรรค</h2>
                 <ul class="row">
                     @foreach($info_sub as $row)
@@ -78,6 +79,7 @@
                     @endforeach
                 </ul>
 
+                <hr>
                 <h2 data-aos="fade-up" data-aos-duration="1000">ข่าวสารจากเยาวชนคนรุ่นใหม่</h2>
                 <ul class="row">
                     @foreach($info_youth as $row)
@@ -107,7 +109,7 @@
             
 
             <!-- Right Side -->
-            <div class="col-lg-3 col-md-12">
+            <div class="col-lg-3 col-md-12 right-sidebar">
 
             
                 <h2 data-aos="fade-up" data-aos-duration="1000">ข้อมูลพรรค</h2>
@@ -138,7 +140,7 @@
                 </ul>
 
                 <div class="row">
-                    <a class="col-12" href="#">
+                    <a class="col-12" href="{{ url('membership/form') }}">
                         <div class="right-side-banner"><i class="far fa-list-alt"></i> สมัครสมาชิกพรรค</div>
                     </a>
                     <a class="col-12" href="{{ url('download') }}">

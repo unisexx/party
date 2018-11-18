@@ -1,6 +1,5 @@
 @extends('layouts.front') @section('content')
 
-
 <section class="banner innerpage-banner contact-banner">
     <div class="container">
         <h1 data-aos="fade-up" data-aos-duration="1000">ดาวน์โหลดเอกสาร</h1>
@@ -11,11 +10,11 @@
     <div class="container">
         <h2 data-aos="fade-up" data-aos-duration="1000">ดาวน์โหลดเอกสาร</h2>
 
-        <table class="table table-bordered">
-            <thead>
+        <table class="table table-hover">
+            <thead class="thead-light">
                 <tr>
-                <th scope="col">หัวข้อ</th>
-                <th scope="col">ดาวน์โหลด</th>
+                    <th scope="col">หัวข้อ</th>
+                    <th scope="col">ดาวน์โหลด</th>
                 </tr>
             </thead>
             <tbody>
@@ -35,6 +34,5 @@
         {{ $rs->appends(@$_GET)->render() }}
     </div>
 </section>
-
 
 @endsection

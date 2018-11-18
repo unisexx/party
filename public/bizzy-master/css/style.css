@@ -240,7 +240,7 @@ section .container .get-started-btn {
 }
 
 section .container .get-started-btn:hover {
-    background: #fff;
+    /* background: #fff; */
     color: #000000;
 }
 
@@ -734,10 +734,11 @@ section.index-contact button:hover {
 /* ------End of index contact----- */
 
 /* ------Footer------- */
-footer {
+
+/* footer {
     width: 100%;
     float: left;
-    /* background: url(../images/footer-bg2.jpg); */
+    background: url(../images/footer-bg2.jpg);
     min-height: 135px;
     display: flex;
     align-items: center;
@@ -819,7 +820,7 @@ footer div.nav-sec {
     display: -ms-flexbox;
     flex-grow: 1;
     justify-content: flex-end;
-}
+} */
 
 
 /* ------End of Footer------- */
@@ -2833,12 +2834,6 @@ a {
     border-top-right-radius: 3px;
 }
 
-[class^=col-] {
-    padding-top: .75rem;
-    padding-bottom: .75rem;
-    background-color: rgba(86, 61, 124, .15);
-    border: 1px solid rgba(86, 61, 124, .2);
-}
 
 /* ------ home ------- */
 section.blog-home {
@@ -2976,4 +2971,188 @@ section.blog-home ul li .overlay .blog-img .blog-img-inner {
         width: 370px;
         height: auto !important;
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Custom Style */
+body {
+    /* background: #f1f1f1; */
+}
+
+[class^=col-] {
+    /* padding-top: .75rem;
+    padding-bottom: .75rem; */
+    /* background-color: rgba(86, 61, 124, .15);
+    border: 1px solid rgba(86, 61, 124, .2); */
+}
+
+section.h-banner [class^=col-] {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    background-color: rgba(86, 61, 124, .15);
+    border: 1px solid rgba(86, 61, 124, .2);
+}
+
+section.blog-home .container h2 {
+    color: #0845ae;
+}
+
+/* section.blog-home ul li .overlay a:first-child h5 {
+    color: #0166a7 !important;
+    margin-bottom: 23px;
+    font-size: 16px;
+} */
+
+/* section.blog-home ul li .overlay a:first-child h5:hover {
+    color: #23527c !important;
+    text-decoration: underline;
+} */
+
+.right-sidebar {
+    border-left: 1px solid #f1f1f1;
+}
+
+.contain-block {
+    /* background: #FFF;
+    border-radius: 10px;
+    padding: 10px 10px 20px;
+    box-sizing: border-box; */
+}
+
+/***** Footer *****/
+
+.footer-top {
+    padding: 60px 0;
+    background: #f1f1f1;
+    text-align: left;
+    color: #aaa;
+}
+
+.footer-top h3 {
+    padding-bottom: 10px;
+    /* color: #fff; */
+}
+
+.footer-about img.logo-footer {
+    max-width: 200px;
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+.footer-about p a {
+    color: #aaa;
+    border-bottom: 1px dashed #666;
+}
+
+.footer-about p a:hover,
+.footer-about p a:focus {
+    color: #fff;
+    border-color: #aaa;
+}
+
+.footer-contact p {
+    word-wrap: break-word;
+}
+
+.footer-contact i {
+    padding-right: 10px;
+    font-size: 18px;
+    color: #666;
+}
+
+.footer-contact p a {
+    color: #aaa;
+    border-bottom: 1px dashed #666;
+}
+
+.footer-contact p a:hover,
+.footer-contact p a:focus {
+    color: #fff;
+    border-color: #aaa;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 8px;
+    color: #777;
+    border: 0;
+}
+
+.footer-social a:hover,
+.footer-social a:focus {
+    color: #aaa;
+    border: 0;
+}
+
+.footer-social i {
+    font-size: 24px;
+    vertical-align: middle;
+}
+
+.footer-bottom {
+    padding: 15px 0;
+    background: #0944aa;
+    text-align: left;
+    color: #aaa;
+}
+
+.footer-copyright p {
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+.footer-copyright a {
+    color: #fff;
+    border: 0;
+}
+
+.footer-copyright a:hover,
+.footer-copyright a:focus {
+    color: #aaa;
+    border: 0;
+}
+
+/* footer navbar */
+footer.navbar {
+    padding: 0;
+    background: #444;
+    backface-visibility: hidden;
+}
+
+footer.navbar-dark .navbar-nav {
+    font-size: 15px;
+    color: #fff;
+    font-weight: 400;
+}
+
+footer.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+    border: 0;
+}
+
+footer.navbar-dark .navbar-nav .nav-link:hover {
+    color: #aaa;
+}
+
+footer.navbar-dark .navbar-nav .nav-link:focus {
+    color: #aaa;
+    outline: 0;
+}
+
+footer.navbar-expand-md .navbar-nav .nav-link {
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
