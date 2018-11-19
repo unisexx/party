@@ -18,6 +18,13 @@
 // Route::controller('sticker', 'StickerController');
 // Route::controller('theme', 'ThemeController');
 
+// เปลี่ยนภาษา
+Route::get('change/{locale}', function ($locale) {
+    Session::set('locale', $locale); // กำหนดค่าตัวแปรแบบ locale session ให้มีค่าเท่ากับตัวแปรที่ส่งเข้ามา 
+    session(['lang' => $locale]);
+	return Redirect::back(); // สั่งให้โหลดหน้าเดิม
+});
+
 Route::auth();
 
 Route::get('/', 'HomeController@index');

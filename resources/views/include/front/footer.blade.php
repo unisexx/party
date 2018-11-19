@@ -11,7 +11,7 @@
                     <p>โลกเปลี่ยน ไทยต้องปรับ ทางเลือกใหม่ของการเมืองไทย ก้าวข้ามความขัดแย้ง</p>
                 </div>
                 <div class="col-md-4 col-lg-4 offset-lg-1 footer-contact wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
-                    <h3>ติดต่อพรรค</h3>
+                    <h3>{{ trans('site.contact') }}</h3>
                     @if($contact->address) <p><i class="fas fa-map-marker-alt"></i> {{ $contact->address }}</p> @endif
                     @if($contact->tel) <p><i class="fas fa-phone"></i> โทรศัพท์: {{ $contact->tel }}</p> @endif
                     @if($contact->fax) <p><i class="fas fa-fax"></i> แฟกซ์: {{ $contact->fax }}</p> @endif
@@ -20,7 +20,7 @@
                     @if($contact->line) <p><i class="fab fa-line"></i></i> Line: {{ $contact->line }}</p> @endif
                 </div>
                 <div class="col-md-4 col-lg-3 footer-social wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-                    <h3>ติดตามพรรค</h3>
+                    <h3>{{ trans('site.follow') }}</h3>
                     <p>
                         @if($contact->facebook) <a href="{{ $contact->facebook }}"><i class="fab fa-facebook"></i></a> @endif
                         @if($contact->twitter) <a href="{{ $contact->twitter }}"><i class="fab fa-twitter"></i></a> @endif
@@ -46,19 +46,19 @@
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link scroll-link" href="{{ url('home') }}">หน้าแรก</a>
+                                    <a class="nav-link scroll-link" href="{{ url('home') }}">{{ trans('site.home') }}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link scroll-link" href="{{ url('page') }}">เกี่ยวกับพรรค</a>
+                                    <a class="nav-link scroll-link" href="{{ url('page') }}">{{ trans('site.about') }}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link scroll-link" href="{{ url('manager') }}">ผู้บริหารพรรค</a>
+                                    <a class="nav-link scroll-link" href="{{ url('manager') }}">{{ trans('site.executive') }}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link scroll-link" href="{{ url('info') }}">ข่าวสารพรรค</a>
+                                    <a class="nav-link scroll-link" href="{{ url('info') }}">{{ trans('site.news') }}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link scroll-link" href="{{ url('contact/1') }}">ติดต่อพรรค</a>
+                                    <a class="nav-link scroll-link" href="{{ url('contact/1') }}">{{ trans('site.contact') }}</a>
                                 </li>
                             </ul>
                         </div>
@@ -68,7 +68,6 @@
         </div>
     </div>
 </footer>
-
 
 <button class="scrolltop-btn">
     <i class="fa fa-angle-up"></i>

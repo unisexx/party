@@ -3036,6 +3036,10 @@ section.blog-page h2 {
     color: #0845ae !important;
 }
 
+.setlang .active {
+    color: rgb(255, 223, 49) !important
+}
+
 /***** Footer *****/
 footer {
     margin-top: 50px !important;
