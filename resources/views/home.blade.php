@@ -14,12 +14,32 @@
 <!-- Sub Banner Block -->
 <section class="blog-home h-banner" style="padding-bottom:0px;">
     <div class="container">
-        <!-- <div class="row"> -->
-            <div class="col-12"><img class="img-fluid" src="{{ url('image/banner_1.jpg') }}"></div>
-            <div class="col-12"><img class="img-fluid" src="{{ url('image/banner_2.jpg') }}"></div>
-            <div class="col-12"><img class="img-fluid" src="{{ url('image/banner_3.jpg') }}"></div>
-            <div class="col-12"><img class="img-fluid" src="{{ url('image/banner_4.jpg') }}"></div>
-        <!-- </div> -->
+        <div class="col-md-12">
+
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                @foreach($hilight as $key => $row)
+                    <li data-target="#carouselExampleIndicators" data-slide-to="{{ $key }}" class="@if($key == 0) active @endif"></li>
+                @endforeach
+            </ol>
+            <div class="carousel-inner">
+                @foreach($hilight as $key => $row)
+                <div class="carousel-item @if($key == 0) active @endif">
+                    <img class="d-block w-100" src="{{ url('uploads/hilight/'.$row->image) }}" alt="{{ $row->title }}">
+                </div>
+                @endforeach
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="fas fa-chevron-circle-left fa-3x" aria-hidden="true" style="opacity:0.5;"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="fas fa-chevron-circle-right fa-3x" aria-hidden="true" style="opacity:0.5;"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            </div>
+
+        </div>
     </div>
 </section>
 

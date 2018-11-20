@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Info;
 use App\Models\Announce_type;
 use App\Models\Person_type;
+use App\Models\Hilight;
 
 use DB;
 use SEO;
@@ -58,6 +59,10 @@ class HomeController extends Controller
         // หมวดหมู่ประกาศพรรค
         $data['announce_type'] = new Announce_type;
         $data['announce_type'] = $data['announce_type']->orderBy('id', 'asc')->get();
+
+        // ไฮไลท์รูปแบนเนอร์
+        $data['hilight'] = new Hilight;
+        $data['hilight'] = $data['hilight']->orderBy('id', 'asc')->get();
         
         return view('home',$data);
     }

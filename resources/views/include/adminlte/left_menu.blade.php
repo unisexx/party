@@ -30,6 +30,7 @@
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">เมนู</li>
+        <li {{ request()->segment(2) == 'hilight' ? 'class=active' : '' }}><a href="{{ url('fdadmin/hilight') }}"><i class="fa fa-bookmark-o"></i> <span>ไฮไลท์</span></a></li>
         <li class="{{ request()->segment(2) == 'page' && request()->path() != 'fdadmin/page/form/5' ? 'active' : '' }} treeview">
           <a href="#">
             <i class="fa fa-files-o"></i> <span>เกี่ยวกับพรรค</span>

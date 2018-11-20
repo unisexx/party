@@ -67,6 +67,7 @@ Route::group(['middleware' => 'auth'], function () {
     // FDadmin
     Route::group(['prefix' => 'fdadmin', 'namespace' => 'Fdadmin'], function () {
         Route::controller('dashboard', 'DashboardController');
+        Route::controller('hilight', 'HilightController');
         Route::controller('page', 'PageController');
         Route::controller('info', 'InfoController');
         Route::controller('announce', 'AnnounceController');

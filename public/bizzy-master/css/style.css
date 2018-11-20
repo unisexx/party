@@ -190,7 +190,8 @@ header .navbar .header-nav {
 /* -----Banner------- */
 section.banner {
     /* background: url(../images/banner3.jpg); */
-    background: url(../images/banner2_resize.jpg);
+    /* background: url(../images/banner2_resize.jpg); */
+    background: url(../images/432_crop.jpg);
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -200,7 +201,7 @@ section.banner {
     display: -ms-flexbox;
     align-items: center;
     padding-top: 225px;
-    padding-bottom: 345px;
+    padding-bottom: 380px;
     background-position: center top;
 }
 
@@ -1651,6 +1652,7 @@ section.contact-page ul li:nth-child(2) {
     section.banner {
         padding-top: 200px;
         padding-bottom: 120px;
+        margin-top: 60px;
     }
 
     section .container .get-started-btn {
@@ -2989,6 +2991,17 @@ section.blog-home ul li .overlay .blog-img .blog-img-inner {
 
 
 /* Custom Style */
+header {
+    border: none;
+}
+
+#app-layout>header>div>nav>a.navbar-brand.mr-0.pr-4 {
+    background: #f1f1f1;
+}
+
+#app-layout>header>div>nav>a.navbar-brand.mr-0.pr-4>img {
+    margin-left: 25px;
+}
 
 [class^=col-] {
     padding-top: .75rem;
@@ -3043,7 +3056,7 @@ section.blog-page h2 {
 }
 
 section.innerpage-banner .container h1 {
-    display:none;
+    display: none;
 }
 
 /***** Footer *****/
