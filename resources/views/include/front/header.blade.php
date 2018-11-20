@@ -65,24 +65,36 @@
                         </a>
                     </li> -->
                 </ul>
-                <!-- <div class="search-box mr-lg-0">
-                    <input type="text" placeholder="Search here..." name="search1">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                    </form>
-                </div> -->
+                <div class="search-box mr-lg-0">
+                    <!-- <form>
+                        <input type="text" placeholder="Search here..." name="search1">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form> -->
+
+                    <div class="pull-right setlang">
+                        <a class="text-white {{ session('lang') == 'th' ? 'active' : '' }}" href="{{ URL::to('change/th') }}">TH</a> <span class="text-white">|</span>
+                        <a class="text-white {{ session('lang') == 'en' ? 'active' : '' }}" href="{{ URL::to('change/en') }}">EN</a>
+                        {{-- trans('site.home') --}}
+                        {{-- session('lang') --}}
+                    </div>
+
+                </div>
+                
                 
                 <!-- เปลี่ยนภาษา -->
-                <div class="pull-right setlang">
+                <!-- <div class="pull-right setlang">
                     <a class="text-white {{ session('lang') == 'th' ? 'active' : '' }}" href="{{ URL::to('change/th') }}">TH</a> <span class="text-white">|</span>
                     <a class="text-white {{ session('lang') == 'en' ? 'active' : '' }}" href="{{ URL::to('change/en') }}">EN</a>
                     {{-- trans('site.home') --}}
                     {{-- session('lang') --}}
-                </div>
+                </div> -->
+
                 <div class="menu-icon d-lg-none">
                     <span class="ml-auto"></span>
                     <span class="ml-auto"></span>
                     <span class="ml-auto"></span>
                 </div>
+            </div>
         </nav>
     </div>
 </header>

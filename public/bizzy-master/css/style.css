@@ -78,6 +78,7 @@ header {
     height: 105px;
     transition: all 0.5s;
     border-bottom: 1px solid rgba(255, 255, 255, .2);
+    background: #002a87;
 }
 
 header .container {
@@ -153,7 +154,7 @@ header .menu-icon span:last-child {
 
 header.scrolled {
     height: 70px;
-    background: #242424;
+    background: #002a87;
 }
 
 header div.search-box {
@@ -188,7 +189,8 @@ header .navbar .header-nav {
 
 /* -----Banner------- */
 section.banner {
-    background: url(../images/banner3.jpg);
+    /* background: url(../images/banner3.jpg); */
+    background: url(../images/banner2_resize.jpg);
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1283,10 +1285,10 @@ section.portfolio-page .container {
 
 section.portfolio-page ul li .portfolio-gallery {
     width: 284px;
-    height: 284px;
+    /* height: 284px; */
     background-size: cover !important;
     background-repeat: no-repeat !important;
-    margin-bottom: 78px;
+    /* margin-bottom: 78px; */
     position: relative;
     cursor: pointer;
 }
@@ -3038,6 +3040,10 @@ section.blog-page h2 {
 
 .setlang .active {
     color: rgb(255, 223, 49) !important
+}
+
+section.innerpage-banner .container h1 {
+    display:none;
 }
 
 /***** Footer *****/

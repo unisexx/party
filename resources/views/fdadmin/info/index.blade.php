@@ -44,7 +44,7 @@
                 		<tr>
                       <td>{{ $row->id }}</td>
 		                  <td>{{ $row->title }}</td>
-                      <td>{{ $row->info_type->name }}</td>
+                      <td>{{ @$row->info_type->name }}</td>
 		                  <td>
 		                  	<a href="fdadmin/info/form/{{ $row->id }}"><button type="button" class="btn btn-warning  btn-xs">แก้ไข</button></a>
 		                  	<a href="fdadmin/info/delete/{{ $row->id }}" onclick="return confirm('ต้องการลบรายการนี้')"><button type="button" class="btn btn-danger btn-xs">ลบ</button></a>
