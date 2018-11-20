@@ -73,7 +73,7 @@
                 
                 <!-- เปลี่ยนภาษา -->
                 <div class="pull-right setlang">
-                    <a class="text-white {{ session('lang') == 'th' || session('lang') == ''  ? 'active' : '' }}" href="{{ URL::to('change/th') }}">TH</a> <span class="text-white">|</span>
+                    <a class="text-white {{ session('lang') == 'th' ? 'active' : '' }}" href="{{ URL::to('change/th') }}">TH</a> <span class="text-white">|</span>
                     <a class="text-white {{ session('lang') == 'en' ? 'active' : '' }}" href="{{ URL::to('change/en') }}">EN</a>
                     {{-- trans('site.home') --}}
                     {{-- session('lang') --}}

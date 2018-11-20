@@ -18,6 +18,11 @@
 // Route::controller('sticker', 'StickerController');
 // Route::controller('theme', 'ThemeController');
 
+// ตั้งค่า session ภาษา เริ่มต้น
+if(session('lang') == ''){
+    Session::set('lang', 'th');
+}
+
 // เปลี่ยนภาษา
 Route::get('change/{locale}', function ($locale) {
     Session::set('locale', $locale); // กำหนดค่าตัวแปรแบบ locale session ให้มีค่าเท่ากับตัวแปรที่ส่งเข้ามา 
