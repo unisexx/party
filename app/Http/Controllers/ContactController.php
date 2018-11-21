@@ -24,7 +24,7 @@ class ContactController extends Controller
 		// SEO::setDescription('รวมสติ๊กเกอร์ไลน์ขายดี แนะนำ ฮิตๆ ยอดนิยม');
 
 		$data['rs'] = new Contact;
-		$data['rs'] = $data['rs']->orderBy('id', 'desc')->paginate(10);
+		$data['rs'] = $data['rs']->where('status','public')->orderBy('id', 'desc')->paginate(10);
 		return view('contact.index', $data);
 	}
 

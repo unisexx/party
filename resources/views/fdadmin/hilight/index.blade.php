@@ -2,9 +2,6 @@
 
 @section('content')
 
-<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-
 <!-- Content Wrapper. Contains hilight content -->
 <div class="content-wrapper">
     <!-- Content Header (hilight header) -->
@@ -37,7 +34,7 @@
                 <thead>
                 <tr>
                   <th>ไอดี</th>
-                  <!-- <th>สถานะ</th> -->
+                  <th>สถานะ</th>
                   <th>หัวข้อ</th>
                   <th data-orderable="false" data-searchable="false">ภาพแบนเนอร์</th>
                   <th data-orderable="false" data-searchable="false">จัดการ</th>
@@ -47,9 +44,9 @@
                 	@foreach($rs as $row)
                 		<tr>
                       <td>{{ $row->id }}</td>
-                      <!-- <td>
-                        <input class="switch_status" type="checkbox" checked data-toggle="toggle" data-switch-id="{{ $row->id }}">
-                      </td> -->
+                      <td>
+                        <input class="switch_status" type="checkbox" data-toggle="toggle" data-switch-id="{{ $row->id }}" @if($row->status == 'public') checked @endif>
+                      </td>
 		                  <td>{{ $row->title }}</td>
                       <td><img src="{{ url('uploads/hilight/'.$row->image) }}" width="300"></td>
 		                  <td>
@@ -60,16 +57,6 @@
                 	@endforeach
                 </tfoot>
               </table>
-
-<!-- <div id="console-event"></div>
-<script>
-  $(function() {
-    $('.switch_status').change(function() {
-      $('#console-event').html('Toggle: ' + $(this).prop('checked') + ' | id: ' + $(this).data('switch-id'))
-    })
-  })
-</script> -->
-
 
             </div>
             <!-- /.box-body -->
@@ -83,5 +70,22 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+
+<!-- switch status -->
+<script>
+  $(function() {
+
+    $(document).on('change', ".switch_status", function () {
+      
+      $.ajax({
+          url: '{{ url("fdadmin/ajax/changestatus") }}',
+          data:{ table : 'hilights', status : $(this).prop('checked'), id : $(this).data('switch-id') },
+          dataType: "json",
+      });
+
+    });
+
+  });
+</script>
 
 @endsection

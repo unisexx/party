@@ -24,7 +24,7 @@ class DownloadController extends Controller
 		SEO::setDescription('ดาวน์โหลดเอกสารเกี่ยวกับพรรคประชารัฐ');
 
 		$data['rs'] = new Download;
-		$data['rs'] = $data['rs']->orderBy('updated_at', 'desc')->paginate(30);
+		$data['rs'] = $data['rs']->where('status','public')->orderBy('updated_at', 'desc')->paginate(30);
 		return view('download.index', $data);
 	}
 

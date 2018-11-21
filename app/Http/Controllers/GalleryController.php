@@ -25,7 +25,7 @@ class GalleryController extends Controller
 		SEO::setDescription('แฟ้มภาพกิจกรรมของพรรคพลังประชารัฐ');
 
 		$data['rs'] = new Gallery;
-		$data['rs'] = $data['rs']->orderBy('id', 'desc')->paginate(30);
+		$data['rs'] = $data['rs']->orderBy('id', 'desc')->where('status','public')->paginate(30);
 		return view('gallery.index', $data);
 	}
 

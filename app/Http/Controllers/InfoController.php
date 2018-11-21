@@ -32,7 +32,7 @@ class InfoController extends Controller
 	public function getType($id){
 		$data['type'] = Info_type::find($id);
 		$data['rs'] = new Info;
-		$data['rs'] = $data['rs']->where('info_type_id',$id)->orderBy('id', 'desc')->paginate(8);
+		$data['rs'] = $data['rs']->where('info_type_id',$id)->where('status','public')->orderBy('id', 'desc')->paginate(8);
 		return view('info.type', $data);
 	}
 

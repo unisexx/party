@@ -25,16 +25,16 @@
             <div class="carousel-inner">
                 @foreach($hilight as $key => $row)
                 <div class="carousel-item @if($key == 0) active @endif">
-                    <img class="d-block w-100" src="{{ url('uploads/hilight/'.$row->image) }}" alt="{{ $row->title }}">
+                    <a href="{{ $row->url != '' ? url($row->url) : url('home') }}"><img class="d-block w-100" src="{{ url('uploads/hilight/'.$row->image) }}" alt="{{ $row->title }}"></a>
                 </div>
                 @endforeach
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="fas fa-chevron-circle-left fa-3x" aria-hidden="true" style="opacity:0.5;"></span>
+                <span class="fas fa-chevron-circle-left fa-3x" aria-hidden="true" style="opacity:0.4;"></span>
                 <span class="sr-only">Previous</span>
             </a>
             <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="fas fa-chevron-circle-right fa-3x" aria-hidden="true" style="opacity:0.5;"></span>
+                <span class="fas fa-chevron-circle-right fa-3x" aria-hidden="true" style="opacity:0.4;"></span>
                 <span class="sr-only">Next</span>
             </a>
             </div>

@@ -15,7 +15,7 @@
 
             <h2 data-aos="fade-up" data-aos-duration="1000">{{ $person_type->name }}</h3>
             <ul class="row">
-                @foreach($person_type->manager()->get() as $manager)
+                @foreach($person_type->manager()->where('status','public')->get() as $manager)
                 <li class="col-md-3">
                     <div class="overlay" data-aos="fade-up" data-aos-duration="1000">
                         <a href="{{ url('manager/'.$manager->slug) }}">

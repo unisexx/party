@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Info extends Model
 {
-    protected $fillable = array('title','description','slug','image','info_type_id');
+    protected $fillable = array('title','description','slug','image','info_type_id','status');
 
     public function info_type() {
     	return $this->hasOne('App\Models\Info_type','id','info_type_id');

@@ -34,6 +34,7 @@
                 <thead>
                 <tr>
                   <th>ไอดี</th>
+                  <th>สถานะ</th>
                   <th>หัวข้อ</th>
                   <th data-orderable="false" data-searchable="false">จัดการ</th>
                 </tr>
@@ -42,6 +43,9 @@
                 	@foreach($rs as $row)
                 		<tr>
                       <td>{{ $row->id }}</td>
+                      <td>
+                        <input class="switch_status" type="checkbox" data-toggle="toggle" data-switch-id="{{ $row->id }}" @if($row->status == 'public') checked @endif>
+                      </td>
 		                  <td>{{ $row->title }}</td>
 		                  <td>
 		                  	<a href="fdadmin/gallery/form/{{ $row->id }}"><button type="button" class="btn btn-warning  btn-xs">แก้ไข</button></a>
@@ -64,5 +68,21 @@
   </div>
   <!-- /.content-wrapper -->
 
+<!-- switch status -->
+<script>
+  $(function() {
+
+    $(document).on('change', ".switch_status", function () {
+      
+      $.ajax({
+          url: '{{ url("fdadmin/ajax/changestatus") }}',
+          data:{ table : 'galleries', status : $(this).prop('checked'), id : $(this).data('switch-id') },
+          dataType: "json",
+      });
+
+    });
+
+  });
+</script>
 
 @endsection

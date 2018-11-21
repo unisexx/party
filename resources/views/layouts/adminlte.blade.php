@@ -152,18 +152,18 @@ desired effect
 
 
 <!-- DataTables -->
-
 <script src="AdminLTE-2.4.5/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-
 <script src="AdminLTE-2.4.5/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 
 <!-- SlimScroll -->
-
 <script src="AdminLTE-2.4.5/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 
 <!-- FastClick -->
-
 <script src="AdminLTE-2.4.5/bower_components/fastclick/lib/fastclick.js"></script>
+
+<!-- switch toggle -->
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
 
 

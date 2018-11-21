@@ -32,7 +32,7 @@ class AnnounceController extends Controller
 	public function getType($id){
 		$data['type'] = Announce_type::find($id);
 		$data['rs'] = new Announce;
-		$data['rs'] = $data['rs']->where('announce_type_id',$id)->orderBy('id', 'desc')->paginate(8);
+		$data['rs'] = $data['rs']->where('announce_type_id',$id)->where('status','public')->orderBy('id', 'desc')->paginate(8);
 		return view('announce.index', $data);
 	}
 

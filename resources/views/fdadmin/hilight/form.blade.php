@@ -46,6 +46,11 @@
               </div>
               @endif
 
+              <div class="form-group {{ $errors->has('info_type_id') ? 'has-error' : '' }}">
+                <label>สถานะ</label>
+                {{ Form::select('status', array('public'=>'เปิด','draft'=>'ปิด'), @$rs->status, ['class' => 'form-control']) }}
+              </div>
+
               <!-- text input -->
               <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
                 <label>หัวข้อ</label>

@@ -42,15 +42,15 @@ class HomeController extends Controller
 
         // ข่าวสารพรรค
         $data['info'] = new Info;
-        $data['info'] = $data['info']->where('info_type_id',1)->orderBy('id', 'desc')->take(6)->get();
+        $data['info'] = $data['info']->where('info_type_id',1)->where('status','public')->orderBy('id', 'desc')->take(6)->get();
 
         // ข่าวสารจากสาขาพรรค
         $data['info_sub'] = new Info;
-        $data['info_sub'] = $data['info_sub']->where('info_type_id',2)->orderBy('id', 'desc')->take(3)->get();
+        $data['info_sub'] = $data['info_sub']->where('info_type_id',2)->where('status','public')->orderBy('id', 'desc')->take(3)->get();
 
-        // ข่าวสารจากสาขาพรรค
+        // ข่าวสารจากเยาวชนคนรุ่นใหม่
         $data['info_youth'] = new Info;
-        $data['info_youth'] = $data['info_youth']->where('info_type_id',3)->orderBy('id', 'desc')->take(6)->get();
+        $data['info_youth'] = $data['info_youth']->where('info_type_id',3)->where('status','public')->orderBy('id', 'desc')->take(6)->get();
 
         // หมวดหมู่ผู้บริการพรรค
         $data['person_type'] = new Person_type;
@@ -62,7 +62,7 @@ class HomeController extends Controller
 
         // ไฮไลท์รูปแบนเนอร์
         $data['hilight'] = new Hilight;
-        $data['hilight'] = $data['hilight']->orderBy('id', 'asc')->get();
+        $data['hilight'] = $data['hilight']->where('status', 'public')->orderBy('id', 'asc')->get();
         
         return view('home',$data);
     }

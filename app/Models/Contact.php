@@ -19,5 +19,6 @@ class Contact extends Model
         'instagram',
         'pinterest',
         'line',
+        'status',
     );
 }

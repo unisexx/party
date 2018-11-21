@@ -57,7 +57,7 @@ class ContactController extends Controller
 		// }
 
 		$this->validate($rq, [
-			'name' => 'name',
+			'name' => 'required',
 			'address' => 'required'
         ], [
 			'name.required' => 'ชื่อ ห้ามเป็นค่าว่าง',
@@ -69,8 +69,8 @@ class ContactController extends Controller
 		$model->save();
 
 		set_notify('success', trans('message.completeSave'));
-		// return Redirect('fdadmin/contact/index');
-		return redirect()->back();
+		return Redirect('fdadmin/contact/index');
+		// return redirect()->back();
 	}
 
 	public function getDelete($id = null)

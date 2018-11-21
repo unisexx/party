@@ -37,6 +37,8 @@
                     @endforeach
                 </ul>
 
+                {{ $rs->appends(@$_GET)->render() }}
+
 
             </div>
             <!-- END Left Side -->

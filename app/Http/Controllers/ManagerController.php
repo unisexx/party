@@ -32,7 +32,7 @@ class ManagerController extends Controller
 	public function getType($id){
 		$data['type'] = Person_type::find($id);
 		$data['rs'] = new Manager;
-		$data['rs'] = $data['rs']->where('Person_type_id',$id)->orderBy('id', 'desc')->paginate(8);
+		$data['rs'] = $data['rs']->where('Person_type_id',$id)->where('status','public')->orderBy('id', 'desc')->paginate(8);
 		return view('manager.type', $data);
 	}
 
