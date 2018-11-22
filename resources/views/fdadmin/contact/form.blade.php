@@ -57,6 +57,16 @@
                 <input name="name" type="text" class="form-control" value="{{ @$rs->name ? @$rs->name : old('name') }}">
               </div>
 
+              <!-- <div class="form-group {{ $errors->has('title_th') ? 'has-error' : '' }}">
+                <label>ชื่อ (ภาษาไทย)</label>
+                <input name="title_th" type="text" class="form-control" value="{{ @$rs->title_th ? @$rs->title_th : old('title_th') }}">
+              </div>
+
+              <div class="form-group {{ $errors->has('title_en') ? 'has-error' : '' }}">
+                <label>ชื่อ (อังกฤษ)</label>
+                <input name="title_en" type="text" class="form-control" value="{{ @$rs->title_en ? @$rs->title_en : old('title_en') }}">
+              </div> -->
+
               <div class="form-group {{ $errors->has('address') ? 'has-error' : '' }}">
                 <label>ที่อยู่</label>
                 <input name="address" type="text" class="form-control" value="{{ @$rs->address ? @$rs->address : old('address') }}">

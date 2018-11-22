@@ -57,6 +57,16 @@
                 <input name="title" type="text" class="form-control" value="{{ @$rs->title ? @$rs->title : old('title') }}">
               </div>
 
+              <!-- <div class="form-group {{ $errors->has('title_th') ? 'has-error' : '' }}">
+                <label>ชื่อ (ภาษาไทย)</label>
+                <input name="title_th" type="text" class="form-control" value="{{ @$rs->title_th ? @$rs->title_th : old('title_th') }}">
+              </div>
+
+              <div class="form-group {{ $errors->has('title_en') ? 'has-error' : '' }}">
+                <label>ชื่อ (อังกฤษ)</label>
+                <input name="title_en" type="text" class="form-control" value="{{ @$rs->title_en ? @$rs->title_en : old('title_en') }}">
+              </div> -->
+
               <input type="button" class="btn btn-primary btn-attachimgs-add" value="เพิ่มภาพ">
 
               <table id="attach_img" class="table table-striped table-bordered table-data sorted_table">

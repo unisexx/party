@@ -20,5 +20,7 @@ class Contact extends Model
         'pinterest',
         'line',
         'status',
+        'name_th',
+        'name_en'
     );
 }

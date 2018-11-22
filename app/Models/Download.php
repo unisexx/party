@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Download extends Model
 {
-    protected $fillable = array('title','description','file_path','image','slug','status');
+    protected $fillable = array('title','description','file_path','image','slug','status','title_th','title_en');
 }
