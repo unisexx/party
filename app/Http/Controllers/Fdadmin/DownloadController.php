@@ -57,9 +57,11 @@ class DownloadController extends Controller
 		// }
 
 		$this->validate($rq, [
-			'title' => 'required',
+			'title_th' => 'required',
+			'title_en' => 'required',
         ], [
-			'title.required' => 'หัวข้อ ห้ามเป็นค่าว่าง',
+			'title_th.required' => 'หัวข้อ (ภาษาไทย) ห้ามเป็นค่าว่าง',
+			'title_en.required' => 'หัวข้อ (ภาษาอังกฤษ) ห้ามเป็นค่าว่าง',
 		]);
 		
 		// Save
@@ -114,7 +116,7 @@ class DownloadController extends Controller
 
 	public function getFiledownload($id){
 		$rs = Download::find($id);
-		return downloadFile('uploads/doc',$rs->file_path, $rs->title);
+		return downloadFile('uploads/doc',$rs->file_path, $rs->title_th);
 	}
 
 }

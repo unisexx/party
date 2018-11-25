@@ -56,13 +56,23 @@
                 @if(!empty($rs->image)) 
                   <div><img src="uploads/manager/{{ $rs->image }}" width="250" style="margin-bottom:10px;"><div>
                 @endif
-                <input type="file" name="imgUpload">
+                <input type="file" name="imgUpload" style="margin-bottom:10px;">
               </div>
 
               <!-- text input -->
-              <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
+              <!-- <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
                 <label>ชื่อ</label>
                 <input name="title" type="text" class="form-control" value="{{ @$rs->title ? @$rs->title : old('title') }}">
+              </div> -->
+
+              <div class="form-group {{ $errors->has('title_th') ? 'has-error' : '' }}">
+                <label>ชื่อ (ภาษาไทย)</label>
+                <input name="title_th" type="text" class="form-control" value="{{ @$rs->title_th ? @$rs->title_th : old('title_th') }}">
+              </div>
+
+              <div class="form-group {{ $errors->has('title_en') ? 'has-error' : '' }}">
+                <label>ชื่อ (ภาษาอังกฤษ)</label>
+                <input name="title_en" type="text" class="form-control" value="{{ @$rs->title_en ? @$rs->title_en : old('title_en') }}">
               </div>
 
               <div class="form-group {{ $errors->has('person_type_id') ? 'has-error' : '' }}">
@@ -70,21 +80,10 @@
                 {{ Form::select('person_type_id', dropdownOption('person_types','id','name'), @$rs->person_type_id, ['placeholder' => '-- เลือกตำแหน่ง --','class' => 'form-control']) }}
               </div>
 
-              <div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
+              <!-- <div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
                 <label>ประวัติ</label>
                 <textarea name="description" class="form-control tinymce" rows="15">{{ @$rs->description ? @$rs->description : old('description') }}</textarea>
-              </div>
-
-
-              <!-- <div class="form-group {{ $errors->has('title_th') ? 'has-error' : '' }}">
-                <label>ชื่อ (ภาษาไทย)</label>
-                <input name="title_th" type="text" class="form-control" value="{{ @$rs->title_th ? @$rs->title_th : old('title_th') }}">
-              </div>
-
-              <div class="form-group {{ $errors->has('title_en') ? 'has-error' : '' }}">
-                <label>ชื่อ (อังกฤษ)</label>
-                <input name="title_en" type="text" class="form-control" value="{{ @$rs->title_en ? @$rs->title_en : old('title_en') }}">
-              </div>
+              </div> -->
 
               <div class="form-group {{ $errors->has('description_th') ? 'has-error' : '' }}">
                 <label>ประวัติ (ภาษาไทย)</label>
@@ -94,8 +93,7 @@
               <div class="form-group {{ $errors->has('description_en') ? 'has-error' : '' }}">
                 <label>ประวัติ (ภาษาอังกฤษ)</label>
                 <textarea name="description_en" class="form-control tinymce" rows="15">{{ @$rs->description_en ? @$rs->description_en : old('description_en') }}</textarea>
-              </div> -->
-
+              </div>
 
 
               </div>

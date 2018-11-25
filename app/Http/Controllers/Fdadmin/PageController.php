@@ -60,11 +60,15 @@ class PageController extends Controller
 		// ]);
 
 		$this->validate($rq, [
-			'title' => 'required',
-			'description' => 'required'
+			'title_th' => 'required',
+			'title_en' => 'required',
+			'description_th' => 'required',
+			'description_en' => 'required'
         ], [
-			'title.required' => 'หัวข้อ ห้ามเป็นค่าว่าง',
-			'description.required' => 'รายละเอียด ห้ามเป็นค่าว่าง'
+			'title_th.required' => 'หัวข้อ(ภาษาไทย) ห้ามเป็นค่าว่าง',
+			'title_en.required' => 'หัวข้อ(ภาษาอังกฤษ) ห้ามเป็นค่าว่าง',
+			'description_th.required' => 'รายละเอียด(ภาษาไทย) ห้ามเป็นค่าว่าง',
+			'description_en.required' => 'รายละเอียด(ภาษาอังกฤษ) ห้ามเป็นค่าว่าง'
         ]);
 		
 		// Save

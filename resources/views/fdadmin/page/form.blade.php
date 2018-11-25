@@ -48,7 +48,7 @@
               @endif
 
               <!-- text input -->
-              <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
+              <!-- <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
                 <label>หัวข้อ</label>
                 <input name="title" type="text" class="form-control" value="{{ @$rs->title ? @$rs->title : old('title') }}" readonly>
               </div>
@@ -56,9 +56,9 @@
               <div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
                 <label>รายละเอียด</label>
                 <textarea name="description" class="form-control tinymce" rows="15">{{ @$rs->description ? @$rs->description : old('description') }}</textarea>
-              </div>
+              </div> -->
 
-              <!-- 
+              
               <div class="form-group {{ $errors->has('title_th') ? 'has-error' : '' }}">
                 <label>หัวข้อ  (ภาษาไทย)</label>
                 <input name="title_th" type="text" class="form-control" value="{{ @$rs->title_th ? @$rs->title_th : old('title_th') }}" readonly>
@@ -78,7 +78,7 @@
                 <label>รายละเอียด (ภาษาอังกฤษ)</label>
                 <textarea name="description_en" class="form-control tinymce" rows="15">{{ @$rs->description_en ? @$rs->description_en : old('description_en') }}</textarea>
               </div> 
-              -->
+             
 
 
               </div>

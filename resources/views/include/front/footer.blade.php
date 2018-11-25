@@ -7,15 +7,15 @@
             <div class="row">
                 <div class="col-md-4 col-lg-4 footer-about wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
                     <img class="logo-footer" src="{{ url('image/logo.png') }}" alt="logo-footer" data-at2x="assets/img/logo.png">
-                    <p><a href="{{ url('home') }}" style="font-size:28px;">พรรคพลังประชารัฐ</a></p>
+                    <p><a href="{{ url('home') }}" style="font-size:28px;">{{ trans('site.phalangpracharat') }}</a></p>
                     <p>โลกเปลี่ยน ไทยต้องปรับ ทางเลือกใหม่ของการเมืองไทย ก้าวข้ามความขัดแย้ง</p>
                 </div>
                 <div class="col-md-4 col-lg-4 offset-lg-1 footer-contact wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
                     <h3>{{ trans('site.contact') }}</h3>
-                    @if($contact->address) <p><i class="fas fa-map-marker-alt"></i> {{ $contact->address }}</p> @endif
-                    @if($contact->tel) <p><i class="fas fa-phone"></i> โทรศัพท์: {{ $contact->tel }}</p> @endif
-                    @if($contact->fax) <p><i class="fas fa-fax"></i> แฟกซ์: {{ $contact->fax }}</p> @endif
-                    @if($contact->email) <p><i class="fas fa-envelope"></i> อีเมล์: <a href="mailto:{{ $contact->email }}">{{ $contact->email }}</a></p> @endif
+                    @if($contact->address) <p><i class="fas fa-map-marker-alt"></i> {{ $contact->{'address_'.session('lang')} }}</p> @endif
+                    @if($contact->tel) <p><i class="fas fa-phone"></i> {{ trans('site.tel') }}: {{ $contact->tel }}</p> @endif
+                    @if($contact->fax) <p><i class="fas fa-fax"></i> {{ trans('site.fax') }}: {{ $contact->fax }}</p> @endif
+                    @if($contact->email) <p><i class="fas fa-envelope"></i> {{ trans('site.email') }}: <a href="mailto:{{ $contact->email }}">{{ $contact->email }}</a></p> @endif
                     @if($contact->skype) <p><i class="fab fa-skype"></i> Skype: {{ $contact->skype }}</p> @endif
                     @if($contact->line) <p><i class="fab fa-line"></i></i> Line: {{ $contact->line }}</p> @endif
                 </div>
@@ -36,7 +36,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-5 footer-copyright">
-                    <p>© 2018 พรรคพลังประชารัฐ</p>
+                    <p>© 2018 {{ trans('site.phalangpracharat') }}</p>
                 </div>
                 <div class="col-md-7 footer-menu">
                     <nav class="navbar navbar-dark navbar-expand-md">

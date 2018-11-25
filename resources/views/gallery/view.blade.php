@@ -3,13 +3,13 @@
 
 <section class="banner innerpage-banner contact-banner">
     <div class="container">
-        <h1 data-aos="fade-up" data-aos-duration="1000">แฟ้มภาพ</h1>
+        <h1 data-aos="fade-up" data-aos-duration="1000">{{ trans('site.gallery') }}</h1>
     </div>
 </section>
 
 <section class="about-page contact-page portfolio-page" id="my-port">
     <div class="container">
-        <h2 data-aos="fade-up" data-aos-duration="1000">{{ $rs->title }}</h2>
+        <h2 data-aos="fade-up" data-aos-duration="1000">{{ $rs->{'title_'.session('lang')} }}</h2>
 
         <ul class="row tz-gallery">
             @foreach($rs->attach_imgs()->orderBy('id','asc')->get() as $row)

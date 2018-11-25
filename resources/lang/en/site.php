@@ -13,16 +13,51 @@ return [
     |
     */
 
+    // ชื่อพรรค
+    'phalangpracharat' => 'Phalangpracharat',
+
     // header
-    'home'                  => 'Home',
-    'about'                 => 'About Us',
-    'executive'             => 'Executive',
-    'news'                  => 'News',
+    'home'      => 'Home',
+    'about'     => 'About Us',
+    'executive' => 'Executive',
+    'news'      => 'News',
 
     // footer
-    'follow'               => 'Follow Us',
+    'follow' => 'Follow Us',
 
     // footer-bottom
-    'contact'               => 'Contact',
+    'contact' => 'Contact',
+
+    // homepage
+    'news_about'  => 'News about the party',
+    'news_branch' => 'News from the party branch',
+    'news_young'  => 'News from the young generation',
+
+    // sidebar
+    'party_infomation'        => 'Party Infomation',
+    'party_announcement'      => 'Party Announcement',
+    'party_membership'        => 'Party Membership',
+    'download'                => 'Download',
+    'membership_system'       => 'Membership System',
+    'online_party_system'     => 'Online Party System',
+    'gallery'                 => 'Gallery',
+    'party_management_system' => 'Party Management System',
+    'candidate_list'          => 'Candidate List',
+    'contact_party'           => 'Contact Party',
+
+    // Gallery
+    'topics' => 'Topics',
+    'images' => 'Images',
+
+    // Download
+    'downloads' => 'Download',
+
+    // Contact Party
+    'contact_party_2' => 'Contact Party',
+    'name'            => 'Name',
+    'address'         => 'Address',
+    'tel'             => 'Tel',
+    'fax'             => 'Fax',
+    'email'           => 'E-mail',
     
 ];

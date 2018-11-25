@@ -21,6 +21,8 @@ class Contact extends Model
         'line',
         'status',
         'name_th',
-        'name_en'
+        'name_en',
+        'address_th',
+        'address_en',
     );
 }

@@ -46,7 +46,10 @@
                       <td>
                         <input class="switch_status" type="checkbox" data-toggle="toggle" data-switch-id="{{ $row->id }}" @if($row->status == 'public') checked @endif>
                       </td>
-		                  <td>{{ $row->name }}</td>
+		                  <td>
+                        ภาษาไทย :: {{ $row->name_th }}<br>
+                        ภาษาอังกฤษ :: {{ $row->name_en }}
+                      </td>
 		                  <td>
 		                  	<a href="fdadmin/contact/form/{{ $row->id }}"><button type="button" class="btn btn-warning  btn-xs">แก้ไข</button></a>
 		                  	<a href="fdadmin/contact/delete/{{ $row->id }}" onclick="return confirm('ต้องการลบรายการนี้')"><button type="button" class="btn btn-danger btn-xs">ลบ</button></a>

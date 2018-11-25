@@ -47,7 +47,10 @@
                       <td>
                         <input class="switch_status" type="checkbox" data-toggle="toggle" data-switch-id="{{ $row->id }}" @if($row->status == 'public') checked @endif>
                       </td>
-		                  <td>{{ $row->title }}</td>
+		                  <td>
+                        ภาษาไทย :: {{ $row->title_th }}<br>
+                        ภาษาอังกฤษ :: {{ $row->title_en }}
+                      </td>
                       <td>{{ $row->announce_type->name }}</td>
 		                  <td>
 		                  	<a href="fdadmin/announce/form/{{ $row->id }}"><button type="button" class="btn btn-warning  btn-xs">แก้ไข</button></a>

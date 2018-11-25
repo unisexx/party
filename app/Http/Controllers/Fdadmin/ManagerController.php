@@ -57,13 +57,17 @@ class ManagerController extends Controller
 		// }
 
 		$this->validate($rq, [
-			'title' => 'required',
+			'title_th' => 'required',
+			'title_en' => 'required',
 			'person_type_id' => 'required',
-			'description' => 'required'
+			'description_th' => 'required',
+			'description_en' => 'required',
         ], [
-			'title.required' => 'ชื่อ ห้ามเป็นค่าว่าง',
+			'title_th.required' => 'ชื่อ (ภาษาไทย) ห้ามเป็นค่าว่าง',
+			'title_en.required' => 'ชื่อ (ภาษาอังกฤษ) ห้ามเป็นค่าว่าง',
 			'person_type_id.required' => 'ตำแหน่ง ห้ามเป็นค่าว่าง',
-			'description.required' => 'ประวัติ ห้ามเป็นค่าว่าง'
+			'description_th.required' => 'ประวัติ (ภาษาไทย) ห้ามเป็นค่าว่าง',
+			'description_en.required' => 'ประวัติ (ภาษาอังกฤษ) ห้ามเป็นค่าว่าง'
         ]);
 
 		// Save

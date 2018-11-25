@@ -54,69 +54,69 @@
             <div class="col-lg-9 col-md-12">
 
 
-                <h2 data-aos="fade-up" data-aos-duration="1000">ข่าวสารเกี่ยวกับพรรค</h2>
+                <h2 data-aos="fade-up" data-aos-duration="1000">{{ trans('site.news_about') }}</h2>
                 <ul class="row">
                     @foreach($info as $row)
                     <li class="col-md-4">
                         <div class="overlay" data-aos="fade-up" data-aos-duration="1000">
-                            <a href="{{ url('info/'.$row->slug) }}">
+                            <a href="{{ url('info/'.$row->id) }}">
                                 <div class="blog-img">
                                     <figure><img src="{{ url('uploads/info/'.$row->image) }}" alt="img-1" class="img-fluid"></figure>
 
                                     <div class="blog-img-inner"></div>
                                 </div>
                                 <h5>
-                                    {{ $row->title }}
+                                    {{ $row->{'title_'.session('lang')} }}
                                 </h5>
                                 <!-- <p>{!! cuttext($row->description,100) !!}</p> -->
                             </a>
-                            <a href="{{ url('info/'.$row->slug) }}" style="display:none;">อ่านต่อ</a>
+                            <a href="{{ url('info/'.$row->id) }}" style="display:none;">อ่านต่อ</a>
                         </div>
                     </li>
                     @endforeach
                 </ul>
 
                 <!-- <hr> -->
-                <h2 data-aos="fade-up" data-aos-duration="1000">ข่าวสารจากสาขาพรรค</h2>
+                <h2 data-aos="fade-up" data-aos-duration="1000">{{ trans('site.news_branch') }}</h2>
                 <ul class="row">
                     @foreach($info_sub as $row)
                     <li class="col-md-4">
                         <div class="overlay" data-aos="fade-up" data-aos-duration="1000">
-                            <a href="{{ url('info/'.$row->slug) }}">
+                            <a href="{{ url('info/'.$row->id) }}">
                                 <div class="blog-img">
                                     <figure><img src="{{ url('uploads/info/'.$row->image) }}" alt="img-1" class="img-fluid"></figure>
 
                                     <div class="blog-img-inner"></div>
                                 </div>
                                 <h5>
-                                    {{ $row->title }}
+                                    {{ $row->{'title_'.session('lang')} }}
                                 </h5>
                                 <!-- <p>{!! cuttext($row->description,100) !!}</p> -->
                             </a>
-                            <a href="{{ url('info/'.$row->slug) }}" style="display:none;">อ่านต่อ</a>
+                            <a href="{{ url('info/'.$row->id) }}" style="display:none;">อ่านต่อ</a>
                         </div>
                     </li>
                     @endforeach
                 </ul>
 
                 <!-- <hr> -->
-                <h2 data-aos="fade-up" data-aos-duration="1000">ข่าวสารจากเยาวชนคนรุ่นใหม่</h2>
+                <h2 data-aos="fade-up" data-aos-duration="1000">{{ trans('site.news_young') }}</h2>
                 <ul class="row">
                     @foreach($info_youth as $row)
                     <li class="col-md-4">
                         <div class="overlay" data-aos="fade-up" data-aos-duration="1000">
-                            <a href="{{ url('info/'.$row->slug) }}">
+                            <a href="{{ url('info/'.$row->id) }}">
                                 <div class="blog-img">
                                     <figure><img src="{{ url('uploads/info/'.$row->image) }}" alt="img-1" class="img-fluid"></figure>
 
                                     <div class="blog-img-inner"></div>
                                 </div>
                                 <h5>
-                                    {{ $row->title }}
+                                    {{ $row->{'title_'.session('lang')} }}
                                 </h5>
                                 <!-- <p>{!! cuttext($row->description,100) !!}</p> -->
                             </a>
-                            <a href="{{ url('info/'.$row->slug) }}" style="display:none;">อ่านต่อ</a>
+                            <a href="{{ url('info/'.$row->id) }}" style="display:none;">อ่านต่อ</a>
                         </div>
                     </li>
                     @endforeach
@@ -131,58 +131,56 @@
             <!-- Right Side -->
             <div class="col-lg-3 col-md-12 right-sidebar">
 
-            
-                <h2 data-aos="fade-up" data-aos-duration="1000">ข้อมูลพรรค</h2>
+                <h2 data-aos="fade-up" data-aos-duration="1000">{{ trans('site.party_infomation') }}</h2>
                 <ul class="section-nav">
-                    <li class="toc-entry toc-h2"><a href="#">ข้อมูลเกี่ยวกับพรรค</a>
+                    <li class="toc-entry toc-h2"><a href="#">{{ trans('site.about') }}</a>
                         <ul>
-                            <li class="toc-entry toc-h3"><a href="{{ url('page/วิสัยทัศน์') }}">- วิสัยทัศน์</a></li>
-                            <li class="toc-entry toc-h3"><a href="{{ url('page/นโยบาย') }}">- นโยบาย</a></li>
-                            <li class="toc-entry toc-h3"><a href="{{ url('page/พรรค') }}">- พรรค</a></li>
-                            <li class="toc-entry toc-h3"><a href="{{ url('page/ข้อบังคับพรรค') }}">- ข้อบังคับพรรค</a></li>
+                            @foreach($page as $row)
+                                <li class="toc-entry toc-h3"><a href="{{ url('page/'.$row->slug) }}">- {{ $row->{'title_'.session('lang')} }}</a></li>
+                            @endforeach
                         </ul>
                     </li>
-                    <li class="toc-entry toc-h2"><a href="#">ผู้บริหารพรรค</a>
+                    <li class="toc-entry toc-h2"><a href="#">{{ trans('site.executive') }}</a>
                         <ul>
                             @foreach($person_type as $row)
-                            <li class="toc-entry toc-h3"><a href="{{ url('manager/type/'.$row->id) }}">- {{ $row->name }}</a></li>
+                            <li class="toc-entry toc-h3"><a href="{{ url('manager/type/'.$row->id) }}">- {{ $row->{'name_'.session('lang')} }}</a></li>
                             @endforeach
                         </ul>
                     </li>
-                    <li class="toc-entry toc-h2"><a href="#">ประกาศพรรค</a>
+                    <li class="toc-entry toc-h2"><a href="#">{{ trans('site.party_announcement') }}</a>
                         <ul>
                             @foreach($announce_type as $row)
-                            <li class="toc-entry toc-h3"><a href="{{ url('announce/type/'.$row->id) }}">- {{ $row->name }}</a></li>
+                            <li class="toc-entry toc-h3"><a href="{{ url('announce/type/'.$row->id) }}">- {{ $row->{'name_'.session('lang')} }}</a></li>
                             @endforeach
                         </ul>
                     </li>
-                    <li class="toc-entry toc-h2"><a href="{{ url('contact/1') }}">ติดต่อพรรค</a></li>
+                    <li class="toc-entry toc-h2"><a href="{{ url('contact/1') }}">{{ trans('site.contact') }}</a></li>
                 </ul>
 
                 <div class="row side-banner">
                     <a class="col-12" href="{{ url('membership/form') }}">
-                        <div class="right-side-banner"><i class="far fa-list-alt"></i> สมัครสมาชิกพรรค</div>
+                        <div class="right-side-banner"><i class="far fa-list-alt"></i> {{ trans('site.party_membership') }}</div>
                     </a>
                     <a class="col-12" href="{{ url('download') }}">
-                        <div class="right-side-banner"><i class="fas fa-download"></i> ดาวน์โหลดเอกสาร</div>
+                        <div class="right-side-banner"><i class="fas fa-download"></i> {{ trans('site.download') }}</div>
                     </a>
                     <a class="col-12" href="#">
-                        <div class="right-side-banner"><i class="fas fa-users"></i> ระบบสมาชิกออนไลน์</div>
+                        <div class="right-side-banner"><i class="fas fa-users"></i> {{ trans('site.membership_system') }}</div>
                     </a>
                     <a class="col-12" href="#">
-                        <div class="right-side-banner"><i class="fas fa-user-tie"></i> ระบบพรรคออนไลน์</div>
+                        <div class="right-side-banner"><i class="fas fa-user-tie"></i> {{ trans('site.online_party_system') }}</div>
                     </a>
                     <a class="col-12" href="{{ url('gallery') }}">
-                        <div class="right-side-banner"><i class="far fa-image"></i> แฟ้มภาพ</div>
+                        <div class="right-side-banner"><i class="far fa-image"></i> {{ trans('site.gallery') }}</div>
                     </a>
                     <a class="col-12" href="#">
-                        <div class="right-side-banner"><i class="far fa-handshake"></i> ระบบบริหารงานพรรค</div>
+                        <div class="right-side-banner"><i class="far fa-handshake"></i> {{ trans('site.party_management_system') }}</div>
                     </a>
                     <a class="col-12" href="#">
-                        <div class="right-side-banner"><i class="fas fa-list-ul"></i> รายชื่อผู้สมัคร สส.และ<br>สส.บัญชีรายชื่อ ของ<br>พรรคทั่วประเทศ</div>
+                        <div class="right-side-banner"><i class="fas fa-list-ul"></i> {!! trans('site.candidate_list') !!}</div>
                     </a>
                     <a class="col-12" href="{{ url('contact') }}">
-                        <div class="right-side-banner"><i class="far fa-envelope"></i> ติดต่อพรรค ผู้สมัครพรรค<br>และ สส.ของพรรค</div>
+                        <div class="right-side-banner"><i class="far fa-envelope"></i> {!! trans('site.contact_party') !!}</div>
                     </a>
                 </div>
                 

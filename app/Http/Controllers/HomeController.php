@@ -8,6 +8,7 @@ use App\Models\Info;
 use App\Models\Announce_type;
 use App\Models\Person_type;
 use App\Models\Hilight;
+use App\Models\Page;
 
 use DB;
 use SEO;
@@ -63,6 +64,10 @@ class HomeController extends Controller
         // ไฮไลท์รูปแบนเนอร์
         $data['hilight'] = new Hilight;
         $data['hilight'] = $data['hilight']->where('status', 'public')->orderBy('id', 'asc')->get();
+
+        // เกี่ยวกับพรรค
+        $data['page'] = new Page;
+        $data['page'] = $data['page']->orderBy('id', 'asc')->get();
         
         return view('home',$data);
     }

@@ -3,41 +3,41 @@
 
 <section class="banner innerpage-banner contact-banner">
     <div class="container">
-        <h1 data-aos="fade-up" data-aos-duration="1000">ติดต่อพรรค</h1>
+        <h1 data-aos="fade-up" data-aos-duration="1000">{{ trans('site.contact') }}</h1>
     </div>
 </section>
 
 <section class="blog-page blogsingle">
-    <h2 data-aos="fade-up" data-aos-duration="1000">{{ $rs->name }}</h2>
+    <h2 data-aos="fade-up" data-aos-duration="1000">{{ $rs->{'name_'.session('lang')} }}</h2>
     <table class="table table-striped">
         <tbody>
             @if($rs->name)
             <tr>
-                <td>ชื่อ</td>
-                <td>{{ $rs->name }}</td>
+                <td>{{ trans('site.name') }}</td>
+                <td>{{ $rs->{'name_'.session('lang')} }}</td>
             </tr>
             @endif
             @if($rs->address)
             <tr>
-                <td>ที่อยู่</td>
-                <td>{{ $rs->address }}</td>
+                <td>{{ trans('site.address') }}</td>
+                <td>{{ $rs->{'address_'.session('lang')} }}</td>
             </tr>
             @endif
             @if($rs->tel)
             <tr>
-                <td>เบอร์โทรศัพท์</td>
+                <td>{{ trans('site.tel') }}</td>
                 <td>{{ $rs->tel }}</td>
             </tr>
             @endif
             @if($rs->fax)
             <tr>
-                <td>แฟกซ์</td>
+                <td>{{ trans('site.fax') }}</td>
                 <td>{{ $rs->fax }}</td>
             </tr>
             @endif
             @if($rs->email)
             <tr>
-                <td>อีเมล์</td>
+                <td>{{ trans('site.email') }}</td>
                 <td><a href="mailto:{{ $rs->email }}">{{ $rs->email }}</a></td>
             </tr>
             @endif

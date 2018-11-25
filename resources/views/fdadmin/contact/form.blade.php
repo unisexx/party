@@ -52,24 +52,34 @@
               </div>
 
               <!-- text input -->
-              <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
+              <!-- <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
                 <label>ชื่อ</label>
                 <input name="name" type="text" class="form-control" value="{{ @$rs->name ? @$rs->name : old('name') }}">
-              </div>
-
-              <!-- <div class="form-group {{ $errors->has('title_th') ? 'has-error' : '' }}">
-                <label>ชื่อ (ภาษาไทย)</label>
-                <input name="title_th" type="text" class="form-control" value="{{ @$rs->title_th ? @$rs->title_th : old('title_th') }}">
-              </div>
-
-              <div class="form-group {{ $errors->has('title_en') ? 'has-error' : '' }}">
-                <label>ชื่อ (อังกฤษ)</label>
-                <input name="title_en" type="text" class="form-control" value="{{ @$rs->title_en ? @$rs->title_en : old('title_en') }}">
               </div> -->
 
-              <div class="form-group {{ $errors->has('address') ? 'has-error' : '' }}">
+              <div class="form-group {{ $errors->has('name_th') ? 'has-error' : '' }}">
+                <label>ชื่อ (ภาษาไทย)</label>
+                <input name="name_th" type="text" class="form-control" value="{{ @$rs->name_th ? @$rs->name_th : old('name_th') }}">
+              </div>
+
+              <div class="form-group {{ $errors->has('name_en') ? 'has-error' : '' }}">
+                <label>ชื่อ (ภาษาอังกฤษ)</label>
+                <input name="name_en" type="text" class="form-control" value="{{ @$rs->name_en ? @$rs->name_en : old('name_en') }}">
+              </div>
+
+              <!-- <div class="form-group {{ $errors->has('address') ? 'has-error' : '' }}">
                 <label>ที่อยู่</label>
                 <input name="address" type="text" class="form-control" value="{{ @$rs->address ? @$rs->address : old('address') }}">
+              </div> -->
+
+              <div class="form-group {{ $errors->has('address_th') ? 'has-error' : '' }}">
+                <label>ที่อยู่ (ภาษาไทย)</label>
+                <input name="address_th" type="text" class="form-control" value="{{ @$rs->address_th ? @$rs->address_th : old('address_th') }}">
+              </div>
+
+              <div class="form-group {{ $errors->has('address_en') ? 'has-error' : '' }}">
+                <label>ที่อยู่ (ภาษาอังกฤษ)</label>
+                <input name="address_en" type="text" class="form-control" value="{{ @$rs->address_en ? @$rs->address_en : old('address_en') }}">
               </div>
 
               <div class="form-group {{ $errors->has('tel') ? 'has-error' : '' }}">

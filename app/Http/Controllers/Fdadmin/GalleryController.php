@@ -58,9 +58,11 @@ class GalleryController extends Controller
 		// }
 
 		$this->validate($rq, [
-			'title' => 'required'
+			'title_th' => 'required',
+			'title_en' => 'required',
         ], [
-			'title.required' => 'หัวข้อกิจกรรม ห้ามเป็นค่าว่าง'
+			'title_th.required' => 'หัวข้อกิจกรรม (ภาษาไทย) ห้ามเป็นค่าว่าง',
+			'title_en.required' => 'หัวข้อกิจกรรม (ภาษาอังกฤษ) ห้ามเป็นค่าว่าง',
 		]);
 		
 		// Save Gallery

@@ -57,11 +57,15 @@ class ContactController extends Controller
 		// }
 
 		$this->validate($rq, [
-			'name' => 'required',
-			'address' => 'required'
+			'name_th' => 'required',
+			'name_en' => 'required',
+			'address_th' => 'required',
+			'address_en' => 'required',
         ], [
-			'name.required' => 'ชื่อ ห้ามเป็นค่าว่าง',
-			'address.required' => 'ที่อยู่ ห้ามเป็นค่าว่าง'
+			'name_th.required' => 'ชื่อ (ภาษาไทย) ห้ามเป็นค่าว่าง',
+			'name_en.required' => 'ชื่อ (ภาษาอังกฤษ) ห้ามเป็นค่าว่าง',
+			'address_th.required' => 'ที่อยู่ (ภาษาไทย) ห้ามเป็นค่าว่าง',
+			'address_en.required' => 'ที่อยู่ (ภาษาอังกฤษ) ห้ามเป็นค่าว่าง',
         ]);
 
 		$model = $id ? Contact::find($id) : new Contact;

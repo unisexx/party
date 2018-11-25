@@ -43,7 +43,7 @@ Route::get('/info', 'InfoController@getIndex');
 Route::get('/info/type/{param}', 'InfoController@getType');
 Route::get('/info/{param}', 'InfoController@getView');
 
-Route::get('/download', 'DownloadController@getIndex');
+Route::controller('download', 'DownloadController');
 
 Route::get('/gallery', 'GalleryController@getIndex');
 Route::get('/gallery/{param}', 'GalleryController@getView');
