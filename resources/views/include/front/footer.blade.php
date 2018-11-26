@@ -10,7 +10,7 @@
                     <p><a href="{{ url('home') }}" style="font-size:28px;">{{ trans('site.phalangpracharat') }}</a></p>
                     <p>โลกเปลี่ยน ไทยต้องปรับ ทางเลือกใหม่ของการเมืองไทย ก้าวข้ามความขัดแย้ง</p>
                 </div>
-                <div class="col-md-4 col-lg-4 offset-lg-1 footer-contact wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+                <div class="col-md-4 col-lg-4 offset-lg-1 footer-contact wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown; padding-right: 70px;">
                     <h3>{{ trans('site.contact') }}</h3>
                     @if($contact->address) <p><i class="fas fa-map-marker-alt"></i> {{ $contact->{'address_'.session('lang')} }}</p> @endif
                     @if($contact->tel) <p><i class="fas fa-phone"></i> {{ trans('site.tel') }}: {{ $contact->tel }}</p> @endif
