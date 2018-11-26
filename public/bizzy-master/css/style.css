@@ -8,6 +8,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
+    background-image: url('../../image/hbg10.png');
 }
 
 button {
@@ -75,7 +76,7 @@ textarea:focus {
 
 /* -------Header-------- */
 header {
-    height: 105px;
+    height: 149px;
     transition: all 0.5s;
     border-bottom: 1px solid rgba(255, 255, 255, .2);
     background: #002a87;
@@ -153,7 +154,7 @@ header .menu-icon span:last-child {
 }
 
 header.scrolled {
-    height: 70px;
+    height: 149px;
     background: #002a87;
 }
 
@@ -162,6 +163,7 @@ header div.search-box {
     height: 35px;
     margin-right: 20px;
     border-radius: 100px;
+    padding-right: 30px;
 }
 
 header nav ul li a {
@@ -869,7 +871,7 @@ section.innerpage-banner .container h1 {
 }
 
 section.about-page {
-    padding-top: 64px;
+    padding-top: 200px;
     padding-bottom: 140px;
 }
 
@@ -918,7 +920,7 @@ section.about-page ul li figure img {
 /* ------Blog page------- */
 section.blog-page {
     text-align: left;
-    padding-top: 64px;
+    padding-top: 200px;
     padding-bottom: 140px;
 }
 
@@ -1024,7 +1026,7 @@ section.blog-page ul li .overlay .blog-img .blog-img-inner {
 section.blogsingle {
     max-width: 980px;
     margin: 0 auto;
-    padding: 52px 0 0;
+    padding: 200px 0 0;
 }
 
 section.blogsingle h3 {
@@ -1761,7 +1763,7 @@ section.contact-page ul li:nth-child(2) {
     }
 
     section.blog-page {
-        padding-top: 50px;
+        padding-top: 200px;
         padding-bottom: 20px;
     }
 
@@ -1804,7 +1806,7 @@ section.contact-page ul li:nth-child(2) {
     /* -----blog single------ */
     section.blogsingle {
         max-width: 100%;
-        padding: 52px 20px 0;
+        padding: 200px 20px 0;
     }
 
     section.blogsingle .similarposts ul li.col-md-6 {
@@ -1942,7 +1944,7 @@ section.contact-page ul li:nth-child(2) {
     }
 
     section.about-page {
-        padding: 35px 0 60px;
+        padding: 200px 0 60px;
     }
 
     /* ------end of about page------ */
@@ -2161,7 +2163,7 @@ section.contact-page ul li:nth-child(2) {
     }
 
     section.blogsingle {
-        padding: 40px 20px 0;
+        padding: 200px 20px 0;
     }
 
     section.blogsingle p:nth-child(6) {
@@ -2298,8 +2300,8 @@ section.contact-page ul li:nth-child(2) {
 
     /* -----blog page----- */
     section.blog-page {
-        padding-top: 30px;
-        padding-bottom: 20px;
+        padding-top: 180px;
+        /* padding-bottom: 20px; */
     }
 
     section.blog-page .container h2 {
@@ -2404,7 +2406,7 @@ section.contact-page ul li:nth-child(2) {
     }
 
     header {
-        height: 80px;
+        height: 149px;
     }
 
     section.index-blog .container h3 {
@@ -2505,7 +2507,7 @@ section.contact-page ul li:nth-child(2) {
     }
 
     section.blog-page {
-        padding-top: 25px;
+        padding-top: 200px;
     }
 
     section.blogsingle .overlay .blog-img {
@@ -2842,14 +2844,14 @@ a {
 /* ------ home ------- */
 section.blog-home {
     text-align: left;
-    padding-top: 64px;
+    padding-top: 200px;
     padding-bottom: 140px;
 }
 
 section.blog-home ul li .overlay a:first-child h5 {
     color: #363636;
     margin-bottom: 23px;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 section.blog-home ul li .overlay p {
@@ -2955,6 +2957,7 @@ section.blog-home ul li .overlay .blog-img .blog-img-inner {
 
 .right-side-banner {
     margin: 10px 0;
+    font-size: 1.25rem;
 }
 
 .form-group.has-error .form-control,
@@ -3224,3 +3227,37 @@ section.blog-home .container .right-sidebar h2 {
 .side-banner [class^=col-] {
     border-bottom: 1px solid #FFF;
 } */
+
+/* carousel fade */
+.carousel-fade .carousel-item {
+    opacity: 0;
+    transition-duration: .6s;
+    transition-property: opacity;
+}
+
+.carousel-fade .carousel-item.active,
+.carousel-fade .carousel-item-next.carousel-item-left,
+.carousel-fade .carousel-item-prev.carousel-item-right {
+    opacity: 1;
+}
+
+.carousel-fade .active.carousel-item-left,
+.carousel-fade .active.carousel-item-right {
+    opacity: 0;
+}
+
+.carousel-fade .carousel-item-next,
+.carousel-fade .carousel-item-prev,
+.carousel-fade .carousel-item.active,
+.carousel-fade .active.carousel-item-left,
+.carousel-fade .active.carousel-item-prev {
+    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
+}
+
+/* sticky affix sidebar */
+div.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 149px;
+}

@@ -107,3 +107,13 @@ if (!function_exists('cuttext')) {
 		return $sub . (($len < strlen($str)) ? '...' : '');
 	}
 }
+
+// convert youtube link to embed code
+function convertYoutube($string) {
+    return preg_replace(
+        "/\s*[a-zA-Z\/\/:\.]*youtu(be.com\/watch\?v=|.be\/)([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i",
+		// "<iframe src=\"//www.youtube.com/embed/$2\" allowfullscreen></iframe>",
+		"//www.youtube.com/embed/$2",
+        $string
+    );
+}

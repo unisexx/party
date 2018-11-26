@@ -78,6 +78,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::controller('gallery', 'GalleryController');
         Route::controller('membership', 'MembershipController');
         Route::controller('contact', 'ContactController');
+        Route::controller('video', 'VideoController');
     });
 
 }); //middleware

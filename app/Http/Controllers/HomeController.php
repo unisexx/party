@@ -9,6 +9,8 @@ use App\Models\Announce_type;
 use App\Models\Person_type;
 use App\Models\Hilight;
 use App\Models\Page;
+use App\Models\Video;
+use App\Models\Gallery;
 
 use DB;
 use SEO;
@@ -68,6 +70,14 @@ class HomeController extends Controller
         // เกี่ยวกับพรรค
         $data['page'] = new Page;
         $data['page'] = $data['page']->orderBy('id', 'asc')->get();
+
+        // pprp channel 
+        $data['video'] = new Video;
+        $data['video'] = $data['video']->orderBy('id', 'desc')->first();
+
+        // แฟ้มภาพ
+        $data['gallery'] = new Gallery;
+        $data['gallery'] = $data['gallery']->orderBy('id', 'desc')->take(3)->get();
         
         return view('home',$data);
     }

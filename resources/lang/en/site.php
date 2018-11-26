@@ -23,7 +23,8 @@ return [
     'news'      => 'News',
 
     // footer
-    'follow' => 'Follow Us',
+    'follow'  => 'Follow Us',
+    'line_id' => 'Line ID',
 
     // footer-bottom
     'contact' => 'Contact',
@@ -32,6 +33,7 @@ return [
     'news_about'  => 'News about the party',
     'news_branch' => 'News from the party branch',
     'news_young'  => 'News from the young generation',
+    'menu'        => 'Menu',
 
     // sidebar
     'party_infomation'        => 'Party Infomation',

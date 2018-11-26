@@ -1,11 +1,11 @@
 @extends('layouts.front') @section('content')
 
 
-<section class="banner innerpage-banner contact-banner">
+<!-- <section class="banner innerpage-banner contact-banner">
     <div class="container">
         <h1 data-aos="fade-up" data-aos-duration="1000">{{ trans('site.gallery') }}</h1>
     </div>
-</section>
+</section> -->
 
 <section class="about-page contact-page portfolio-page" id="my-port">
     <div class="container">

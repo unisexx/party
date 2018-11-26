@@ -5,10 +5,11 @@
 ?>
 
 <header class="fixed-top p-auto">
-    <div class="container">
+    <!-- <div class="container"> -->
+    <div class="">
         <nav class="navbar navbar-expand p-0">
             <a class="navbar-brand mr-0 pr-4" href="{{ url('home') }}">
-                <img src="image/logo.png" alt="logo" width="100">
+                <img src="image/logo.png" alt="logo" width="200">
             </a>
             <a href="javascript:void(0)" id="cls-btn">&times;</a>
             <div class="navbar-collapse nav-sec" id="sidenav">

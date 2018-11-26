@@ -41,7 +41,7 @@
           <ul class="treeview-menu">
             <li class="{{ request()->path() == 'fdadmin/page/form/1' ? 'active' : '' }}"><a href="{{ url('fdadmin/page/form/1') }}"><i class="fa fa-circle-o"></i> วิสัยทัศน์</a></li>
             <li class="{{ request()->path() == 'fdadmin/page/form/2' ? 'active' : '' }}"><a href="{{ url('fdadmin/page/form/2') }}"><i class="fa fa-circle-o"></i> นโยบาย</a></li>
-            <li class="{{ request()->path() == 'fdadmin/page/form/3' ? 'active' : '' }}"><a href="{{ url('fdadmin/page/form/3') }}"><i class="fa fa-circle-o"></i> พรรค</a></li>
+            <!-- <li class="{{ request()->path() == 'fdadmin/page/form/3' ? 'active' : '' }}"><a href="{{ url('fdadmin/page/form/3') }}"><i class="fa fa-circle-o"></i> พรรค</a></li> -->
             <li class="{{ request()->path() == 'fdadmin/page/form/4' ? 'active' : '' }}"><a href="{{ url('fdadmin/page/form/4') }}"><i class="fa fa-circle-o"></i> ข้อบังคับพรรค</a></li>
           </ul>
         </li>
@@ -65,6 +65,8 @@
         </li> -->
         <li {{ request()->segment(2) == 'gallery' ? 'class=active' : '' }}><a href="{{ url('fdadmin/gallery
 ') }}"><i class="fa fa-picture-o"></i> <span>ภาพกิจกรรม</span></a></li>
+        <li {{ request()->segment(2) == 'video' ? 'class=active' : '' }}><a href="{{ url('fdadmin/video
+') }}"><i class="fa fa-youtube-play"></i> <span>PPRP Channel</span></a></li>
         <li {{ request()->segment(2) == 'download' ? 'class=active' : '' }}><a href="{{ url('fdadmin/download
 ') }}"><i class="fa fa-download"></i> <span>ดาวน์โหลดเอกสาร</span></a></li>
         <li {{ request()->segment(2) == 'membership' ? 'class=active' : '' }}><a href="{{ url('fdadmin/membership

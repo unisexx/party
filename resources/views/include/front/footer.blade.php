@@ -17,16 +17,16 @@
                     @if($contact->fax) <p><i class="fas fa-fax"></i> {{ trans('site.fax') }}: {{ $contact->fax }}</p> @endif
                     @if($contact->email) <p><i class="fas fa-envelope"></i> {{ trans('site.email') }}: <a href="mailto:{{ $contact->email }}">{{ $contact->email }}</a></p> @endif
                     @if($contact->skype) <p><i class="fab fa-skype"></i> Skype: {{ $contact->skype }}</p> @endif
-                    @if($contact->line) <p><i class="fab fa-line"></i></i> Line: {{ $contact->line }}</p> @endif
+                    @if($contact->line) <p><i class="fab fa-line"></i></i> Line ID: <a href="javascript:void(0)" target="_blank" onclick="window.open('http://line.me/ti/p/~{{ $contact->line }}','_blank')">{{ $contact->line }}</a></p> @endif
                 </div>
                 <div class="col-md-4 col-lg-3 footer-social wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
                     <h3>{{ trans('site.follow') }}</h3>
                     <p>
-                        @if($contact->facebook) <a href="{{ $contact->facebook }}"><i class="fab fa-facebook"></i></a> @endif
-                        @if($contact->twitter) <a href="{{ $contact->twitter }}"><i class="fab fa-twitter"></i></a> @endif
-                        @if($contact->google_plus) <a href="{{ $contact->google_plus }}"><i class="fab fa-google-plus-g"></i></a> @endif
-                        @if($contact->instagram) <a href="{{ $contact->instagram }}"><i class="fab fa-instagram"></i></a> @endif
-                        @if($contact->pinterest) <a href="{{ $contact->pinterest }}"><i class="fab fa-pinterest"></i></a> @endif
+                        @if($contact->facebook) <a href="{{ $contact->facebook }}" target="_blank"><i class="fab fa-facebook"></i></a> @endif
+                        @if($contact->twitter) <a href="{{ $contact->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a> @endif
+                        @if($contact->google_plus) <a href="{{ $contact->google_plus }}"  target="_blank"><i class="fab fa-google-plus-g"></i></a> @endif
+                        @if($contact->instagram) <a href="{{ $contact->instagram }}" target="_blank"><i class="fab fa-instagram"></i></a> @endif
+                        @if($contact->pinterest) <a href="{{ $contact->pinterest }}" target="_blank"><i class="fab fa-pinterest"></i></a> @endif
                     </p>
                 </div>
             </div>

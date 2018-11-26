@@ -69,7 +69,8 @@ class HilightController extends Controller
 			$image = $rq->file('imgUpload');
 			$filename  = time() . '.' . $image->getClientOriginalExtension();
 			$path = public_path('uploads/hilight/' . $filename);
-			Image::make($image->getRealPath())->resize(1310, 384)->save($path);
+			// Image::make($image->getRealPath())->resize(1310, 384)->save($path);
+			Image::make($image->getRealPath())->resize(1920, 800)->save($path);
 			$model->image = $filename;
 		}
 		$model->slug = generateUniqueSlug($rq->input('title'));

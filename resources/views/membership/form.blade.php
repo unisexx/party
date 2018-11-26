@@ -1,11 +1,11 @@
 @extends('layouts.front') @section('content')
 
 
-<section class="banner innerpage-banner contact-banner">
+<!-- <section class="banner innerpage-banner contact-banner">
     <div class="container">
         <h1 data-aos="fade-up" data-aos-duration="1000">สมัครสมาชิกพรรค</h1>
     </div>
-</section>
+</section> -->
 
 <section class="blog-page blogsingle">
     <h3 data-aos="fade-up" data-aos-duration="1000">ใบสมัครสมาชิกพรรคพลังประชารัฐ</h3>

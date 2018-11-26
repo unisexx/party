@@ -1,11 +1,11 @@
 @extends('layouts.front') @section('content')
 
 
-<section class="banner innerpage-banner contact-banner">
+<!-- <section class="banner innerpage-banner contact-banner">
     <div class="container">
         <h1 data-aos="fade-up" data-aos-duration="1000">{{ trans('site.executive') }}</h1>
     </div>
-</section>
+</section> -->
 
 <section class="blog-home" style="padding-bottom:0px;">
     <div class="container">
