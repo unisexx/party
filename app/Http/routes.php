@@ -48,6 +48,9 @@ Route::controller('download', 'DownloadController');
 Route::get('/gallery', 'GalleryController@getIndex');
 Route::get('/gallery/{param}', 'GalleryController@getView');
 
+Route::get('/video', 'VideoController@getIndex');
+Route::get('/video/{param}', 'VideoController@getView');
+
 Route::get('/announce', 'AnnounceController@getIndex');
 Route::get('/announce/type/{param}', 'AnnounceController@getType');
 Route::get('/announce/{param}', 'AnnounceController@getView');
