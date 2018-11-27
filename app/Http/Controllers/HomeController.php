@@ -73,11 +73,11 @@ class HomeController extends Controller
 
         // pprp channel 
         $data['video'] = new Video;
-        $data['video'] = $data['video']->orderBy('id', 'desc')->first();
+        $data['video'] = $data['video']->where('status','public')->orderBy('id', 'desc')->first();
 
         // แฟ้มภาพ
         $data['gallery'] = new Gallery;
-        $data['gallery'] = $data['gallery']->orderBy('id', 'desc')->take(3)->get();
+        $data['gallery'] = $data['gallery']->where('status','public')->orderBy('id', 'desc')->take(3)->get();
         
         return view('home',$data);
     }

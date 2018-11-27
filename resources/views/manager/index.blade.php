@@ -24,7 +24,7 @@
 
                                 <div class="blog-img-inner"></div>
                             </div>
-                            <h5>
+                            <h5 style="text-align:center;">
                                 {{ $manager->{'title_'.session('lang')} }}
                             </h5>
                         </a>

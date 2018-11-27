@@ -32,7 +32,7 @@ return [
     // homepage
     'news_about'  => 'News about the party',
     'news_branch' => 'News from the party branch',
-    'news_young'  => 'News from the young generation',
+    'news_young'  => 'News from the new generation',
     'menu'        => 'Menu',
 
     // sidebar
