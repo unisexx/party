@@ -76,7 +76,7 @@ textarea:focus {
 
 /* -------Header-------- */
 header {
-    height: 149px;
+    height: 93px;
     transition: all 0.5s;
     border-bottom: 1px solid rgba(255, 255, 255, .2);
     background: #002a87;
@@ -154,7 +154,7 @@ header .menu-icon span:last-child {
 }
 
 header.scrolled {
-    height: 149px;
+    height: 93px;
     background: #002a87;
 }
 
@@ -871,7 +871,7 @@ section.innerpage-banner .container h1 {
 }
 
 section.about-page {
-    padding-top: 200px;
+    padding-top: 150px;
     padding-bottom: 140px;
 }
 
@@ -920,7 +920,7 @@ section.about-page ul li figure img {
 /* ------Blog page------- */
 section.blog-page {
     text-align: left;
-    padding-top: 200px;
+    padding-top: 150px;
     padding-bottom: 140px;
 }
 
@@ -1026,7 +1026,7 @@ section.blog-page ul li .overlay .blog-img .blog-img-inner {
 section.blogsingle {
     max-width: 980px;
     margin: 0 auto;
-    padding: 200px 0 0;
+    padding: 150px 0 0;
 }
 
 section.blogsingle h3 {
@@ -1763,7 +1763,7 @@ section.contact-page ul li:nth-child(2) {
     }
 
     section.blog-page {
-        padding-top: 200px;
+        padding-top: 150px;
         padding-bottom: 20px;
     }
 
@@ -1806,7 +1806,7 @@ section.contact-page ul li:nth-child(2) {
     /* -----blog single------ */
     section.blogsingle {
         max-width: 100%;
-        padding: 200px 20px 0;
+        padding: 150px 20px 0;
     }
 
     section.blogsingle .similarposts ul li.col-md-6 {
@@ -1944,7 +1944,7 @@ section.contact-page ul li:nth-child(2) {
     }
 
     section.about-page {
-        padding: 200px 0 60px;
+        padding: 150px 0 60px;
     }
 
     /* ------end of about page------ */
@@ -2163,7 +2163,7 @@ section.contact-page ul li:nth-child(2) {
     }
 
     section.blogsingle {
-        padding: 200px 20px 0;
+        padding: 150px 20px 0;
     }
 
     section.blogsingle p:nth-child(6) {
@@ -2300,7 +2300,7 @@ section.contact-page ul li:nth-child(2) {
 
     /* -----blog page----- */
     section.blog-page {
-        padding-top: 180px;
+        padding-top: 150px;
         /* padding-bottom: 20px; */
     }
 
@@ -2406,7 +2406,7 @@ section.contact-page ul li:nth-child(2) {
     }
 
     header {
-        height: 149px;
+        height: 93px;
     }
 
     section.index-blog .container h3 {
@@ -2507,7 +2507,7 @@ section.contact-page ul li:nth-child(2) {
     }
 
     section.blog-page {
-        padding-top: 200px;
+        padding-top: 150px;
     }
 
     section.blogsingle .overlay .blog-img {
@@ -2645,7 +2645,7 @@ section.contact-page ul li:nth-child(2) {
     }
 
     section.about-page {
-        padding: 20px 0 30px;
+        padding: 150px 0 30px;
     }
 
     section.about-page .container h2 {
@@ -2844,7 +2844,7 @@ a {
 /* ------ home ------- */
 section.blog-home {
     text-align: left;
-    padding-top: 200px;
+    padding-top: 150px;
     padding-bottom: 140px;
 }
 
@@ -3259,5 +3259,5 @@ section.blog-home .container .right-sidebar h2 {
 div.sticky {
     position: -webkit-sticky;
     position: sticky;
-    top: 149px;
+    top: 93px;
 }

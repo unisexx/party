@@ -10,7 +10,7 @@
     <!-- </div>
 </section> -->
 
-<div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" style="margin-top:125px;">
+<div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" style="margin-top:93px;">
     <ol class="carousel-indicators">
         @foreach($hilight as $key => $row)
             <li data-target="#carouselExampleIndicators" data-slide-to="{{ $key }}" class="@if($key == 0) active @endif"></li>
@@ -80,12 +80,12 @@
                 <!-- <h2 data-aos="fade-up" data-aos-duration="1000">{{ trans('site.menu') }}</h2> -->
                 <div class="row" style="margin-bottom:20px;">
                     <div class="col-md-6">
-                        <a class="btn btn-lg btn-block btn-outline-primary" href="{{ url('membership/form') }}" role="button">
+                        <a class="btn btn-lg btn-block btn-primary text-white" href="{{ url('membership/form') }}" role="button" style="background-color:#3180cc;">
                             <div class="right-side-banner"><i class="far fa-list-alt"></i> {{ trans('site.party_membership') }}</div>
                         </a>
                     </div>
                     <div class="col-md-6">
-                        <a class="btn btn-lg btn-block btn-outline-primary" href="{{ url('download') }}" role="button">
+                        <a class="btn btn-lg btn-block btn-primary text-white" href="{{ url('download') }}" role="button" style="background-color:#3180cc;">
                             <div class="right-side-banner"><i class="fas fa-download"></i> {{ trans('site.download') }}</div>
                         </a>
                     </div>

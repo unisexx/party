@@ -9,7 +9,7 @@
     <div class="">
         <nav class="navbar navbar-expand p-0">
             <a class="navbar-brand mr-0 pr-4" href="{{ url('home') }}">
-                <img src="image/logo.png" alt="logo" width="200">
+                <img src="image/logo.png" alt="logo" width="120">
             </a>
             <a href="javascript:void(0)" id="cls-btn">&times;</a>
             <div class="navbar-collapse nav-sec" id="sidenav">
