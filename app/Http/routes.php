@@ -64,6 +64,13 @@ Route::controller('membership', 'MembershipController');
 Route::get('/contact', 'ContactController@getIndex');
 Route::get('/contact/{param}', 'ContactController@getView');
 
+Route::get('admin', function () {
+    return redirect('fdadmin/info');
+});
+Route::get('fdadmin', function () {
+    return redirect('fdadmin/info');
+});
+
 // เช็กล็อกอิน
 Route::group(['middleware' => 'auth'], function () {
 
