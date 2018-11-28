@@ -2541,9 +2541,9 @@ section.contact-page ul li:nth-child(2) {
         padding: 25px;
     }
 
-    section.portfolio-page ul li .portfolio-gallery {
-        /* height: 350px; */
-    }
+    /* section.portfolio-page ul li .portfolio-gallery {
+        height: 350px;
+    } */
 
     section.about-page .container p {
         margin: 20px 0 0;
