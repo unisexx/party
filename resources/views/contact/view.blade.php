@@ -9,7 +9,7 @@
 
 <section class="blog-page blogsingle">
     <h2 data-aos="fade-up" data-aos-duration="1000">{{ $rs->{'name_'.session('lang')} }}</h2>
-    <table class="table table-striped">
+    <table class="table table-striped table-responsive">
         <tbody>
             @if($rs->name)
             <tr>
