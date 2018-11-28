@@ -51,7 +51,7 @@
                         ภาษาไทย :: {{ $row->title_th }}<br>
                         ภาษาอังกฤษ :: {{ $row->title_en }}
                       </td>
-                      <td>{{ $row->person_type->name }}</td>
+                      <td>{{ @$row->person_type->name }}</td>
 		                  <td>
 		                  	<a href="fdadmin/manager/form/{{ $row->id }}"><button type="button" class="btn btn-warning  btn-xs">แก้ไข</button></a>
 		                  	<a href="fdadmin/manager/delete/{{ $row->id }}" onclick="return confirm('ต้องการลบรายการนี้')"><button type="button" class="btn btn-danger btn-xs">ลบ</button></a>
