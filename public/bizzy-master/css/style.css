@@ -1101,7 +1101,7 @@ section.blogsingle .box h6 {
     color: #636363;
 }
 
-section.blogsingle p:nth-child(6) {
+/* section.blogsingle p:nth-child(6) {
     margin-bottom: 40px;
 }
 
@@ -1110,7 +1110,7 @@ section.blogsingle p:nth-child(10) {
     padding-bottom: 81px;
     border-bottom: 1px solid #c6c6c6;
     margin-bottom: 39px;
-}
+} */
 
 section.blogsingle .similarposts {
     margin-bottom: 40px;
