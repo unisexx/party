@@ -132,6 +132,11 @@
                 <input name="pinterest" type="text" class="form-control" value="{{ @$rs->pinterest ? @$rs->pinterest : old('pinterest') }}">
               </div>
 
+              <div class="form-group {{ $errors->has('map') ? 'has-error' : '' }}">
+                <label>ฝังแผนที่</label>
+                <textarea class="form-control" name="map" id="" cols="30" rows="5">{{ @$rs->map ? @$rs->map : old('map') }}</textarea>
+              </div>
+
               </div>
               <!-- /.box-body -->
               <div class="box-footer">

@@ -24,5 +24,6 @@ class Contact extends Model
         'name_en',
         'address_th',
         'address_en',
+        'map',
     );
 }

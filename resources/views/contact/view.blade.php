@@ -9,7 +9,7 @@
 
 <section class="blog-page blogsingle">
     <h2 data-aos="fade-up" data-aos-duration="1000">{{ $rs->{'name_'.session('lang')} }}</h2>
-    <table class="table table-striped table-responsive">
+    <table class="table table-striped table-responsive w-100 d-block d-md-table">
         <tbody>
             @if($rs->name)
             <tr>
@@ -85,6 +85,17 @@
             @endif
         </tbody>
     </table>
+
+    @if($rs->map)
+        <style>
+            body #map iframe{
+                width:100% !important;
+                height:300px !important;
+            }
+        </style>
+        <div id="map">{!! $rs->map !!}</div>
+    @endif
+
 </section>
 
 
