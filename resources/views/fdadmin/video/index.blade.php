@@ -24,9 +24,11 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">PPRP Channel</h3>
+              @can('video-add')
               <a href="{{ url('fdadmin/video/form') }}">
                 <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> เพิ่มรายการ</button>
               </a>
+              @endcan
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive">
@@ -51,8 +53,12 @@
                         ภาษาอังกฤษ :: {{ $row->title_en }}
                       </td>
 		                  <td>
+                        @can('video-edit')
 		                  	<a href="fdadmin/video/form/{{ $row->id }}"><button type="button" class="btn btn-warning  btn-xs">แก้ไข</button></a>
+                        @endcan
+                        @can('video-delete')
 		                  	<a href="fdadmin/video/delete/{{ $row->id }}" onclick="return confirm('ต้องการลบรายการนี้')"><button type="button" class="btn btn-danger btn-xs">ลบ</button></a>
+                        @endcan
 		                  </td>
 		                </tr>
                 	@endforeach

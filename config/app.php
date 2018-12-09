@@ -155,8 +155,9 @@ return [
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
         Arrilot\Widgets\ServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-        Zizaco\Entrust\EntrustServiceProvider::class,
+        // Zizaco\Entrust\EntrustServiceProvider::class,
         AlbertCht\InvisibleReCaptcha\InvisibleReCaptchaServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
 
         /*
          * Application Service Providers...

@@ -31,6 +31,9 @@ class VideoController extends Controller
 		// 	return back()->send();
 		// }
 
+		// ตรวจสอบ permission
+        ChkPerm('video-view');
+
 		$data['rs'] = new Video;
 		$data['rs'] = $data['rs']->orderBy('id', 'desc')->get();
 		return view('fdadmin.video.index', $data);
@@ -44,6 +47,9 @@ class VideoController extends Controller
 		// 	return back()->send();
 		// }
 
+		// ตรวจสอบ permission
+		ChkPerm('video-add', 'video', $id);
+
 		$data['rs'] = Video::find($id);
 		return view('fdadmin.video.form', $data);
 	}
@@ -55,6 +61,9 @@ class VideoController extends Controller
 		// 	set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
 		// 	return back()->send();
 		// }
+
+		// ตรวจสอบ permission
+		ChkPerm('video-add', 'video', $id);
 
 		$this->validate($rq, [
 			'title_th' => 'required',
@@ -100,6 +109,9 @@ class VideoController extends Controller
 		// 	set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
 		// 	return back()->send();
 		// }
+
+		// ตรวจสอบ permission
+		ChkPerm('video-delete', 'video');
 
 		if ($rs = Video::find($id)) {
 			$rs->delete(); // Delete process

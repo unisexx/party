@@ -15,21 +15,12 @@ use Image;
 
 class ContactController extends Controller
 {
-	// public function __construct()
-    // {
-    //     if(Auth::user()->level != 99){
-	// 		set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
-	// 		return back()->send();
-	// 	}
-	// }
 
 	public function getIndex()
 	{
-		//permission
-		// if (Auth::user()->level != 99) {
-		// 	set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
-		// 	return back()->send();
-		// }
+
+		// ตรวจสอบ permission
+        ChkPerm('contact-view');
 
 		$data['rs'] = new Contact;
 		$data['rs'] = $data['rs']->orderBy('id', 'desc')->get();
@@ -38,11 +29,9 @@ class ContactController extends Controller
 
 	public function getForm($id = null)
 	{
-		//permission
-		// if (Auth::user()->level != 99) {
-		// 	set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
-		// 	return back()->send();
-		// }
+
+		// ตรวจสอบ permission
+		ChkPerm('contact-add', 'contact', $id);
 
 		$data['rs'] = Contact::find($id);
 		return view('fdadmin.contact.form', $data);
@@ -50,11 +39,9 @@ class ContactController extends Controller
 
 	public function postSave(Request $rq, $id = null)
 	{
-		//permission
-		// if (Auth::user()->level != 99) {
-		// 	set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
-		// 	return back()->send();
-		// }
+
+		// ตรวจสอบ permission
+		ChkPerm('contact-add', 'contact', $id);
 
 		$this->validate($rq, [
 			'name_th' => 'required',
@@ -79,11 +66,8 @@ class ContactController extends Controller
 
 	public function getDelete($id = null)
 	{
-		//permission
-		// if (Auth::user()->level != 99) {
-		// 	set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
-		// 	return back()->send();
-		// }
+		// ตรวจสอบ permission
+		ChkPerm('contact-delete', 'contact');
 
 		if ($rs = Contact::find($id)) {
 			$rs->delete(); // Delete process

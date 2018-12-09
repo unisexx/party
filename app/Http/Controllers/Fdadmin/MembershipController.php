@@ -31,6 +31,9 @@ class MembershipController extends Controller
 		// 	return back()->send();
 		// }
 
+		// ตรวจสอบ permission
+        ChkPerm('membership-view');
+
 		$data['rs'] = new Membership;
 		$data['rs'] = $data['rs']->orderBy('id', 'desc')->get();
 		return view('fdadmin.membership.index', $data);
@@ -44,12 +47,19 @@ class MembershipController extends Controller
 		// 	return back()->send();
 		// }
 
+		// ตรวจสอบ permission
+		ChkPerm('membership-add', 'membership', $id);
+
 		$data['rs'] = Membership::find($id);
 		return view('fdadmin.membership.form', $data);
 	}
 
 	public function postSave(Request $rq, $id = null)
 	{
+
+		// ตรวจสอบ permission
+		ChkPerm('membership-add', 'membership', $id);
+
 		$this->validate($rq, [
 			'name' => 'required',
 			'birthdate' => 'required',
@@ -149,6 +159,9 @@ class MembershipController extends Controller
 		// 	set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
 		// 	return back()->send();
 		// }
+
+		// ตรวจสอบ permission
+		ChkPerm('membership-delete', 'membership');
 
 		if ($rs = Membership::find($id)) {
 			$rs->delete(); // Delete process

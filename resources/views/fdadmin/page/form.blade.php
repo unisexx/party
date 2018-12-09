@@ -85,7 +85,9 @@
               <!-- /.box-body -->
               <div class="box-footer">
                 <!-- <button type="submit" class="btn btn-default">Cancel</button> -->
+                @can('page-edit')
                 <button type="submit" class="btn btn-info pull-right">บันทึกข้อมูล</button>
+                @endcan
               </div>
               <!-- /.box-footer -->
             {{Form::close()}}

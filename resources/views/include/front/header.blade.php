@@ -25,7 +25,7 @@
                             aria-haspopup="true" aria-expanded="false">{{ trans('site.about') }}</a>
                         <div class="dropdown-menu">
                             @foreach($page as $row)
-                                <a class="dropdown-item" href="{{ url('page/'.$row->slug) }}">{{ $row->{'title_'.session('lang')} }}</a>
+                                <a class="dropdown-item" href="{{ url('page/'.$row->id) }}">{{ $row->{'title_'.session('lang')} }}</a>
                             @endforeach
                             <!-- <a class="dropdown-item" href="{{ url('page/วิสัยทัศน์') }}">วิสัยทัศน์</a>
                             <a class="dropdown-item" href="{{ url('page/นโยบาย') }}">นโยบาย</a>

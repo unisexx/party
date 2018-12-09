@@ -30,6 +30,9 @@ class PageController extends Controller
 		// 	return back()->send();
 		// }
 
+		// ตรวจสอบ permission
+        ChkPerm('page-view');
+
 		$data['rs'] = new Page;
 		$data['rs'] = $data['rs']->orderBy('id', 'desc')->get();
 		return view('fdadmin.page.index', $data);

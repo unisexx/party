@@ -2,9 +2,9 @@
 
 @section('content')
 
-<!-- Content Wrapper. Contains info content -->
+<!-- Content Wrapper. Contains user content -->
 <div class="content-wrapper">
-    <!-- Content Header (info header) -->
+    <!-- Content Header (user header) -->
     <!-- <section class="content-header">
       <h1>
         Data Tables
@@ -23,9 +23,9 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">ข่าวสารพรรค</h3>
-              @can('info-add')
-              <a href="{{ url('fdadmin/info/form') }}">
+              <h3 class="box-title">ผู้ใช้งาน</h3>
+              @can('user-add')
+              <a href="{{ url('fdadmin/user/form') }}">
                 <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> เพิ่มรายการ</button>
               </a>
               @endcan
@@ -37,8 +37,9 @@
                 <tr>
                   <th>ไอดี</th>
                   <th>สถานะ</th>
-                  <th>หัวข้อ</th>
-                  <th>หมวดหมู่</th>
+                  <th>ชื่อ</th>
+                  <th>อีเมล์</th>
+                  <th>สิทธิ์การใช้งาน</th>
                   <th data-orderable="false" data-searchable="false">จัดการ</th>
                 </tr>
                 </thead>
@@ -49,24 +50,23 @@
                       <td>
                         <input class="switch_status" type="checkbox" data-toggle="toggle" data-switch-id="{{ $row->id }}" @if($row->status == 'public') checked @endif>
                       </td>
+		                  <td>{{ $row->name }}</td>
+                      <td>{{ $row->email }}</td>
+                      <td>{{ $row->roles()->first()->name }}</td>
 		                  <td>
-                        ภาษาไทย :: {{ $row->title_th }}<br>
-                        ภาษาอังกฤษ :: {{ $row->title_en }}
-                      </td>
-                      <td>{{ @$row->info_type->name }}</td>
-		                  <td>
-                        @can('info-edit')
-		                  	<a href="fdadmin/info/form/{{ $row->id }}"><button type="button" class="btn btn-warning  btn-xs">แก้ไข</button></a>
-                        @endcan
+                            @can('user-edit')
+		                  	    <a href="fdadmin/user/form/{{ $row->id }}"><button type="button" class="btn btn-warning  btn-xs">แก้ไข</button></a>
+                            @endcan
 
-                        @can('info-delete')
-		                  	<a href="fdadmin/info/delete/{{ $row->id }}" onclick="return confirm('ต้องการลบรายการนี้')"><button type="button" class="btn btn-danger btn-xs">ลบ</button></a>
-                        @endcan
+                            @can('user-delete')
+		                  	    <a href="fdadmin/user/delete/{{ $row->id }}" onclick="return confirm('ต้องการลบรายการนี้')"><button type="button" class="btn btn-danger btn-xs">ลบ</button></a>
+                            @endcan
 		                  </td>
 		                </tr>
                 	@endforeach
                 </tfoot>
               </table>
+
             </div>
             <!-- /.box-body -->
           </div>
@@ -88,7 +88,7 @@
       
       $.ajax({
           url: '{{ url("fdadmin/ajax/changestatus") }}',
-          data:{ table : 'infos', status : $(this).prop('checked'), id : $(this).data('switch-id') },
+          data:{ table : 'users', status : $(this).prop('checked'), id : $(this).data('switch-id') },
           dataType: "json",
       });
 

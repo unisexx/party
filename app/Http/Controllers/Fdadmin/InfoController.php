@@ -31,6 +31,9 @@ class InfoController extends Controller
 		// 	return back()->send();
 		// }
 
+		// ตรวจสอบ permission
+        ChkPerm('info-view');
+
 		$data['rs'] = new Info;
 		$data['rs'] = $data['rs']->orderBy('id', 'desc')->get();
 		return view('fdadmin.info.index', $data);
@@ -44,6 +47,9 @@ class InfoController extends Controller
 		// 	return back()->send();
 		// }
 
+		// ตรวจสอบ permission
+		ChkPerm('info-add', 'info', $id);
+
 		$data['rs'] = Info::find($id);
 		return view('fdadmin.info.form', $data);
 	}
@@ -55,6 +61,9 @@ class InfoController extends Controller
 		// 	set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
 		// 	return back()->send();
 		// }
+
+		// ตรวจสอบ permission
+		ChkPerm('info-add', 'info', $id);
 
 		$this->validate($rq, [
 			'title_th' => 'required',
@@ -96,6 +105,9 @@ class InfoController extends Controller
 		// 	set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
 		// 	return back()->send();
 		// }
+
+		// ตรวจสอบ permission
+		ChkPerm('info-delete', 'info');
 
 		if ($rs = Info::find($id)) {
 			$rs->delete(); // Delete process

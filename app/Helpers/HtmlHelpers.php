@@ -117,3 +117,17 @@ function convertYoutube($string) {
         $string
     );
 }
+
+if(!function_exists('ChkPerm')) {
+	function ChkPerm($prem_name, $url_redirect = 'fdadmin/dashboard', $id = null) {
+
+		if (is_numeric($id)) {
+			$prem_name = str_replace('-add', '-edit', $prem_name);
+		}
+		// dd($prem_name);
+		if (!Auth::user()->can($prem_name)) {
+			set_notify('error', trans('message.errorNoaccess'));
+			Redirect::to($url_redirect)->send();
+		}
+	}
+}

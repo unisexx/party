@@ -28,7 +28,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/fdadmin/info';
+    protected $redirectTo = '/fdadmin/dashboard';
 
     /**
      * Create a new authentication controller instance.

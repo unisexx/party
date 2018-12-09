@@ -31,6 +31,9 @@ class AnnounceController extends Controller
 		// 	return back()->send();
 		// }
 
+		// ตรวจสอบ permission
+        ChkPerm('announce-view');
+
 		$data['rs'] = new Announce;
 		$data['rs'] = $data['rs']->orderBy('id', 'desc')->get();
 		return view('fdadmin.announce.index', $data);
@@ -44,6 +47,9 @@ class AnnounceController extends Controller
 		// 	return back()->send();
 		// }
 
+		// ตรวจสอบ permission
+		ChkPerm('announce-add', 'announce', $id);
+
 		$data['rs'] = Announce::find($id);
 		return view('fdadmin.announce.form', $data);
 	}
@@ -55,6 +61,9 @@ class AnnounceController extends Controller
 		// 	set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
 		// 	return back()->send();
 		// }
+
+		// ตรวจสอบ permission
+		ChkPerm('announce-add', 'announce', $id);
 
 		$this->validate($rq, [
 			'title_th' => 'required',
@@ -97,6 +106,9 @@ class AnnounceController extends Controller
 		// 	return back()->send();
 		// }
 
+		// ตรวจสอบ permission
+		ChkPerm('announce-delete', 'hilight');
+		
 		if ($rs = Announce::find($id)) {
 			$rs->delete(); // Delete process
 			set_notify('error', trans('message.completeDelete'));

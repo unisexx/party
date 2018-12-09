@@ -31,6 +31,9 @@ class DownloadController extends Controller
 		// 	return back()->send();
 		// }
 
+		// ตรวจสอบ permission
+        ChkPerm('download-view');
+
 		$data['rs'] = new Download;
 		$data['rs'] = $data['rs']->orderBy('id', 'desc')->get();
 		return view('fdadmin.download.index', $data);
@@ -44,6 +47,9 @@ class DownloadController extends Controller
 		// 	return back()->send();
 		// }
 
+		// ตรวจสอบ permission
+		ChkPerm('download-add', 'download', $id);
+
 		$data['rs'] = Download::find($id);
 		return view('fdadmin.download.form', $data);
 	}
@@ -55,6 +61,9 @@ class DownloadController extends Controller
 		// 	set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
 		// 	return back()->send();
 		// }
+
+		// ตรวจสอบ permission
+		ChkPerm('download-add', 'download', $id);
 
 		$this->validate($rq, [
 			'title_th' => 'required',
@@ -100,6 +109,9 @@ class DownloadController extends Controller
 		// 	set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
 		// 	return back()->send();
 		// }
+
+		// ตรวจสอบ permission
+		ChkPerm('download-delete', 'download');
 
 		if ($rs = Download::find($id)) {
 			$rs->delete(); // Delete process

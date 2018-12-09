@@ -24,9 +24,11 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">ผู้บริหารพรรค</h3>
+              @can('manager-add')
               <a href="{{ url('fdadmin/manager/form') }}">
                 <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> เพิ่มรายการ</button>
               </a>
+              @endcan
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive">
@@ -53,8 +55,13 @@
                       </td>
                       <td>{{ @$row->person_type->name }}</td>
 		                  <td>
+                        @can('manager-edit')
 		                  	<a href="fdadmin/manager/form/{{ $row->id }}"><button type="button" class="btn btn-warning  btn-xs">แก้ไข</button></a>
+                        @endcan
+
+                        @can('manager-delete')
 		                  	<a href="fdadmin/manager/delete/{{ $row->id }}" onclick="return confirm('ต้องการลบรายการนี้')"><button type="button" class="btn btn-danger btn-xs">ลบ</button></a>
+                        @endcan
 		                  </td>
 		                </tr>
                 	@endforeach

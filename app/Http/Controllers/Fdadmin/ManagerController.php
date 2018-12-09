@@ -31,6 +31,9 @@ class ManagerController extends Controller
 		// 	return back()->send();
 		// }
 
+		// ตรวจสอบ permission
+        ChkPerm('manager-view');
+
 		$data['rs'] = new Manager;
 		$data['rs'] = $data['rs']->orderBy('id', 'desc')->get();
 		return view('fdadmin.manager.index', $data);
@@ -44,6 +47,9 @@ class ManagerController extends Controller
 		// 	return back()->send();
 		// }
 
+		// ตรวจสอบ permission
+		ChkPerm('manager-add', 'manager', $id);
+
 		$data['rs'] = Manager::find($id);
 		return view('fdadmin.manager.form', $data);
 	}
@@ -55,6 +61,9 @@ class ManagerController extends Controller
 		// 	set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
 		// 	return back()->send();
 		// }
+
+		// ตรวจสอบ permission
+		ChkPerm('manager-add', 'manager', $id);
 
 		$this->validate($rq, [
 			'title_th' => 'required',
@@ -98,6 +107,9 @@ class ManagerController extends Controller
 		// 	set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
 		// 	return back()->send();
 		// }
+
+		// ตรวจสอบ permission
+		ChkPerm('manager-delete', 'manager');
 
 		if ($rs = Manager::find($id)) {
 			$rs->delete(); // Delete process

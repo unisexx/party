@@ -89,6 +89,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::controller('membership', 'MembershipController');
         Route::controller('contact', 'ContactController');
         Route::controller('video', 'VideoController');
+        Route::controller('role', 'RoleController');
+        Route::controller('user', 'UserController');
     });
 
 }); //middleware

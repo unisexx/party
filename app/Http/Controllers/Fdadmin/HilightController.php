@@ -15,21 +15,11 @@ use Image;
 
 class HilightController extends Controller
 {
-	// public function __construct()
-    // {
-    //     if(Auth::user()->level != 99){
-	// 		set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
-	// 		return back()->send();
-	// 	}
-	// }
 
 	public function getIndex()
 	{
-		//permission
-		// if (Auth::user()->level != 99) {
-		// 	set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
-		// 	return back()->send();
-		// }
+		// ตรวจสอบ permission
+        ChkPerm('hilight-view');
 
 		$data['rs'] = new Hilight;
 		$data['rs'] = $data['rs']->orderBy('id', 'desc')->get();
@@ -38,24 +28,18 @@ class HilightController extends Controller
 
 	public function getForm($id = null)
 	{
-		//permission
-		// if (Auth::user()->level != 99) {
-		// 	set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
-		// 	return back()->send();
-		// }
-
+		// ตรวจสอบ permission
+		ChkPerm('hilight-add', 'hilight', $id);
+		
 		$data['rs'] = Hilight::find($id);
 		return view('fdadmin.hilight.form', $data);
 	}
 
 	public function postSave(Request $rq, $id = null)
 	{
-		//permission
-		// if (Auth::user()->level != 99) {
-		// 	set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
-		// 	return back()->send();
-		// }
-
+		// ตรวจสอบ permission
+		ChkPerm('hilight-add', 'hilight', $id);
+		
 		$this->validate($rq, [
 			'title' => 'required',
         ], [
@@ -84,12 +68,9 @@ class HilightController extends Controller
 
 	public function getDelete($id = null)
 	{
-		//permission
-		// if (Auth::user()->level != 99) {
-		// 	set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
-		// 	return back()->send();
-		// }
-
+		// ตรวจสอบ permission
+		ChkPerm('hilight-delete', 'hilight');
+		
 		if ($rs = Hilight::find($id)) {
 			$rs->delete(); // Delete process
 			set_notify('error', trans('message.completeDelete'));

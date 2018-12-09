@@ -26,7 +26,8 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    // 'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'sqlsrv_dev'),
 
     /*
     |--------------------------------------------------------------------------
@@ -76,6 +77,16 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
             'schema' => 'public',
+        ],
+
+        'sqlsrv_dev'  => [
+            'driver' => 'sqlsrv',
+            'host' => '27.254.33.57',
+            'database' => 'Party',
+            'username' => 'partyadm',
+            'password' => 'p@l2tyAdm',
+            'charset' => 'SQLSRV_ENCODING_UTF8',
+            'prefix' => '',
         ],
 
     ],

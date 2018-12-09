@@ -2,11 +2,11 @@
 namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Zizaco\Entrust\Traits\EntrustUserTrait;
+use Spatie\Permission\Traits\HasRoles; 
 
 class User extends Authenticatable
 {
-    use EntrustUserTrait; // add this trait to your user model
+    use HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -14,7 +14,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'status', 'email', 'password',
     ];
 
     /**

@@ -32,6 +32,9 @@ class GalleryController extends Controller
 		// 	return back()->send();
 		// }
 
+		// ตรวจสอบ permission
+        ChkPerm('gallery-view');
+
 		$data['rs'] = new Gallery;
 		$data['rs'] = $data['rs']->orderBy('id', 'desc')->get();
 		return view('fdadmin.gallery.index', $data);
@@ -45,6 +48,9 @@ class GalleryController extends Controller
 		// 	return back()->send();
 		// }
 
+		// ตรวจสอบ permission
+		ChkPerm('gallery-add', 'gallery', $id);
+
 		$data['rs'] = Gallery::find($id);
 		return view('fdadmin.gallery.form', $data);
 	}
@@ -56,6 +62,9 @@ class GalleryController extends Controller
 		// 	set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
 		// 	return back()->send();
 		// }
+
+		// ตรวจสอบ permission
+		ChkPerm('gallery-add', 'gallery', $id);
 
 		$this->validate($rq, [
 			'title_th' => 'required',
@@ -128,6 +137,9 @@ class GalleryController extends Controller
 		// 	set_notify('error', trans('คุณไม่มีสิทธิ์เข้าใช้งาน'));
 		// 	return back()->send();
 		// }
+		
+		// ตรวจสอบ permission
+		ChkPerm('gallery-delete', 'gallery');
 
 		if ($rs = Gallery::find($id)) {
 			$rs->delete(); // Delete process

@@ -24,9 +24,11 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">ติดต่อพรรค ผู้สมัครพรรค และ สส.ของพรรค</h3>
+              @can('contact-add')
               <a href="{{ url('fdadmin/contact/form') }}">
                 <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> เพิ่มรายการ</button>
               </a>
+              @endcan
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive">
@@ -51,8 +53,12 @@
                         ภาษาอังกฤษ :: {{ $row->name_en }}
                       </td>
 		                  <td>
+                        @can('contact-edit')
 		                  	<a href="fdadmin/contact/form/{{ $row->id }}"><button type="button" class="btn btn-warning  btn-xs">แก้ไข</button></a>
+                        @endcan
+                        @can('contact-delete')
 		                  	<a href="fdadmin/contact/delete/{{ $row->id }}" onclick="return confirm('ต้องการลบรายการนี้')"><button type="button" class="btn btn-danger btn-xs">ลบ</button></a>
+                        @endcan
 		                  </td>
 		                </tr>
                 	@endforeach

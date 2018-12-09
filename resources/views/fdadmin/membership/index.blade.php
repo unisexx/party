@@ -24,9 +24,11 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">ผู้สมัครพรรค</h3>
+              @can('membership-add')
               <a href="{{ url('fdadmin/membership/form') }}">
                 <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> เพิ่มรายการ</button>
               </a>
+              @endcan
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive">
@@ -46,8 +48,12 @@
 		                  <td>{{ $row->name }}</td>
                       <td>{{ $row->status }}</td>
 		                  <td>
+                        @can('membership-edit')
 		                  	<a href="fdadmin/membership/form/{{ $row->id }}"><button type="button" class="btn btn-warning  btn-xs">แก้ไข</button></a>
+                        @endcan
+                        @can('membership-delete')
 		                  	<a href="fdadmin/membership/delete/{{ $row->id }}" onclick="return confirm('ต้องการลบรายการนี้')"><button type="button" class="btn btn-danger btn-xs">ลบ</button></a>
+                        @endcan
 		                  </td>
 		                </tr>
                 	@endforeach
