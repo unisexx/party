@@ -18,6 +18,13 @@
 // Route::controller('sticker', 'StickerController');
 // Route::controller('theme', 'ThemeController');
 
+// check permission
+Route::get('checkperm', function () {
+    $path = public_path('uploads');
+    echo 'path : '.$path."<br>";
+    echo 'permission : '.substr(sprintf('%o', fileperms($path)), -4);
+});
+
 // ตั้งค่า session ภาษา เริ่มต้น
 if(session('lang') == ''){
     Session::set('lang', 'th');
